@@ -1,0 +1,2553 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTAK Group | بوابتك للعمل مع كبرى منصات التوصيل</title>
+    
+    <!-- الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- الأيقونات -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- مكتبة التحقق من البيانات (JustValidate) -->
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316', 
+                            600: '#ea580c', 
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                            950: '#431407',
+                        },
+                        dark: {
+                            bg: '#020617',      
+                            card: '#0f172a',    
+                            border: '#1e293b'
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'float-medium': 'float 6s ease-in-out infinite',
+                        'float-fast': 'float 4s ease-in-out infinite',
+                        'marquee': 'marquee 40s linear infinite',
+                        'pulse-glow': 'pulseGlow 3s infinite',
+                        'blob': 'blob 7s infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                        'breathe': 'breathe 3s ease-in-out infinite',
+                        'fly-icon': 'flyIcon 4s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'drive': 'drive 20s linear infinite',
+                        'float-random': 'floatRandom 20s linear infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'drift': 'drift 10s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotate(2deg)' },
+                        },
+                        floatRandom: {
+                            '0%': { transform: 'translate(0, 0) rotate(0deg)' },
+                            '25%': { transform: 'translate(10px, -15px) rotate(5deg)' },
+                            '50%': { transform: 'translate(-5px, -25px) rotate(-5deg)' },
+                            '75%': { transform: 'translate(-15px, -10px) rotate(2deg)' },
+                            '100%': { transform: 'translate(0, 0) rotate(0deg)' },
+                        },
+                        drift: {
+                            '0%': { transform: 'translateX(0) translateY(0)' },
+                            '50%': { transform: 'translateX(20px) translateY(-20px)' },
+                            '100%': { transform: 'translateX(0) translateY(0)' },
+                        },
+                        marquee: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(100%)' }, 
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(249, 115, 22, 0.3)' },
+                            '50%': { boxShadow: '0 0 30px rgba(249, 115, 22, 0.6)' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        breathe: {
+                            '0%, 100%': { transform: 'scale(1)', opacity: '0.8' },
+                            '50%': { transform: 'scale(1.2)', opacity: '1' },
+                        },
+                        flyIcon: {
+                            '0%': { transform: 'translate(0, 0) rotate(0deg)', opacity: '0' },
+                            '20%': { opacity: '1' },
+                            '80%': { opacity: '1' },
+                            '100%': { transform: 'translate(var(--tx), var(--ty)) rotate(var(--r))', opacity: '0' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-1000px 0' },
+                            '100%': { backgroundPosition: '1000px 0' }
+                        },
+                        drive: {
+                            '0%': { transform: 'translateX(-100%) translateY(20px) scale(0.8)', opacity: '0' },
+                            '10%': { opacity: '1' },
+                            '90%': { opacity: '1' },
+                            '100%': { transform: 'translateX(100%) translateY(-20px) scale(1.1)', opacity: '0' }
+                        }
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm1 1h38v38H1V1z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E\")",
+                        'shimmer-gradient': 'linear-gradient(to right, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* === Core Styles === */
+        body { overflow-x: hidden; }
+
+        /* === Premium Custom Scrollbar === */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #f97316 0%, #c2410c 100%);
+            border-radius: 10px;
+            border: 3px solid #0f172a; /* Creates padding effect */
+            background-clip: content-box;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #fb923c 0%, #ea580c 100%);
+            border: 2px solid #0f172a;
+        }
+
+        /* Floating Label Styles */
+        .input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 1.25rem 1rem 0.5rem;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(203, 213, 225, 0.6);
+            border-radius: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+            font-size: 1rem;
+            color: #1e293b;
+        }
+        .dark .input-group input, .dark .input-group select {
+            background: rgba(15, 23, 42, 0.6);
+            border-color: rgba(51, 65, 85, 0.6);
+            color: white;
+        }
+        .input-group label {
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            color: #64748b;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            font-weight: 500;
+        }
+        .dark .input-group label { color: #94a3b8; }
+
+        /* Label Float Logic */
+        .input-group input:focus, 
+        .input-group input:not(:placeholder-shown),
+        .input-group select:focus,
+        .input-group select:has(option:checked:not([value=""])) {
+            border-color: #f97316;
+            box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .dark .input-group input:focus,
+        .dark .input-group select:focus {
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        .input-group input:focus + label,
+        .input-group input:not(:placeholder-shown) + label,
+        .input-group select:focus + label,
+        .input-group select:has(option:checked:not([value=""])) + label {
+            top: 0.75rem;
+            transform: translateY(0);
+            font-size: 0.75rem;
+            color: #f97316;
+            font-weight: 700;
+        }
+
+        /* Validation Error Styles */
+        .just-validate-error-label {
+            color: #ef4444 !important;
+            font-size: 0.8rem !important;
+            margin-top: 0.25rem !important;
+            font-weight: bold;
+        }
+        .input-group input.just-validate-error-field,
+        .input-group select.just-validate-error-field {
+            border-color: #ef4444 !important;
+            box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1) !important;
+        }
+
+        /* Scroll To Top Button */
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 99;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        #scrollToTopBtn.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        #scrollToTopBtn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(249, 115, 22, 0.6);
+        }
+
+        /* Scroll Down Icon in Hero */
+        .scroll-down-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            z-index: 30;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        .scroll-down-wrapper:hover { opacity: 1; }
+        .mouse-icon {
+            width: 30px;
+            height: 50px;
+            border: 2px solid currentColor;
+            border-radius: 20px;
+            position: relative;
+        }
+        .mouse-wheel {
+            width: 4px;
+            height: 8px;
+            background: currentColor;
+            border-radius: 2px;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scrollWheel 1.5s infinite;
+        }
+        @keyframes scrollWheel {
+            0% { top: 8px; opacity: 1; }
+            100% { top: 25px; opacity: 0; }
+        }
+
+        /* --- Animations & Effects --- */
+        .hero-icons-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+        .bg-icon { position: absolute; opacity: 0.05; color: currentColor; animation: float-random var(--duration, 10s) linear infinite; animation-delay: var(--delay, 0s); }
+        .dark .bg-icon { opacity: 0.08; color: white; }
+        #scroll-progress { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, #f97316, #ea580c); z-index: 100; transition: width 0.1s ease-out; box-shadow: 0 0 10px #f97316; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.5); }
+        .dark .glass { background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); }
+        .spotlight-card { position: relative; background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05); overflow: hidden; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .dark .spotlight-card { background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4); }
+        .spotlight-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: inherit; padding: 1.5px; background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(249, 115, 22, 0.4), transparent 40%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity 0.5s ease; pointer-events: none; z-index: 2; }
+        .spotlight-card:hover::before { opacity: 1; }
+        .spotlight-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 40px -5px rgba(249, 115, 22, 0.15); border-color: rgba(249, 115, 22, 0.3); }
+        .typewriter-cursor { display: inline-block; width: 3px; background-color: #f97316; animation: blink 1s step-end infinite; margin-right: 2px; vertical-align: middle; height: 1em; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        .hover-reveal-icon { opacity: 0; transition: all 0.5s ease; transform: scale(0.5); }
+        .group:hover .hover-reveal-icon { opacity: 1; transform: scale(1); animation: breathe 2s infinite ease-in-out alternate; }
+        #toast-container { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; display: flex; flex-direction: column; gap: 10px; pointer-events: none; }
+        .toast { pointer-events: auto; min-width: 300px; padding: 16px 20px; border-radius: 16px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1); display: flex; align-items: center; gap: 12px; transform: translateY(-50px) scale(0.9); opacity: 0; transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); border: 1px solid rgba(0,0,0,0.05); overflow: hidden; position: relative; }
+        .dark .toast { background: rgba(30, 41, 59, 0.95); border: 1px solid rgba(255,255,255,0.1); color: white; }
+        .toast.show { transform: translateY(0) scale(1); opacity: 1; }
+        .toast-success { border-right: 4px solid #10b981; }
+        .toast-error { border-right: 4px solid #ef4444; }
+        .toast-info { border-right: 4px solid #3b82f6; }
+        .toast-progress { position: absolute; bottom: 0; left: 0; height: 3px; background: rgba(0,0,0,0.1); width: 100%; }
+        .dark .toast-progress { background: rgba(255,255,255,0.2); }
+        .toast-progress-bar { height: 100%; width: 100%; background: currentColor; transform-origin: left; animation: toastProgress linear forwards; }
+        @keyframes toastProgress { to { transform: scaleX(0); } }
+        .reveal-hidden { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); filter: blur(5px); }
+        .reveal-visible { opacity: 1; transform: translateY(0); filter: blur(0); }
+        .delay-100 { transition-delay: 100ms; } .delay-200 { transition-delay: 200ms; } .delay-300 { transition-delay: 300ms; }
+        .modal { transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1); opacity: 0; visibility: hidden; }
+        .modal.active { opacity: 1; visibility: visible; }
+        .modal-content { transform: scale(0.95) translateY(20px); transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .modal.active .modal-content { transform: scale(1) translateY(0); }
+        .btn-shimmer { position: relative; overflow: hidden; }
+        .btn-shimmer::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--tw-bg-shimmer-gradient); background-size: 200% 100%; animation: shimmer 3s infinite; pointer-events: none; }
+        .file-drop-zone { background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='24' ry='24' stroke='%23F97316FF' stroke-width='2' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); transition: all 0.3s ease; }
+        .file-drop-zone:hover { background-color: rgba(249, 115, 22, 0.05); transform: translateY(-2px); background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='24' ry='24' stroke='%23F97316FF' stroke-width='3' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); }
+        .icon-wrapper { position: relative; display: inline-flex; align-items: center; justify-content: center; border-radius: 1.5rem; transition: all 0.5s ease; }
+        .icon-wrapper::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(135deg, #f97316, #ec4899, #8b5cf6); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.5; transition: opacity 0.5s ease; }
+        .spotlight-card:hover .icon-wrapper { transform: scale(1.1) rotate(5deg); }
+        .spotlight-card:hover .icon-wrapper::before { opacity: 1; filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.5)); }
+        input[type=range] { -webkit-appearance: none; background: transparent; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 24px; width: 24px; border-radius: 50%; background: #f97316; cursor: pointer; margin-top: -10px; box-shadow: 0 0 10px rgba(249, 115, 22, 0.5); transition: transform 0.2s; }
+        input[type=range]:hover::-webkit-slider-thumb { transform: scale(1.2); }
+        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: #e2e8f0; border-radius: 2px; }
+        .dark input[type=range]::-webkit-slider-runnable-track { background: #334155; }
+        
+        /* New Glass Card for Status Section */
+        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.5); }
+        .dark .glass-card { background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.05); }
+         /* جعل حركة السلايدر خطية ومستمرة (Marquee Effect) */
+        .swiper-wrapper {
+            transition-timing-function: linear !important;
+        }
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: #94a3b8;
+            opacity: 0.4;
+            transition: all 0.4s ease;
+        }
+        .swiper-pagination-bullet-active {
+            width: 35px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            opacity: 1;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800 dark:bg-dark-bg dark:text-slate-100 transition-colors duration-500 font-sans overflow-x-hidden selection:bg-brand-500 selection:text-white">
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Scroll To Top Button -->
+    <button id="scrollToTopBtn" onclick="scrollToTop()">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Global SVG Definitions for Gradients -->
+    <svg width="0" height="0" class="absolute">
+        <defs>
+            <linearGradient id="brand-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#ea580c;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="blue-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <!-- Decorative Background (Dynamic Parallax) -->
+    <div id="parallax-bg" class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="fixed inset-0 bg-grid-pattern opacity-[0.4]"></div>
+        <div data-speed="2" class="parallax-el absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-brand-500/10 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div data-speed="-2" class="parallax-el absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-purple-500/10 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div data-speed="4" class="parallax-el absolute bottom-[-20%] left-[20%] w-[600px] h-[600px] bg-blue-500/10 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        
+        <!-- Infinite Floating Icons Background -->
+        <div id="bg-icons-container" class="hero-icons-bg"></div>
+    </div>
+
+<!-- Navbar (Redesigned) -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300 border-b border-white/10 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl supports-[backdrop-filter]:bg-white/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-24 items-center">
+                
+                <!-- Logo Area -->
+                <div class="flex items-center gap-4 group cursor-pointer reveal-hidden">
+                    <!-- 3D Icon Container -->
+                    <div class="relative w-12 h-12 perspective-[500px]">
+                        <div class="absolute inset-0 bg-brand-500 rounded-xl rotate-6 group-hover:rotate-12 transition-transform duration-500 opacity-40 blur-md"></div>
+                        <div class="relative w-full h-full bg-gradient-to-br from-brand-500 to-orange-600 rounded-xl flex items-center justify-center text-white font-black text-2xl shadow-lg shadow-brand-500/30 border border-white/20 transform group-hover:rotate-y-12 transition-transform duration-500 preserve-3d">
+                            <span class="drop-shadow-md relative z-10">E</span>
+                            <!-- Shine Effect -->
+                            <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        </div>
+                    </div>
+                    <!-- Text -->
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-black tracking-tighter text-slate-900 dark:text-white leading-none group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-brand-600 group-hover:to-brand-400 transition-all duration-300">EVENTAK</span>
+                        <div class="flex items-center gap-1 mt-0.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse"></span>
+                            <span class="text-[10px] text-slate-400 font-bold tracking-[0.3em] uppercase group-hover:tracking-[0.4em] transition-all duration-300">Group</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu (Floating Pills) -->
+                <div class="hidden lg:flex items-center p-1.5 rounded-2xl bg-slate-100/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 backdrop-blur-sm reveal-hidden delay-100">
+                    
+                    <a href="#about" class="relative group/link px-6 py-3 rounded-xl overflow-hidden transition-all duration-300 hover:bg-white dark:hover:bg-slate-700">
+                        <span class="relative z-10 text-sm font-bold text-slate-600 dark:text-slate-300 group-hover/link:text-brand-600 dark:group-hover/link:text-brand-400 transition-colors">عن الشركة</span>
+                        <!-- Floating Icon -->
+                        <i data-lucide="building-2" class="absolute top-[150%] left-1/2 -translate-x-1/2 text-brand-500/10 dark:text-brand-400/10 w-10 h-10 group-hover/link:top-1/2 group-hover/link:-translate-y-1/2 transition-all duration-500 ease-out rotate-12 group-hover/link:rotate-0"></i>
+                    </a>
+
+                    <a href="#features" class="relative group/link px-6 py-3 rounded-xl overflow-hidden transition-all duration-300 hover:bg-white dark:hover:bg-slate-700">
+                        <span class="relative z-10 text-sm font-bold text-slate-600 dark:text-slate-300 group-hover/link:text-brand-600 dark:group-hover/link:text-brand-400 transition-colors">الخدمات</span>
+                        <i data-lucide="zap" class="absolute top-[150%] left-1/2 -translate-x-1/2 text-brand-500/10 dark:text-brand-400/10 w-10 h-10 group-hover/link:top-1/2 group-hover/link:-translate-y-1/2 transition-all duration-500 ease-out -rotate-12 group-hover/link:rotate-0"></i>
+                    </a>
+
+                    <a href="#whyus" class="relative group/link px-6 py-3 rounded-xl overflow-hidden transition-all duration-300 hover:bg-white dark:hover:bg-slate-700">
+                        <span class="relative z-10 text-sm font-bold text-slate-600 dark:text-slate-300 group-hover/link:text-brand-600 dark:group-hover/link:text-brand-400 transition-colors">لماذا نحن</span>
+                        <i data-lucide="star" class="absolute top-[150%] left-1/2 -translate-x-1/2 text-brand-500/10 dark:text-brand-400/10 w-10 h-10 group-hover/link:top-1/2 group-hover/link:-translate-y-1/2 transition-all duration-500 ease-out rotate-45 group-hover/link:rotate-0"></i>
+                    </a>
+
+                    <a href="#calculator" class="relative group/link px-6 py-3 rounded-xl overflow-hidden transition-all duration-300 hover:bg-white dark:hover:bg-slate-700">
+                        <span class="relative z-10 text-sm font-bold text-slate-600 dark:text-slate-300 group-hover/link:text-brand-600 dark:group-hover/link:text-brand-400 transition-colors">احسب دخلك</span>
+                        <i data-lucide="calculator" class="absolute top-[150%] left-1/2 -translate-x-1/2 text-brand-500/10 dark:text-brand-400/10 w-10 h-10 group-hover/link:top-1/2 group-hover/link:-translate-y-1/2 transition-all duration-500 ease-out -rotate-6 group-hover/link:rotate-0"></i>
+                    </a>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-4 reveal-hidden delay-200">
+                    <button onclick="toggleTheme()" class="p-3 rounded-full bg-slate-100/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-300 hover:bg-brand-100 dark:hover:bg-slate-700 hover:text-brand-600 transition-all backdrop-blur-sm border border-slate-200 dark:border-slate-700 group">
+                        <i data-lucide="moon" class="w-5 h-5 block dark:hidden group-hover:-rotate-12 transition-transform"></i>
+                        <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-yellow-400 group-hover:rotate-45 transition-transform"></i>
+                    </button>
+                    
+                    <!-- New Attractive Join Button -->
+                    <button onclick="openModal()" class="hidden md:flex relative group items-center gap-3 px-8 py-3 bg-gradient-to-r from-slate-900 to-slate-800 dark:from-white dark:to-slate-100 text-white dark:text-slate-900 rounded-2xl font-black shadow-lg shadow-slate-900/20 hover:shadow-brand-500/30 transition-all duration-300 hover:-translate-y-1 overflow-hidden ring-1 ring-white/10 dark:ring-black/5">
+                        
+                        <!-- Hover Background (Gradient Slide Up) -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-brand-600 to-brand-500 translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1)"></div>
+                        
+                        <!-- Shine Effect -->
+                        <div class="absolute inset-0 opacity-0 group-hover:opacity-20 pointer-events-none bg-gradient-to-r from-transparent via-white to-transparent -translate-x-full group-hover:animate-shimmer z-20" style="animation-duration: 1s;"></div>
+
+                        <!-- Button Text -->
+                        <span class="relative z-10 group-hover:text-white transition-colors duration-300">انضم للكباتن</span>
+                        
+                        <!-- Icon Circle with Animation -->
+                        <div class="relative z-10 w-8 h-8 rounded-full bg-white/10 dark:bg-slate-900/10 flex items-center justify-center group-hover:bg-white/20 transition-all duration-300 overflow-hidden">
+                            <!-- Icon 1: Steering Wheel (Exits Up) -->
+                            <i data-lucide="steering-wheel" class="absolute w-4 h-4 text-brand-500 dark:text-brand-600 group-hover:text-white transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0"></i>
+                            <!-- Icon 2: Rocket (Enters from Bottom) -->
+                            <i data-lucide="rocket" class="absolute w-4 h-4 text-white translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-75"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex px-4 sm:px-6 lg:px-8 items-center pt-32 pb-20 overflow-hidden">
+        <div class="max-w-fill mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+                
+                <!-- Text Content -->
+                <div class="lg:w-5/12 text-center lg:text-right relative z-20">
+                    <div class="reveal-hidden inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/60 dark:bg-slate-800/60 border border-brand-200 dark:border-brand-900/50 text-brand-700 dark:text-brand-400 text-sm font-bold mb-8 backdrop-blur-md shadow-sm ring-1 ring-brand-500/20">
+                        <span class="relative flex h-3 w-3">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-500"></span>
+                        </span>
+                        الوكيل المعتمد الأول
+                    </div>
+                    
+                    <h1 class="reveal-hidden delay-100 text-5xl lg:text-7xl font-black text-slate-900 dark:text-white mb-8 leading-tight tracking-tight h-auto">
+                        قُد سيارتك نحو <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-brand-500 to-yellow-500 drop-shadow-sm type-text"></span>
+                        <span class="typewriter-cursor"></span>
+                    </h1>
+                    
+                    <p class="reveal-hidden delay-200 text-lg text-slate-600 dark:text-slate-300 mb-10 leading-relaxed font-medium">
+                        انضم لمنظومة <span class="text-brand-600 font-bold">EVENTAK</span> المتكاملة. ابدأ العمل مع (Uber, Careem, inDrive, DiDi) في خطوة واحدة، واستمتع بسحب أرباحك يومياً.
+                    </p>
+                    
+                    <div class="reveal-hidden delay-300 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-7">
+                        <button onclick="openModal()" class="w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white rounded-2xl font-black text-lg shadow-xl shadow-brand-500/30 transition-all transform hover:-translate-y-1 hover:scale-105 border border-white/20 flex items-center justify-center gap-3 group btn-shimmer relative overflow-hidden">
+                            <span class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+                            <i data-lucide="rocket" class="w-5 h-5 fill-white text-white group-hover:animate-bounce"></i>
+                            سجل الآن مجاناً
+                        </button>
+                        <div class="flex items-center gap-4">
+                            <div class="flex -space-x-3 space-x-reverse">
+                                <img class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900" src="https://i.pravatar.cc/100?img=11" alt="Driver">
+                                <img class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900" src="https://i.pravatar.cc/100?img=12" alt="Driver">
+                                <div class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 bg-slate-800 text-white flex items-center justify-center text-xs font-bold">+5k</div>
+                            </div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400 font-bold">
+                                انضم لأكثر من <br> 5000 كابتن
+                            </div>
+                        </div>
+                        <a href="#about" class="scroll-down-wrapper text-slate-400 hover:text-brand-500 dark:hover:text-brand-400">
+                            <span class="text-[10px] uppercase font-bold tracking-widest">اكتشف المزيد</span>
+                            <div class="mouse-icon">
+                                <div class="mouse-wheel"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Visual Content -->
+                <div class="lg:w-7/12 relative reveal-hidden delay-300 hero-visual-container h-[600px] flex items-center justify-center">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-tr from-brand-500/20 to-blue-500/20 rounded-full blur-[80px] animate-pulse-glow"></div>
+
+                    <div class="relative w-full h-full flex items-center justify-center">
+                        <div class="absolute top-12 left-4 md:left-12 w-64 h-80 md:w-72 md:h-96 rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 z-10 animate-float-slow transform -rotate-6 opacity-60 hover:opacity-100 transition-opacity duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover">
+                        </div>
+
+                        <div class="absolute bottom-16 right-4 md:right-12 w-60 h-72 md:w-64 md:h-80 rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 z-10 animate-float-medium transform rotate-6 opacity-60 hover:opacity-100 transition-opacity duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover">
+                        </div>
+
+                        <div class="relative z-20 w-[280px] h-[380px] md:w-[340px] md:h-[460px] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] border-4 border-white/20 glass group transform hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000" alt="Happy Driver">
+                            <div class="absolute bottom-6 left-0 right-0 text-center z-20">
+                                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                    <span class="text-white text-sm font-bold">متاح الآن لاستقبال الطلبات</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute top-20 right-0 md:-right-4 z-30 glass p-4 rounded-3xl w-52 floating-element shadow-2xl border border-white/20 backdrop-blur-xl animate-float-fast">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white shadow-lg shadow-green-500/30">
+                                    <i data-lucide="banknote" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-slate-500 dark:text-slate-300 font-bold block">رصيد اليوم</span>
+                                    <span class="text-xl font-black text-slate-900 dark:text-white">1,850 ج.م</span>
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[10px] text-slate-400 font-bold">
+                                    <span>المستهدف</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                                    <div class="h-full bg-green-500 w-[85%] rounded-full relative overflow-hidden">
+                                        <div class="absolute inset-0 bg-white/30 w-full h-full animate-[shimmer_1s_infinite]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute bottom-24 left-0 md:-left-8 z-30 glass p-3 rounded-[2rem] w-auto flex items-center gap-3 floating-element shadow-2xl border border-white/20 backdrop-blur-xl" style="animation-delay: -2s">
+                            <div class="w-14 h-14 bg-brand-100 dark:bg-slate-800 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                                <i data-lucide="car" class="w-7 h-7 text-brand-600 dark:text-brand-400 relative z-10"></i>
+                                <div class="absolute inset-0 bg-brand-500/10 blur-md"></div>
+                            </div>
+                            <div class="pr-2 pl-4">
+                                <p class="text-xs text-slate-400 font-bold mb-0.5">نوع السيارة</p>
+                                <p class="text-sm font-black text-slate-900 dark:text-white">Hyundai Elantra</p>
+                                <div class="flex items-center gap-1 mt-1">
+                                    <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-yellow-400"></i>
+                                    <span class="text-xs font-bold">4.9</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute -top-10 left-10 md:left-20 z-40 animate-bounce duration-[3000ms]">
+                            <div class="w-16 h-16 glass rounded-2xl flex items-center justify-center text-blue-500 shadow-xl border border-white/30 transform rotate-12 hover:rotate-0 transition-all cursor-pointer">
+                                <i data-lucide="map-pin" class="w-8 h-8 fill-blue-500/20"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute top-1/2 -right-8 z-20 animate-float-medium">
+                            <div class="w-12 h-12 bg-white dark:bg-slate-800 animate-pulse-glow rounded-full flex items-center justify-center text-yellow-500 shadow-xl border border-slate-100 dark:border-slate-700">
+                                <i data-lucide="zap" class="w-6 h-6 fill-yellow-500"></i>
+                            </div>
+                        </div>
+
+                        <div class="absolute -bottom-5 right-20 z-40 animate-float-slow">
+                            <div class="w-20 h-20 glass rounded-full flex items-center justify-center text-purple-500 shadow-2xl border border-white/30 backdrop-blur-md">
+                                <i data-lucide="shield-check" class="w-10 h-10"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Partners Marquee (Redesigned & Premium) -->
+
+    <section class="relative py-10 bg-slate-50 dark:bg-[#0B1120] overflow-hidden">
+        
+        <div class="absolute inset-y-0 left-0 w-24 md:w-48 bg-gradient-to-r from-slate-50 dark:from-[#0B1120] to-transparent z-20 pointer-events-none"></div>
+        <div class="absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-slate-50 dark:from-[#0B1120] to-transparent z-20 pointer-events-none"></div>
+
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-64 bg-blue-500/5 blur-3xl rounded-[100%] pointer-events-none z-0"></div>
+
+        <div class="container mx-auto relative z-10">
+            
+            <div class="swiper marquee-swiper w-full pt-10 pb-12">
+                <div class="swiper-wrapper flex items-center">
+
+                    <div class="swiper-slide !w-auto md:!w-[350px] px-4">
+                        <div class="group relative h-[90px] cursor-pointer">
+                            <div class="absolute inset-0 bg-gradient-to-r from-lime-100 to-lime-50 dark:from-lime-900/30 dark:to-lime-900/20 rounded-3xl transform rotate-2 group-hover:rotate-0 transition-all duration-500 shadow-xl opacity-70"></div>
+                            
+                            <div class="relative h-full flex items-center gap-6 px-8 py-4 bg-white/80 dark:bg-[#121929]/80 backdrop-blur-xl border border-white/50 dark:border-slate-700/50 rounded-3xl shadow-lg group-hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+                                <div class="w-16 h-16 shrink-0 bg-gradient-to-br from-[#B3D66C] to-[#51C06D] text-white rounded-2xl flex items-center justify-center shadow-lg shadow-lime-500/20 z-10 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="indrive.png" class="w-12 h-12" alt="inDrive Logo">
+                                </div>
+                                
+                                <div class="flex flex-col z-10">
+                                    <span class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#8cb343] to-[#45a05d] tracking-tighter">inDrive</span>
+                                    <span class="text-xs font-bold text-lime-600/60 uppercase tracking-widest">Fair Price</span>
+                                </div>
+
+                                <i data-lucide="zap" class="absolute top-2 right-4 text-lime-500 w-8 h-8 opacity-0 group-hover:opacity-100 group-hover:rotate-12 transition-all duration-500"></i>
+                                <i data-lucide="coins" class="absolute -bottom-2 -right-2 text-lime-600/20 w-16 h-16 opacity-0 group-hover:opacity-100 group-hover:-translate-x-4 transition-all duration-500 delay-75"></i>
+                                <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#B3D66C] to-[#51C06D] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto md:!w-[350px] px-4">
+                        <div class="group relative h-[90px] cursor-pointer">
+                            <div class="absolute inset-0 bg-gradient-to-r from-orange-100 to-amber-50 dark:from-orange-900/30 dark:to-amber-900/20 rounded-3xl transform -rotate-2 group-hover:rotate-0 transition-all duration-500 shadow-xl opacity-70"></div>
+                            
+                            <div class="relative h-full flex items-center gap-6 px-8 py-4 bg-white/80 dark:bg-[#121929]/80 backdrop-blur-xl border border-white/50 dark:border-slate-700/50 rounded-3xl shadow-lg group-hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+                                
+                                <div class="w-16 h-16 shrink-0 bg-[#FA7D24] text-white rounded-2xl flex items-center justify-center text-xl font-bold shadow-lg shadow-orange-500/20 z-10 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="didi.png" class="w-10 h-10" alt="DiDi Logo">
+                                </div>
+                                
+                                <div class="flex flex-col z-10">
+                                    <span class="text-3xl font-black text-[#FA7D24] tracking-tighter">DiDi</span>
+                                    <span class="text-xs font-bold text-orange-400 uppercase tracking-widest">More Value</span>
+                                </div>
+
+                                <i data-lucide="flame" class="absolute top-4 right-8 text-orange-500 w-6 h-6 opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-500"></i>
+                                <i data-lucide="star" class="absolute bottom-6 right-4 text-orange-400 w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:rotate-[360deg] transition-all duration-700 delay-100"></i>
+                                <div class="absolute bottom-0 left-0 w-full h-1 bg-[#FA7D24] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto md:!w-[350px] px-4">
+                        <div class="group relative h-[90px] cursor-pointer perspective-1000">
+                            <div class="absolute inset-0 bg-gradient-to-r from-slate-200 to-slate-100 dark:from-slate-800 dark:to-slate-900 rounded-3xl transform rotate-2 group-hover:rotate-0 transition-all duration-500 shadow-xl opacity-70 group-hover:opacity-100"></div>
+                            <div class="relative h-full flex items-center gap-6 px-8 py-4 bg-white/80 dark:bg-[#121929]/80 backdrop-blur-xl border border-white/50 dark:border-slate-700/50 rounded-3xl shadow-lg group-hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+                                <div class="w-16 h-16 shrink-0 bg-black text-white rounded-2xl flex items-center justify-center text-3xl font-bold z-10"> <img src="uber.jpeg" class="w-10 h-10" alt="Uber Logo"> </div>
+                                <div class="flex flex-col z-10">
+                                    <span class="text-3xl font-black text-slate-900 dark:text-white tracking-tighter">Uber</span>
+                                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Global</span>
+                                </div>
+                                <i data-lucide="car-front" class="absolute -top-10 -right-10 text-slate-800 dark:text-white w-20 h-20 opacity-0 group-hover:opacity-10 group-hover:rotate-12 group-hover:translate-y-6 transition-all duration-700"></i>
+                                <div class="absolute bottom-0 left-0 w-full h-1 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto md:!w-[350px] px-4">
+                        <div class="group relative h-[90px] cursor-pointer">
+                            <div class="absolute inset-0 bg-gradient-to-r from-green-100 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 rounded-3xl transform -rotate-1 group-hover:rotate-0 transition-all duration-500 shadow-xl opacity-70"></div>
+                            <div class="relative h-full flex items-center gap-6 px-8 py-4 bg-white/80 dark:bg-[#121929]/80 backdrop-blur-xl border border-white/50 dark:border-slate-700/50 rounded-3xl shadow-lg group-hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+                                <div class="w-16 h-16 shrink-0 bg-[#fff] text-white rounded-2xl flex items-center justify-center z-10">
+                                    <img src="careem.png" class="w-10 h-10" alt="Careem Logo">
+                                </div>
+                                <div class="flex flex-col z-10">
+                                    <span class="text-3xl font-black text-[#47A23F] tracking-tighter">Careem</span>
+                                    <span class="text-xs font-bold text-green-400 uppercase tracking-widest">Everything App</span>
+                                </div>
+                                <i data-lucide="sparkles" class="absolute top-4 right-6 text-green-500 w-6 h-6 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></i>
+                                <div class="absolute bottom-0 left-0 w-full h-1 bg-[#47A23F] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto md:!w-[350px] px-4">
+                        <div class="group relative h-[90px] cursor-pointer">
+                            <div class="absolute inset-0 bg-gradient-to-r from-lime-100 to-lime-50 dark:from-lime-900/30 dark:to-lime-900/20 rounded-3xl transform rotate-2 group-hover:rotate-0 transition-all duration-500 shadow-xl opacity-70"></div>
+                            
+                            <div class="relative h-full flex items-center gap-6 px-8 py-4 bg-white/80 dark:bg-[#121929]/80 backdrop-blur-xl border border-white/50 dark:border-slate-700/50 rounded-3xl shadow-lg group-hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+                                <div class="w-16 h-16 shrink-0 bg-gradient-to-br from-[#B3D66C] to-[#51C06D] text-white rounded-2xl flex items-center justify-center shadow-lg shadow-lime-500/20 z-10 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="indrive.png" class="w-12 h-12" alt="inDrive Logo">
+                                </div>
+                                
+                                <div class="flex flex-col z-10">
+                                    <span class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#8cb343] to-[#45a05d] tracking-tighter">inDrive</span>
+                                    <span class="text-xs font-bold text-lime-600/60 uppercase tracking-widest">Fair Price</span>
+                                </div>
+
+                                <i data-lucide="zap" class="absolute top-2 right-4 text-lime-500 w-8 h-8 opacity-0 group-hover:opacity-100 group-hover:rotate-12 transition-all duration-500"></i>
+                                <i data-lucide="coins" class="absolute -bottom-2 -right-2 text-lime-600/20 w-16 h-16 opacity-0 group-hover:opacity-100 group-hover:-translate-x-4 transition-all duration-500 delay-75"></i>
+                                <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#B3D66C] to-[#51C06D] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto md:!w-[350px] px-4">
+                        <div class="group relative h-[90px] cursor-pointer">
+                            <div class="absolute inset-0 bg-gradient-to-r from-orange-100 to-amber-50 dark:from-orange-900/30 dark:to-amber-900/20 rounded-3xl transform -rotate-2 group-hover:rotate-0 transition-all duration-500 shadow-xl opacity-70"></div>
+                            
+                            <div class="relative h-full flex items-center gap-6 px-8 py-4 bg-white/80 dark:bg-[#121929]/80 backdrop-blur-xl border border-white/50 dark:border-slate-700/50 rounded-3xl shadow-lg group-hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+                                
+                                <div class="w-16 h-16 shrink-0 bg-[#FA7D24] text-white rounded-2xl flex items-center justify-center text-xl font-bold shadow-lg shadow-orange-500/20 z-10 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="didi.png" class="w-10 h-10" alt="DiDi Logo">
+                                </div>
+                                
+                                <div class="flex flex-col z-10">
+                                    <span class="text-3xl font-black text-[#FA7D24] tracking-tighter">DiDi</span>
+                                    <span class="text-xs font-bold text-orange-400 uppercase tracking-widest">More Value</span>
+                                </div>
+
+                                <i data-lucide="flame" class="absolute top-4 right-8 text-orange-500 w-6 h-6 opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-500"></i>
+                                <i data-lucide="star" class="absolute bottom-6 right-4 text-orange-400 w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:rotate-[360deg] transition-all duration-700 delay-100"></i>
+                                <div class="absolute bottom-0 left-0 w-full h-1 bg-[#FA7D24] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto md:!w-[350px] px-4">
+                        <div class="group relative h-[90px] cursor-pointer perspective-1000">
+                            <div class="absolute inset-0 bg-gradient-to-r from-slate-200 to-slate-100 dark:from-slate-800 dark:to-slate-900 rounded-3xl transform rotate-2 group-hover:rotate-0 transition-all duration-500 shadow-xl opacity-70 group-hover:opacity-100"></div>
+                            <div class="relative h-full flex items-center gap-6 px-8 py-4 bg-white/80 dark:bg-[#121929]/80 backdrop-blur-xl border border-white/50 dark:border-slate-700/50 rounded-3xl shadow-lg group-hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+                                <div class="w-16 h-16 shrink-0 bg-black text-white rounded-2xl flex items-center justify-center text-3xl font-bold z-10"> <img src="uber.jpeg" class="w-10 h-10" alt="Uber Logo"> </div>
+                                <div class="flex flex-col z-10">
+                                    <span class="text-3xl font-black text-slate-900 dark:text-white tracking-tighter">Uber</span>
+                                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Global</span>
+                                </div>
+                                <i data-lucide="car-front" class="absolute -top-10 -right-10 text-slate-800 dark:text-white w-20 h-20 opacity-0 group-hover:opacity-10 group-hover:rotate-12 group-hover:translate-y-6 transition-all duration-700"></i>
+                                <div class="absolute bottom-0 left-0 w-full h-1 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto md:!w-[350px] px-4">
+                        <div class="group relative h-[90px] cursor-pointer">
+                            <div class="absolute inset-0 bg-gradient-to-r from-green-100 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 rounded-3xl transform -rotate-1 group-hover:rotate-0 transition-all duration-500 shadow-xl opacity-70"></div>
+                            <div class="relative h-full flex items-center gap-6 px-8 py-4 bg-white/80 dark:bg-[#121929]/80 backdrop-blur-xl border border-white/50 dark:border-slate-700/50 rounded-3xl shadow-lg group-hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+                                <div class="w-16 h-16 shrink-0 bg-[#fff] text-white rounded-2xl flex items-center justify-center z-10">
+                                    <img src="careem.png" class="w-10 h-10" alt="Careem Logo">
+                                </div>
+                                <div class="flex flex-col z-10">
+                                    <span class="text-3xl font-black text-[#47A23F] tracking-tighter">Careem</span>
+                                    <span class="text-xs font-bold text-green-400 uppercase tracking-widest">Everything App</span>
+                                </div>
+                                <i data-lucide="sparkles" class="absolute top-4 right-6 text-green-500 w-6 h-6 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></i>
+                                <div class="absolute bottom-0 left-0 w-full h-1 bg-[#47A23F] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Company Section -->
+    <section id="about" class="py-24 relative overflow-hidden bg-slate-50 dark:bg-black/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Text Area -->
+                <div class="lg:w-1/2 reveal-hidden">
+                    <div class="inline-flex items-center gap-2 mb-6">
+                        <div class="w-12 h-1 bg-brand-500 rounded-full"></div>
+                        <span class="text-brand-600 font-bold uppercase tracking-widest text-sm">هوية الشركة</span>
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-8 leading-tight">
+                        نحن <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-400">EVENTAK Group</span> <br>
+                        شركاء النجاح
+                    </h2>
+                    <div class="glass-card p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 backdrop-blur-xl relative overflow-hidden">
+                        <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6 relative z-10 text-justify">
+                            تأسست EVENTAK Group لتكون الجسر الآمن والموثوق بين الكباتن وكبرى شركات النقل الذكي في الشرق الأوسط. نحن لسنا مجرد وكيل، بل منظومة متكاملة تهدف إلى تمكين السائقين من تحقيق أقصى دخل ممكن مع توفير بيئة عمل قانونية وآمنة.
+                        </p>
+                        <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed relative z-10 text-justify">
+                            هويتنا مبنية على الشفافية المطلقة، السرعة في الإجراءات، والدعم المستمر. نحن نؤمن بأن الكابتن هو شريك أساسي في النجاح، ولذلك سخرنا كل إمكانياتنا التكنولوجية والإدارية لخدمته.
+                        </p>
+                        
+                        <i data-lucide="target" class="absolute top-4 left-4 text-brand-500/10 w-24 h-24 animate-spin-slow"></i>
+                        <i data-lucide="fingerprint" class="absolute bottom-4 right-4 text-slate-500/10 w-32 h-32"></i>
+                    </div>
+                </div>
+                
+                <!-- Visual Area -->
+                <div class="lg:w-1/2 relative reveal-hidden delay-200">
+                    <div class="relative z-10">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-4 translate-y-8">
+                                <div class="bg-brand-600 rounded-[2rem] p-6 text-white text-center transform hover:-translate-y-2 transition-transform duration-500 shadow-xl shadow-brand-500/20">
+                                    <i data-lucide="award" class="w-10 h-10 mx-auto mb-2"></i>
+                                    <h4 class="font-bold text-xl">الريادة</h4>
+                                    <p class="text-white/80 text-sm">وكيل رقم 1 في مصر</p>
+                                </div>
+                                <div class="glass-card bg-white dark:bg-slate-800 rounded-[2rem] p-6 text-center border border-slate-200 dark:border-slate-700 transform hover:-translate-y-2 transition-transform duration-500">
+                                    <i data-lucide="users" class="w-10 h-10 mx-auto mb-2 text-blue-500"></i>
+                                    <h4 class="font-bold text-xl dark:text-white">المجتمع</h4>
+                                    <p class="text-slate-500 text-sm">+5000 كابتن</p>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="glass-card bg-white dark:bg-slate-800 rounded-[2rem] p-6 text-center border border-slate-200 dark:border-slate-700 transform hover:-translate-y-2 transition-transform duration-500">
+                                    <i data-lucide="globe" class="w-10 h-10 mx-auto mb-2 text-purple-500"></i>
+                                    <h4 class="font-bold text-xl dark:text-white">التغطية</h4>
+                                    <p class="text-slate-500 text-sm">جميع المحافظات</p>
+                                </div>
+                                <div class="bg-slate-900 dark:bg-white rounded-[2rem] p-6 text-white dark:text-slate-900 text-center transform hover:-translate-y-2 transition-transform duration-500 shadow-xl">
+                                    <i data-lucide="heart-handshake" class="w-10 h-10 mx-auto mb-2"></i>
+                                    <h4 class="font-bold text-xl">الثقة</h4>
+                                    <p class="opacity-80 text-sm">شراكة مستدامة</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-brand-500/20 to-purple-500/20 rounded-full blur-[100px] z-0 animate-pulse-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="features" class="py-24 bg-white dark:bg-dark-bg relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20">
+                <h2 class="reveal-hidden text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6">خدمات متكاملة <span class="text-brand-500">للكابتن المحترف</span></h2>
+                <p class="reveal-hidden delay-100 text-slate-600 dark:text-slate-400 text-xl max-w-2xl mx-auto">باقة خدمات حصرية مصممة خصيصاً لتلبية احتياجاتك</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Protection -->
+                <div class="spotlight-card p-10 rounded-[2.5rem] group reveal-hidden delay-100 border border-slate-100 dark:border-slate-800 hover:border-brand-500/50 dark:hover:border-brand-500/50 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-500/10 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
+                    <div class="icon-wrapper w-20 h-20 bg-white dark:bg-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none mb-8 relative z-20 group-hover:scale-110 transition-transform duration-500">
+                        <i data-lucide="shield-check" class="w-10 h-10 text-brand-600 dark:text-brand-400" stroke="url(#brand-gradient)"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-4 relative z-20">حماية قانونية وأمان</h3>
+                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6 relative z-20 text-sm">نضمن لك عقوداً قانونية موثقة تحمي كافة مستحقاتك المالية. فريقنا القانوني جاهز للتدخل وحل أي نزاعات.</p>
+                    <ul class="space-y-2 relative z-20 text-sm text-slate-600 dark:text-slate-300">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> عقود رسمية موثقة</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> دعم قانوني مجاني</li>
+                    </ul>
+                    <i data-lucide="lock" class="hover-reveal-icon absolute top-10 left-10 text-brand-500/20 w-12 h-12 z-10" style="--tx: 20px; --ty: -30px; --r: 15deg;"></i>
+                    <i data-lucide="file-check" class="hover-reveal-icon absolute bottom-10 right-10 text-brand-500/20 w-16 h-16 z-10" style="--tx: -15px; --ty: -40px; --r: -10deg; animation-delay: 0.5s"></i>
+                </div>
+
+                <!-- Activation -->
+                <div class="spotlight-card p-10 rounded-[2.5rem] group reveal-hidden delay-200 border border-slate-100 dark:border-slate-800 hover:border-blue-500/50 dark:hover:border-blue-500/50 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
+                    <div class="icon-wrapper w-20 h-20 bg-white dark:bg-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none mb-8 relative z-20 group-hover:scale-110 transition-transform duration-500">
+                        <i data-lucide="zap" class="w-10 h-10 text-blue-600 dark:text-blue-400" stroke="url(#blue-gradient)"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-4 relative z-20">تفعيل فوري للحساب</h3>
+                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6 relative z-20 text-sm">نظام إلكتروني متطور يربطك مباشرة بقواعد بيانات الشركات لضمان تفعيل حسابك في دقائق معدودة.</p>
+                    <ul class="space-y-2 relative z-20 text-sm text-slate-600 dark:text-slate-300">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i> تفعيل في نفس اليوم</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i> قبول فوري للمستندات</li>
+                    </ul>
+                    <i data-lucide="clock" class="hover-reveal-icon absolute top-12 left-8 text-blue-500/20 w-14 h-14 z-10" style="--tx: 10px; --ty: -20px; --r: 20deg;"></i>
+                    <i data-lucide="check-square" class="hover-reveal-icon absolute bottom-8 right-12 text-blue-500/20 w-10 h-10 z-10" style="--tx: -20px; --ty: 20px; --r: -15deg; animation-delay: 0.3s"></i>
+                </div>
+
+                <!-- Finance -->
+                <div class="spotlight-card p-10 rounded-[2.5rem] group reveal-hidden delay-300 border border-slate-100 dark:border-slate-800 hover:border-purple-500/50 dark:hover:border-purple-500/50 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
+                    <div class="icon-wrapper w-20 h-20 bg-white dark:bg-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none mb-8 relative z-20 group-hover:scale-110 transition-transform duration-500">
+                        <i data-lucide="wallet" class="w-10 h-10 text-purple-600 dark:text-purple-400" stroke="url(#purple-gradient)"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-4 relative z-20">حلول مالية مرنة</h3>
+                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6 relative z-20 text-sm">تحكم كامل في أرباحك. اختر نظام السحب اليومي أو الأسبوعي. محفظة إلكترونية ذكية لاستلام الأموال.</p>
+                    <ul class="space-y-2 relative z-20 text-sm text-slate-600 dark:text-slate-300">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-purple-500"></i> سحب يومي</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-purple-500"></i> تقارير أرباح مفصلة</li>
+                    </ul>
+                    <i data-lucide="banknote" class="hover-reveal-icon absolute top-8 left-12 text-purple-500/20 w-16 h-16 z-10" style="--tx: 30px; --ty: 10px; --r: 45deg;"></i>
+                    <i data-lucide="coins" class="hover-reveal-icon absolute bottom-12 right-8 text-purple-500/20 w-12 h-12 z-10" style="--tx: -10px; --ty: -30px; --r: -10deg; animation-delay: 0.7s"></i>
+                </div>
+
+                <!-- Support -->
+                <div class="spotlight-card p-10 rounded-[2.5rem] group reveal-hidden delay-100 border border-slate-100 dark:border-slate-800 hover:border-green-500/50 dark:hover:border-green-500/50 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
+                    <div class="icon-wrapper w-20 h-20 bg-white dark:bg-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none mb-8 relative z-20 group-hover:scale-110 transition-transform duration-500">
+                        <i data-lucide="headphones" class="w-10 h-10 text-green-600 dark:text-green-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-4 relative z-20">دعم فني متخصص</h3>
+                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6 relative z-20 text-sm">فريق دعم بشري وليس آلي، متاح 24/7. نساعدك في فك البلوك، حل مشاكل التطبيقات، والتعامل مع شكاوى العملاء.</p>
+                    <ul class="space-y-2 relative z-20 text-sm text-slate-600 dark:text-slate-300">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> دعم واتساب وهاتف</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> حل مشاكل البلوك</li>
+                    </ul>
+                    <i data-lucide="message-circle" class="hover-reveal-icon absolute top-6 left-10 text-green-500/20 w-12 h-12 z-10" style="--tx: 20px; --ty: -20px; --r: 10deg;"></i>
+                    <i data-lucide="phone-call" class="hover-reveal-icon absolute bottom-10 right-6 text-green-500/20 w-14 h-14 z-10" style="--tx: -10px; --ty: 10px; --r: -20deg; animation-delay: 0.2s"></i>
+                </div>
+
+                <!-- Maintenance -->
+                <div class="spotlight-card p-10 rounded-[2.5rem] group reveal-hidden delay-200 border border-slate-100 dark:border-slate-800 hover:border-red-500/50 dark:hover:border-red-500/50 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
+                    <div class="icon-wrapper w-20 h-20 bg-white dark:bg-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none mb-8 relative z-20 group-hover:scale-110 transition-transform duration-500">
+                        <i data-lucide="wrench" class="w-10 h-10 text-red-600 dark:text-red-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-4 relative z-20">خدمات الصيانة</h3>
+                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6 relative z-20 text-sm">شبكة واسعة من مراكز الصيانة المعتمدة تقدم خصومات تصل إلى 30% لكباتن إيفنتك. تشمل الزيوت والإطارات.</p>
+                    <ul class="space-y-2 relative z-20 text-sm text-slate-600 dark:text-slate-300">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-red-500"></i> خصومات حصرية</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-red-500"></i> مراكز معتمدة</li>
+                    </ul>
+                    <i data-lucide="settings" class="hover-reveal-icon absolute top-10 left-8 text-red-500/20 w-16 h-16 z-10" style="--tx: 10px; --ty: 20px; --r: 90deg;"></i>
+                    <i data-lucide="tool" class="hover-reveal-icon absolute bottom-8 right-10 text-red-500/20 w-10 h-10 z-10" style="--tx: -15px; --ty: -15px; --r: 0deg; animation-delay: 0.6s"></i>
+                </div>
+
+                <!-- Rewards -->
+                <div class="spotlight-card p-10 rounded-[2.5rem] group reveal-hidden delay-300 border border-slate-100 dark:border-slate-800 hover:border-yellow-500/50 dark:hover:border-yellow-500/50 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
+                    <div class="icon-wrapper w-20 h-20 bg-white dark:bg-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none mb-8 relative z-20 group-hover:scale-110 transition-transform duration-500">
+                        <i data-lucide="trophy" class="w-10 h-10 text-yellow-600 dark:text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-4 relative z-20">مكافآت وبونص</h3>
+                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6 relative z-20 text-sm">نقدر مجهودك! برامج مكافآت شهرية للكباتن الأكثر تحقيقاً للرحلات. سحوبات على جوائز قيمة وبونص إضافي.</p>
+                    <ul class="space-y-2 relative z-20 text-sm text-slate-600 dark:text-slate-300">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-yellow-500"></i> بونص شهري</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-yellow-500"></i> مسابقات وجوائز</li>
+                    </ul>
+                    <i data-lucide="gift" class="hover-reveal-icon absolute top-8 left-10 text-yellow-500/20 w-12 h-12 z-10" style="--tx: 25px; --ty: -15px; --r: 10deg;"></i>
+                    <i data-lucide="star" class="hover-reveal-icon absolute bottom-12 right-8 text-yellow-500/20 w-14 h-14 z-10" style="--tx: -10px; --ty: 20px; --r: 30deg; animation-delay: 0.4s"></i>
+                </div>
+            </div>
+        </div>
+    </section>  
+
+    <!-- Why Us Section -->
+    <section id="whyus" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <!-- Floating Icons Background -->
+        <div class="absolute inset-0 pointer-events-none opacity-20">
+            <i data-lucide="award" class="absolute top-10 left-10 w-24 h-24 text-brand-500 animate-float-slow"></i>
+            <i data-lucide="shield" class="absolute bottom-20 right-20 w-32 h-32 text-purple-500 animate-float-medium" style="animation-delay: 2s"></i>
+            <i data-lucide="users" class="absolute top-1/2 left-1/3 w-16 h-16 text-blue-500 animate-float-fast" style="animation-delay: 1s"></i>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-black mb-4">لماذا تختار <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-yellow-500">EVENTAK</span>؟</h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">لأننا نقدم لك أكثر من مجرد فرصة عمل، نحن نبني معك مستقبلاً مستداماً.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="group relative bg-white/5 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition-all duration-500 overflow-hidden hover:-translate-y-2">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-brand-500/20 rounded-full blur-2xl group-hover:bg-brand-500/30 transition-all"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-brand-500/20 rounded-2xl flex items-center justify-center text-brand-500 mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="wallet" class="w-7 h-7"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">شفافية مالية</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">نظامنا المالي واضح وشفاف 100%. بدون أي رسوم خفية أو خصومات غير مبررة.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative bg-white/5 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition-all duration-500 overflow-hidden hover:-translate-y-2">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-blue-500/20 rounded-full blur-2xl group-hover:bg-blue-500/30 transition-all"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-blue-500/20 rounded-2xl flex items-center justify-center text-blue-500 mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="layout-grid" class="w-7 h-7"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">تغطية شاملة</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">نعمل مع جميع تطبيقات النقل الذكي الكبرى (Uber, Careem, inDrive, DiDi) لزيادة فرصك.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group relative bg-white/5 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition-all duration-500 overflow-hidden hover:-translate-y-2">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-purple-500/20 rounded-full blur-2xl group-hover:bg-purple-500/30 transition-all"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-purple-500/20 rounded-2xl flex items-center justify-center text-purple-500 mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="smartphone" class="w-7 h-7"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">تطبيق ذكي</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">تطبيق خاص للكباتن لمتابعة الأرباح، الرحلات، والتواصل مع الدعم الفني لحظياً.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="group relative bg-white/5 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition-all duration-500 overflow-hidden hover:-translate-y-2">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-green-500/20 rounded-full blur-2xl group-hover:bg-green-500/30 transition-all"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-green-500/20 rounded-2xl flex items-center justify-center text-green-500 mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="shield-check" class="w-7 h-7"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">أمان وظيفي</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">كيان قانوني مسجل يضمن حقوقك، ويوفر لك مظلة حماية اجتماعية وقانونية.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Earnings Calculator Section -->
+    <section id="calculator" class="py-24 bg-white dark:bg-dark-bg border-y border-slate-100 dark:border-slate-800 relative overflow-hidden">
+        <div class="absolute inset-0 bg-brand-500/5 dark:bg-brand-500/10 z-0"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <div class="glass rounded-[3rem] p-10 md:p-16 text-center border border-white/50 dark:border-white/10 shadow-2xl reveal-hidden">
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">حاسبة الأرباح المتوقعة</h2>
+                <p class="text-slate-500 dark:text-slate-400 mb-12">حرك المؤشر لتعرف كم يمكنك أن تجني معنا شهرياً</p>
+                <div class="mb-12">
+                    <div class="flex justify-between text-sm font-bold text-slate-500 mb-4 px-2"><span>4 ساعات</span><span>8 ساعات</span><span>12 ساعة</span></div>
+                    <input type="range" min="4" max="12" value="8" step="1" id="hoursRange" class="w-full appearance-none h-4 bg-slate-200 dark:bg-slate-700 rounded-full outline-none opacity-90 transition hover:opacity-100" oninput="updateEarnings()">
+                    <p class="mt-4 font-bold text-brand-600 dark:text-brand-400"><span id="hoursVal">8</span> ساعات عمل يومياً</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="spotlight-card p-6 rounded-3xl border border-slate-100 dark:border-slate-800">
+                        <p class="text-slate-500 text-sm font-bold mb-2 relative z-10">الدخل اليومي المتوقع</p>
+                        <p class="text-4xl font-black text-slate-900 dark:text-white relative z-10"><span id="dailyEarn" class="count-up" data-target="800">0</span> <span class="text-base text-slate-400">ج.م</span></p>
+                    </div>
+                    <div class="bg-brand-600 p-6 rounded-3xl text-white shadow-xl shadow-brand-500/30 transform scale-105">
+                        <p class="text-white/80 text-sm font-bold mb-2">الدخل الشهري المتوقع</p>
+                        <p class="text-5xl font-black"><span id="monthlyEarn" class="count-up" data-target="24000">0</span> <span class="text-xl">ج.م</span></p>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-400 mt-8">* هذه الأرقام تقديرية وتعتمد على نوع السيارة، المنطقة، وتقييم الكابتن.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Check Car Compatibility (Redesigned) -->
+    <section id="check-car" class="py-32 relative overflow-hidden bg-slate-900 border-y border-white/5">
+        <!-- Animated Background Gradient -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800 via-slate-950 to-black"></div>
+        
+        <!-- Grid/Road Texture Effect -->
+        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
+        <!-- Perspective Grid Floor -->
+        <div class="absolute bottom-0 left-0 right-0 h-2/3 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] transform perspective-[1000px] rotate-x-60 opacity-30"></div>
+
+        <!-- Floating Icons (Background Atmosphere) -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <i data-lucide="car" class="absolute top-20 left-[10%] text-slate-700/20 w-32 h-32 animate-float-slow -rotate-12"></i>
+            <i data-lucide="settings" class="absolute bottom-40 right-[5%] text-brand-900/20 w-48 h-48 animate-spin-slow opacity-30"></i>
+            <i data-lucide="check-circle" class="absolute top-40 right-[20%] text-green-500/10 w-24 h-24 animate-float-medium rotate-12"></i>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Main Glass Container -->
+            <div class="relative rounded-[3rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-16 group">
+                
+                <!-- Glow Effect behind card -->
+                <div class="absolute -inset-px bg-gradient-to-r from-brand-500/20 via-transparent to-blue-500/20 rounded-[3rem] blur-xl opacity-50 group-hover:opacity-75 transition duration-500 pointer-events-none"></div>
+
+                <!-- Right Side: Text Content -->
+                <div class="relative z-10 lg:w-1/2 text-center lg:text-right">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/80 border border-slate-700 text-brand-400 text-xs font-bold mb-6 shadow-lg shadow-brand-900/20 backdrop-blur-md animate-fade-in-up">
+                        <span class="flex h-2 w-2 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+                        </span>
+                        أداة التحقق الذكية
+                    </div>
+
+                    <h2 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight animate-fade-in-up delay-100">
+                        سيارتك <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-yellow-400">مقبولة</span>؟ <br>
+                        <span class="text-slate-500 text-3xl md:text-4xl block mt-2 font-bold">تأكد في ثوانٍ معدودة</span>
+                    </h2>
+                    
+                    <p class="text-slate-400 text-lg mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0 animate-fade-in-up delay-200">
+                        لا داعي للانتظار أو التخمين. خوارزمية ذكية تفحص موديل سيارتك وسنة الصنع لتعطيك قائمة فورية بالشركات (Uber, Careem, inDrive) التي يمكنك العمل معها الآن.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up delay-300">
+                        <button onclick="openCarCheckModal()" class="relative group/btn px-8 py-4 bg-white text-slate-900 rounded-2xl font-black text-lg hover:scale-105 transition-all shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_-15px_rgba(255,255,255,0.5)] overflow-hidden flex items-center justify-center gap-3">
+                            <div class="absolute inset-0 bg-gradient-to-r from-slate-100 to-slate-300 opacity-0 group-hover/btn:opacity-100 transition-opacity"></div>
+                            <span class="relative z-10">افحص سيارتك مجاناً</span>
+                            <i data-lucide="scan-line" class="w-5 h-5 relative z-10 group-hover/btn:animate-pulse"></i>
+                        </button>
+                        
+                        <!-- Mini Logos -->
+                        <div class="flex items-center gap-2 px-6 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                            <div class="flex -space-x-3 space-x-reverse">
+                                <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-[10px] font-bold border-2 border-slate-900 z-30 shadow-lg">Uber</div>
+                                <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-[10px] font-bold text-white border-2 border-slate-900 z-20 shadow-lg">Car</div>
+                                <div class="w-8 h-8 rounded-full bg-pink-500 flex items-center justify-center text-[10px] font-bold text-white border-2 border-slate-900 z-10 shadow-lg">inD</div>
+                            </div>
+                            <span class="text-xs text-slate-400 font-bold">قاعدة بيانات محدثة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Left Side: Visual Content (3D Cards) -->
+                <div class="relative z-10 lg:w-1/2 w-full flex justify-center perspective-[1200px] animate-fade-in-up delay-200">
+                    <!-- Floating Elements Container -->
+                    <div class="relative w-80 h-80 md:w-96 md:h-96 transform-style-3d group-hover:rotate-y-6 transition-transform duration-700">
+                        
+                        <!-- Main Card (Car) -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-950 rounded-[2.5rem] border border-slate-700/50 shadow-2xl flex flex-col items-center justify-center p-6 transform rotate-y-12 rotate-x-6 hover:rotate-0 transition-transform duration-700 ease-out z-20">
+                            <!-- Carbon Texture Overlay -->
+                            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 rounded-[2.5rem]"></div>
+                            
+                            <!-- Inner Glow -->
+                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-brand-500/30 rounded-full blur-3xl"></div>
+
+                            <!-- Car Image -->
+                            <img src="Hyundai.png" class="w-80 h-auto drop-shadow-2xl relative z-10 animate-float-slow" alt="Car Check">
+                            
+                            <!-- Tag -->
+                            <div class="mt-8 flex items-center gap-3 bg-slate-900/90 px-5 py-3 rounded-2xl border border-white/10 backdrop-blur-md shadow-xl relative z-20">
+                                <div class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_#22c55e]"></div>
+                                <span class="text-white font-bold font-mono tracking-wide">Hyundai Elantra</span>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge 1: Approved -->
+                        <div class="absolute -top-8 -right-8 bg-white/95 backdrop-blur-xl rounded-2xl p-4 shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/50 transform rotate-6 animate-float-medium z-30">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 shadow-inner">
+                                    <i data-lucide="check" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">الحالة</p>
+                                    <p class="text-base font-black text-slate-900">مقبولة للعمل</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge 2: Earnings -->
+                        <div class="absolute -bottom-8 -left-8 bg-slate-800/95 backdrop-blur-xl rounded-2xl p-4 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-slate-600 transform -rotate-3 animate-float-slow z-30" style="animation-delay: 1.5s;">
+                             <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-brand-500/20 rounded-full flex items-center justify-center text-brand-500 shadow-inner">
+                                    <i data-lucide="wallet" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">الدخل المتوقع</p>
+                                    <p class="text-base font-black text-white">+25,000 ج.م</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Car Types Section -->
+    <section id="cars" class="py-24 bg-slate-50 dark:bg-slate-900/30 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="reveal-hidden text-4xl font-black text-slate-900 dark:text-white mb-4">فئات السيارات المقبولة</h2>
+                <p class="reveal-hidden delay-100 text-slate-500 dark:text-slate-400 text-lg">اختر الفئة التي تناسب سيارتك وابدأ الكسب</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Eco Category -->
+                <div class="spotlight-card rounded-[2.5rem] overflow-hidden group border border-slate-200 dark:border-slate-800 hover:border-green-500/50 transition-colors">
+                    <div class="h-56 bg-gradient-to-b from-green-50 to-white dark:from-green-900/10 dark:to-dark-card flex items-center justify-center p-6 relative overflow-visible">
+                        <!-- Flying Background Icon -->
+                        <i data-lucide="leaf" class="absolute -right-6 -top-6 w-40 h-40 text-green-500/5 rotate-12 transition-transform group-hover:rotate-45 duration-700 animate-float-slow"></i>
+                        <!-- Main Car Icon -->
+                        <div class="relative z-10 animate-float-medium">
+                            <img src="eco.png" class="w-full h-32 object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-110" alt="Eco Car">
+                        </div>
+                    </div>
+                    <div class="p-8 relative z-10 bg-white dark:bg-slate-900/50 backdrop-blur-sm">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-black text-slate-900 dark:text-white">الفئة الاقتصادية</h3>
+                            <div class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 p-2 rounded-xl">
+                                <i data-lucide="banknote" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                        <p class="text-slate-500 text-sm mb-6 font-medium">الخيار الأمثل للسيارات الموفرة للوقود.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3 p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/50 hover:bg-green-50 dark:hover:bg-green-900/10 transition-colors">
+                                <div class="w-8 h-8 rounded-full bg-white dark:bg-slate-700 flex items-center justify-center shadow-sm text-green-500"><i data-lucide="calendar" class="w-4 h-4"></i></div>
+                                <div>
+                                    <p class="text-[10px] text-slate-400 font-bold uppercase">الموديل</p>
+                                    <p class="text-sm font-bold text-slate-700 dark:text-slate-200">2008 فما فوق</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/50 hover:bg-green-50 dark:hover:bg-green-900/10 transition-colors">
+                                <div class="w-8 h-8 rounded-full bg-white dark:bg-slate-700 flex items-center justify-center shadow-sm text-green-500"><i data-lucide="car" class="w-4 h-4"></i></div>
+                                <div>
+                                    <p class="text-[10px] text-slate-400 font-bold uppercase">أمثلة</p>
+                                    <p class="text-sm font-bold text-slate-700 dark:text-slate-200">BYD, Verna, Lanos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comfort Category -->
+                <div class="spotlight-card rounded-[2.5rem] overflow-hidden group border border-slate-200 dark:border-slate-800 hover:border-brand-500/50 transition-colors transform md:-translate-y-6 shadow-2xl relative z-20">
+                    <div class="absolute top-4 left-4 z-30">
+                        <span class="bg-brand-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg shadow-brand-500/30">الأكثر طلباً</span>
+                    </div>
+                    <div class="h-56 bg-gradient-to-b from-brand-50 to-white dark:from-brand-900/10 dark:to-dark-card flex items-center justify-center p-6 relative overflow-visible">
+                        <i data-lucide="star" class="absolute -right-6 -top-6 w-40 h-40 text-brand-500/5 rotate-12 transition-transform group-hover:rotate-45 duration-700 animate-float-slow"></i>
+                        <div class="relative z-10 animate-float-medium">
+                            <img src="Comfort.png" class="w-full h-32 object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-110" alt="Comfort Car">
+                        </div>
+                    </div>
+                    <div class="p-8 relative z-10 bg-white dark:bg-slate-900/50 backdrop-blur-sm">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-black text-slate-900 dark:text-white">فئة Comfort</h3>
+                            <div class="bg-brand-100 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 p-2 rounded-xl">
+                                <i data-lucide="gem" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                        <p class="text-slate-500 text-sm mb-6 font-medium">سيارات حديثة ومريحة لتجربة أفضل.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3 p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/50 hover:bg-brand-50 dark:hover:bg-brand-900/10 transition-colors">
+                                <div class="w-8 h-8 rounded-full bg-white dark:bg-slate-700 flex items-center justify-center shadow-sm text-brand-500"><i data-lucide="calendar" class="w-4 h-4"></i></div>
+                                <div>
+                                    <p class="text-[10px] text-slate-400 font-bold uppercase">الموديل</p>
+                                    <p class="text-sm font-bold text-slate-700 dark:text-slate-200">2015 فما فوق</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/50 hover:bg-brand-50 dark:hover:bg-brand-900/10 transition-colors">
+                                <div class="w-8 h-8 rounded-full bg-white dark:bg-slate-700 flex items-center justify-center shadow-sm text-brand-500"><i data-lucide="car" class="w-4 h-4"></i></div>
+                                <div>
+                                    <p class="text-[10px] text-slate-400 font-bold uppercase">أمثلة</p>
+                                    <p class="text-sm font-bold text-slate-700 dark:text-slate-200">Elantra, Cerato, Toyota</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Luxury Category -->
+                <div class="spotlight-card rounded-[2.5rem] overflow-hidden group border border-slate-200 dark:border-slate-800 hover:border-purple-500/50 transition-colors">
+                    <div class="h-56 bg-gradient-to-b from-purple-50 to-white dark:from-purple-900/10 dark:to-dark-card flex items-center justify-center p-6 relative overflow-visible">
+                        <i data-lucide="crown" class="absolute -right-6 -top-6 w-40 h-40 text-purple-500/5 rotate-12 transition-transform group-hover:rotate-45 duration-700 animate-float-slow"></i>
+                        <div class="relative z-10 animate-float-medium">
+                            <img src="verc.png" class="w-full h-32 object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-110" alt="Lux Car">
+                        </div>
+                    </div>
+                    <div class="p-8 relative z-10 bg-white dark:bg-slate-900/50 backdrop-blur-sm">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-black text-slate-900 dark:text-white">الفئة الفاخرة</h3>
+                            <div class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 p-2 rounded-xl">
+                                <i data-lucide="crown" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                        <p class="text-slate-500 text-sm mb-6 font-medium">أعلى درجات الرفاهية والدخل المميز.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3 p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/50 hover:bg-purple-50 dark:hover:bg-purple-900/10 transition-colors">
+                                <div class="w-8 h-8 rounded-full bg-white dark:bg-slate-700 flex items-center justify-center shadow-sm text-purple-500"><i data-lucide="calendar" class="w-4 h-4"></i></div>
+                                <div>
+                                    <p class="text-[10px] text-slate-400 font-bold uppercase">الموديل</p>
+                                    <p class="text-sm font-bold text-slate-700 dark:text-slate-200">2019 فما فوق</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/50 hover:bg-purple-50 dark:hover:bg-purple-900/10 transition-colors">
+                                <div class="w-8 h-8 rounded-full bg-white dark:bg-slate-700 flex items-center justify-center shadow-sm text-purple-500"><i data-lucide="car" class="w-4 h-4"></i></div>
+                                <div>
+                                    <p class="text-[10px] text-slate-400 font-bold uppercase">أمثلة</p>
+                                    <p class="text-sm font-bold text-slate-700 dark:text-slate-200">Kia Sportage, Tucson</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-white dark:bg-dark-bg border-t border-slate-100 dark:border-slate-800">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="reveal-hidden text-3xl font-black text-center text-slate-900 dark:text-white mb-12">الأسئلة الشائعة</h2>
+            <div class="space-y-4">
+                <details class="group spotlight-card rounded-2xl p-4 cursor-pointer reveal-hidden delay-100">
+                    <summary class="flex justify-between items-center font-bold text-lg text-slate-800 dark:text-white list-none relative z-10">
+                        <span>ما هي الأوراق المطلوبة للتقديم؟</span>
+                        <span class="transition-transform duration-300 group-open:rotate-180"><i data-lucide="chevron-down"></i></span>
+                    </summary>
+                    <div class="text-slate-500 dark:text-slate-400 mt-3 leading-relaxed relative z-10 animate-fade-in-up">نحتاج فقط إلى: صورة البطاقة الشخصية (سارية)، صورة رخصة القيادة (سارية)، صورة رخصة السيارة، وفيش جنائي حديث (لم يمر عليه 3 أشهر).</div>
+                </details>
+                <details class="group spotlight-card rounded-2xl p-4 cursor-pointer reveal-hidden delay-200">
+                    <summary class="flex justify-between items-center font-bold text-lg text-slate-800 dark:text-white list-none relative z-10">
+                        <span>هل يشترط أن تكون السيارة باسمي؟</span>
+                        <span class="transition-transform duration-300 group-open:rotate-180"><i data-lucide="chevron-down"></i></span>
+                    </summary>
+                    <div class="text-slate-500 dark:text-slate-400 mt-3 leading-relaxed relative z-10 animate-fade-in-up">لا يشترط ذلك. يمكنك العمل بسيارة أحد الأقارب أو سيارة إيجار بشرط وجود توكيل إدارة أو عقد إيجار ساري.</div>
+                </details>
+                <details class="group spotlight-card rounded-2xl p-4 cursor-pointer reveal-hidden delay-300">
+                    <summary class="flex justify-between items-center font-bold text-lg text-slate-800 dark:text-white list-none relative z-10">
+                        <span>متى يتم تفعيل الحساب؟</span>
+                        <span class="transition-transform duration-300 group-open:rotate-180"><i data-lucide="chevron-down"></i></span>
+                    </summary>
+                    <div class="text-slate-500 dark:text-slate-400 mt-3 leading-relaxed relative z-10 animate-fade-in-up">يتم مراجعة الأوراق وتفعيل الحساب عادةً خلال 24 ساعة من تقديم الطلب، وفي بعض الحالات يتم التفعيل في نفس اليوم.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Status Check (Updated Design) -->
+    <section id="status-check" class="py-32 relative overflow-hidden bg-slate-50 dark:bg-slate-950 transition-colors duration-500">
+        <!-- Dynamic Background Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <!-- Glowing Orbs -->
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-[100px] animate-pulse-glow mix-blend-multiply dark:mix-blend-screen"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] animate-pulse-glow mix-blend-multiply dark:mix-blend-screen" style="animation-delay: 2s"></div>
+            
+            <!-- Floating 3D-like Icons -->
+            <i data-lucide="search" class="absolute top-20 left-10 text-slate-300 dark:text-slate-800 w-16 h-16 animate-float-slow opacity-60 rotate-12"></i>
+            <i data-lucide="file-search" class="absolute bottom-20 right-10 text-slate-300 dark:text-slate-800 w-24 h-24 animate-float-medium opacity-60 -rotate-12" style="animation-delay: 1s"></i>
+            <i data-lucide="check-circle-2" class="absolute top-40 right-20 text-brand-500/20 w-12 h-12 animate-float-fast opacity-60 rotate-45"></i>
+            
+            <!-- Grid Pattern Overlay -->
+            <div class="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05]"></div>
+        </div>
+    
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <!-- Main Card -->
+            <div class="glass-card relative overflow-hidden rounded-[3rem] border border-white/50 dark:border-slate-700/50 shadow-2xl backdrop-blur-xl bg-white/60 dark:bg-slate-900/60 p-8 md:p-16 text-center group transition-all duration-500 hover:shadow-brand-500/10">
+                
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-50 dark:bg-brand-900/20 text-brand-600 dark:text-brand-400 text-sm font-bold mb-8 border border-brand-100 dark:border-brand-800/30 shadow-sm">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+                    </span>
+                    خدمة ذاتية فورية
+                </div>
+
+                <h2 class="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
+                    تابع حالة <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-400">طلبك</span>
+                </h2>
+                
+                <p class="text-slate-600 dark:text-slate-300 text-lg mb-12 max-w-xl mx-auto leading-relaxed">
+                    هل قمت بالتسجيل معنا؟ أدخل رقمك القومي لمعرفة حالة طلبك الحالية (قبول، مراجعة، أو رفض) في ثوانٍ.
+                </p>
+
+                <!-- Input Area -->
+                <div class="max-w-lg mx-auto relative group/input">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-purple-600 rounded-3xl blur opacity-20 group-hover/input:opacity-40 transition duration-500"></div>
+                    <div class="relative flex flex-col sm:flex-row gap-3 bg-white dark:bg-slate-950 p-2 rounded-3xl shadow-lg border border-slate-100 dark:border-slate-800">
+                        <div class="relative flex-1">
+                            <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-400">
+                                <i data-lucide="credit-card" class="w-5 h-5"></i>
+                            </div>
+                            <input type="text" id="statusNationalId" placeholder="الرقم القومي (14 رقم)" maxlength="14" 
+                                class="w-full h-14 pr-12 pl-4 rounded-2xl bg-transparent border-none focus:ring-0 text-lg font-bold text-slate-900 dark:text-white placeholder:text-slate-400/80 placeholder:font-normal text-right">
+                        </div>
+                        <button onclick="checkApplicationStatus()" 
+                            class="h-14 px-8 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl font-black hover:scale-[1.02] active:scale-95 transition-all shadow-xl flex items-center justify-center gap-2 whitespace-nowrap overflow-hidden relative">
+                            <span class="relative z-10">بحث</span>
+                            <i data-lucide="search" class="w-5 h-5 relative z-10"></i>
+                            <div class="absolute inset-0 bg-gradient-to-r from-brand-600 to-brand-500 opacity-0 hover:opacity-10 dark:hover:opacity-20 transition-opacity"></div>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Result Area (Hidden by default) -->
+                <div id="statusResult" class="hidden mt-10 transition-all duration-700 ease-out transform translate-y-4 opacity-0"></div>
+
+            </div>
+        </div>
+    </section>
+<section id="testimonials" class="py-24 relative overflow-hidden bg-white dark:bg-dark-bg border-t border-slate-100 dark:border-slate-800">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-500/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-50 dark:bg-brand-900/10 text-brand-600 dark:text-brand-400 text-xs font-bold mb-6 border border-brand-100 dark:border-brand-800/30 reveal-hidden">
+                    <i data-lucide="heart" class="w-4 h-4 fill-brand-500"></i>
+                    آراء شركاء النجاح
+                </div>
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 reveal-hidden delay-100">
+                    ماذا يقول <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-400">الكباتن</span> عنا؟
+                </h2>
+                <p class="text-slate-500 dark:text-slate-400 text-lg max-w-2xl mx-auto reveal-hidden delay-200">
+                    قصص نجاح حقيقية لكباتن غيروا حياتهم وحققوا استقلالهم المالي مع EVENTAK
+                </p>
+            </div>
+
+            <div class="relative reveal-hidden delay-300">
+                <div class="swiper testimonials-swiper !pb-16 !px-4 md:!px-0">
+                    <div class="swiper-wrapper">
+                        
+                        <div class="swiper-slide">
+                            <div class="spotlight-card h-full bg-slate-50 dark:bg-[#111827] border border-slate-200 dark:border-slate-800 rounded-[2rem] p-8 relative group transition-all duration-300 hover:-translate-y-2">
+                                <div class="absolute top-8 left-8 text-brand-500/20 group-hover:text-brand-500/40 transition-colors">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" /></svg>
+                                </div>
+                                <div class="flex gap-1 text-yellow-500 mb-6">
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                </div>
+                                <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-8 text-lg font-medium">
+                                    "بصراحة التعامل محترم جداً، والتحويل اليومي للأرباح فرق معايا كتير في مصاريف العربية. خدمة العملاء بترد في وقتها وبيحلوا أي مشكلة، شكراً إيفنتك."
+                                </p>
+                                <div class="flex items-center gap-4 mt-auto">
+                                    <div class="w-14 h-14 rounded-full p-1 bg-gradient-to-br from-brand-500 to-yellow-500">
+                                        <img src="https://i.pravatar.cc/150?img=11" alt="User" class="w-full h-full rounded-full object-cover border-2 border-white dark:border-slate-900">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 dark:text-white text-lg">أحمد مصطفى</h4>
+                                        <span class="text-sm text-brand-600 dark:text-brand-400 font-bold">كابتن Uber & DiDi</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="spotlight-card h-full bg-slate-50 dark:bg-[#111827] border border-slate-200 dark:border-slate-800 rounded-[2rem] p-8 relative group transition-all duration-300 hover:-translate-y-2">
+                                <div class="absolute top-8 left-8 text-brand-500/20 group-hover:text-brand-500/40 transition-colors">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" /></svg>
+                                </div>
+                                <div class="flex gap-1 text-yellow-500 mb-6">
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                </div>
+                                <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-8 text-lg font-medium">
+                                    "كنت قلقان من موضوع تفعيل الحساب وإجراءات القبول، لكن الحمد لله خلصت في 24 ساعة بالظبط. السيستم بتاعهم سريع جداً والخصومات على الصيانة ممتازة."
+                                </p>
+                                <div class="flex items-center gap-4 mt-auto">
+                                    <div class="w-14 h-14 rounded-full p-1 bg-gradient-to-br from-brand-500 to-yellow-500">
+                                        <img src="https://i.pravatar.cc/150?img=68" alt="User" class="w-full h-full rounded-full object-cover border-2 border-white dark:border-slate-900">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 dark:text-white text-lg">محمود حسن</h4>
+                                        <span class="text-sm text-brand-600 dark:text-brand-400 font-bold">كابتن inDrive</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="spotlight-card h-full bg-slate-50 dark:bg-[#111827] border border-slate-200 dark:border-slate-800 rounded-[2rem] p-8 relative group transition-all duration-300 hover:-translate-y-2">
+                                <div class="absolute top-8 left-8 text-brand-500/20 group-hover:text-brand-500/40 transition-colors">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" /></svg>
+                                </div>
+                                <div class="flex gap-1 text-yellow-500 mb-6">
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                </div>
+                                <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-8 text-lg font-medium">
+                                    "بقالي معاهم سنة، أكتر حاجة مريحاني هي الوضوح في التعاملات المالية. مفيش خصومات غريبة، والبونص الشهري بيشجعني اشتغل أكتر. أنصح أي كابتن بيهم."
+                                </p>
+                                <div class="flex items-center gap-4 mt-auto">
+                                    <div class="w-14 h-14 rounded-full p-1 bg-gradient-to-br from-brand-500 to-yellow-500">
+                                        <img src="https://i.pravatar.cc/150?img=59" alt="User" class="w-full h-full rounded-full object-cover border-2 border-white dark:border-slate-900">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 dark:text-white text-lg">سيد علي</h4>
+                                        <span class="text-sm text-brand-600 dark:text-brand-400 font-bold">كابتن Careem</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="swiper-slide">
+                            <div class="spotlight-card h-full bg-slate-50 dark:bg-[#111827] border border-slate-200 dark:border-slate-800 rounded-[2rem] p-8 relative group transition-all duration-300 hover:-translate-y-2">
+                                <div class="absolute top-8 left-8 text-brand-500/20 group-hover:text-brand-500/40 transition-colors">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" /></svg>
+                                </div>
+                                <div class="flex gap-1 text-yellow-500 mb-6">
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+                                </div>
+                                <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-8 text-lg font-medium">
+                                    "الدعم الفني عندهم وهمي، حسابي كان عليه بلوك في أوبر بسبب مشكلة قديمة، وهما ساعدوني أحلها ورجعت اشتغل تاني في أقل من أسبوع. حقيقي شركة محترمة."
+                                </p>
+                                <div class="flex items-center gap-4 mt-auto">
+                                    <div class="w-14 h-14 rounded-full p-1 bg-gradient-to-br from-brand-500 to-yellow-500">
+                                        <img src="https://i.pravatar.cc/150?img=12" alt="User" class="w-full h-full rounded-full object-cover border-2 border-white dark:border-slate-900">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 dark:text-white text-lg">عماد حمدي</h4>
+                                        <span class="text-sm text-brand-600 dark:text-brand-400 font-bold">كابتن Uber</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div class="swiper-pagination !-bottom-0"></div>
+                </div>
+                
+                <button class="swiper-btn-prev absolute top-1/2 -right-4 md:-right-12 z-20 -translate-y-1/2 w-12 h-12 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-xl text-slate-600 dark:text-slate-300 flex items-center justify-center hover:bg-brand-600 hover:text-white hover:border-brand-600 transition-all active:scale-95 disabled:opacity-0 disabled:pointer-events-none group">
+                    <i data-lucide="chevron-right" class="w-6 h-6 group-hover:-translate-x-0.5 transition-transform"></i>
+                </button>
+                <button class="swiper-btn-next absolute top-1/2 -left-4 md:-left-12 z-20 -translate-y-1/2 w-12 h-12 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-xl text-slate-600 dark:text-slate-300 flex items-center justify-center hover:bg-brand-600 hover:text-white hover:border-brand-600 transition-all active:scale-95 disabled:opacity-0 disabled:pointer-events-none group">
+                    <i data-lucide="chevron-left" class="w-6 h-6 group-hover:translate-x-0.5 transition-transform"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-white py-16 border-t border-slate-800 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-600 via-brand-400 to-yellow-500"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="w-20 h-20 bg-gradient-to-br from-brand-600 to-brand-800 rounded-3xl flex items-center justify-center font-bold text-3xl mx-auto mb-8 shadow-2xl shadow-brand-500/20">E</div>
+            <h2 class="text-3xl font-black mb-6">EVENTAK Group</h2>
+            <p class="text-slate-400 mb-8 max-w-lg mx-auto">نحن نساعدك في بناء مستقبل أفضل من خلال تحويل سيارتك إلى مشروع مربح ومستدام.</p>
+            <div class="flex justify-center gap-6 mb-10">
+                <a href="#" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-all transform hover:scale-110"><i data-lucide="facebook"></i></a>
+                <a href="#" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-all transform hover:scale-110"><i data-lucide="instagram"></i></a>
+                <a href="#" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-all transform hover:scale-110"><i data-lucide="message-circle"></i></a>
+                <a href="#" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-all transform hover:scale-110"><i data-lucide="phone"></i></a>
+            </div>
+            <p class="text-slate-600 text-sm">جميع الحقوق محفوظة © 2024 EVENTAK Group</p>
+        </div>
+    </footer>
+
+    <!-- MODAL: Application Form -->
+    <div id="applicationModal" class="modal fixed inset-0 z-50 flex items-center justify-center px-4 backdrop-blur-xl bg-slate-900/80 overflow-y-auto">
+        <div class="modal-content spotlight-card bg-white/95 dark:bg-slate-900/95 w-full max-w-5xl rounded-[3rem] shadow-2xl relative flex flex-col max-h-[90vh] my-10 overflow-hidden">
+            <!-- Header -->
+            <div class="px-10 py-8 border-b border-slate-200/50 dark:border-slate-700/50 flex justify-between items-center sticky top-0 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md z-20">
+                <div>
+                    <h3 class="text-3xl font-black text-slate-900 dark:text-white flex items-center gap-3">
+                        <span class="w-10 h-10 bg-brand-500 rounded-xl flex items-center justify-center text-white text-lg shadow-lg shadow-brand-500/30"><i data-lucide="file-plus-2"></i></span>
+                        طلب التحاق جديد
+                    </h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1 mr-14 font-medium">خطوتك الأولى نحو زيادة دخلك معنا</p>
+                </div>
+                <button onclick="closeModal()" class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-red-50 dark:hover:bg-red-900/20 text-slate-500 hover:text-red-500 transition-all flex items-center justify-center border border-slate-200 dark:border-slate-700">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            
+            <div class="p-10 overflow-y-auto custom-scrollbar bg-slate-50/50 dark:bg-black/20">
+                <!-- Advanced Progress Steps -->
+                <div class="mb-12 relative">
+                    <div class="absolute top-1/2 left-0 w-full h-1 bg-slate-200 dark:bg-slate-700 rounded-full -translate-y-1/2 z-0"></div>
+                    <div class="relative z-10 flex justify-between items-center px-4">
+                        <div class="step-indicator active flex flex-col items-center gap-3 cursor-pointer" onclick="if(currentTab>0) showTab(0)">
+                            <div class="w-10 h-10 rounded-full bg-brand-500 text-white flex items-center justify-center font-bold shadow-lg shadow-brand-500/40 ring-4 ring-white dark:ring-slate-900 transition-all">1</div>
+                            <span class="text-xs font-bold text-brand-600 dark:text-brand-400">البيانات</span>
+                        </div>
+                        <div class="step-indicator flex flex-col items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-500 flex items-center justify-center font-bold ring-4 ring-white dark:ring-slate-900 transition-all">2</div>
+                            <span class="text-xs font-bold text-slate-400">المستندات</span>
+                        </div>
+                        <div class="step-indicator flex flex-col items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-500 flex items-center justify-center font-bold ring-4 ring-white dark:ring-slate-900 transition-all">3</div>
+                            <span class="text-xs font-bold text-slate-400">السيارة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="recruitmentForm" onsubmit="event.preventDefault();" novalidate>
+                    <!-- Step 1 -->
+                    <div class="step-content animate-fade-in-up" id="step1">
+                        <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 p-6 rounded-3xl mb-8 flex items-start gap-4">
+                            <i data-lucide="info" class="text-blue-600 dark:text-blue-400 mt-1 shrink-0"></i>
+                            <p class="text-sm text-blue-800 dark:text-blue-200 font-medium leading-relaxed">يرجى إدخال بياناتك كما هي مسجلة في بطاقة الرقم القومي.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <div class="input-group">
+                                <input type="text" name="firstName" id="firstName" required placeholder=" " />
+                                <label for="firstName">الاسم الأول <span class="text-red-500">*</span></label>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" name="middleName" id="middleName" required placeholder=" " />
+                                <label for="middleName">الاسم الأوسط <span class="text-red-500">*</span></label>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" name="lastName" id="lastName" required placeholder=" " />
+                                <label for="lastName">اللقب <span class="text-red-500">*</span></label>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div class="input-group">
+                                <input type="text" name="nationalId" id="nationalId" required maxlength="14" placeholder=" " />
+                                <label for="nationalId">الرقم القومي (14 رقم) <span class="text-red-500">*</span></label>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="input-group">
+                                    <input type="number" name="age" id="age" required min="18" max="75" placeholder=" " />
+                                    <label for="age">السن <span class="text-red-500">*</span></label>
+                                </div>
+                                <div class="input-group">
+                                    <select name="gender" id="gender" required>
+                                        <option value="" disabled selected></option>
+                                        <option value="male">ذكر</option>
+                                        <option value="female">أنثى</option>
+                                    </select>
+                                    <label for="gender">الجنس <span class="text-red-500">*</span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 (Files) -->
+                    <div class="step-content hidden animate-fade-in-up" id="step2">
+                        <div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 p-6 rounded-3xl mb-8 flex items-start gap-4">
+                            <i data-lucide="alert-triangle" class="text-amber-600 shrink-0 mt-1"></i>
+                            <p class="text-sm text-amber-800 dark:text-amber-200 font-medium leading-relaxed">تأكد أن الصور واضحة وغير مقصوصة.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <div class="group"><label class="block text-sm font-bold mb-3 dark:text-slate-300 text-center">وجه البطاقة</label><div class="file-drop-zone relative h-40 rounded-3xl flex flex-col items-center justify-center cursor-pointer border-2 border-dashed border-slate-300 dark:border-slate-600 group-hover:border-brand-500 bg-white dark:bg-slate-800 overflow-hidden" onclick="document.getElementById('idFront').click()"><input type="file" id="idFront" name="idFront" accept="image/*" class="hidden" required onchange="handleFileSelect(this, 'preview-idFront')"><div id="preview-idFront" class="flex flex-col items-center opacity-70"><i data-lucide="scan-face" size="24"></i><span class="text-xs">رفع</span></div><img class="hidden absolute inset-0 w-full h-full object-cover"/></div></div>
+                            <div class="group"><label class="block text-sm font-bold mb-3 dark:text-slate-300 text-center">ظهر البطاقة</label><div class="file-drop-zone relative h-40 rounded-3xl flex flex-col items-center justify-center cursor-pointer border-2 border-dashed border-slate-300 dark:border-slate-600 group-hover:border-brand-500 bg-white dark:bg-slate-800 overflow-hidden" onclick="document.getElementById('idBack').click()"><input type="file" id="idBack" name="idBack" accept="image/*" class="hidden" required onchange="handleFileSelect(this, 'preview-idBack')"><div id="preview-idBack" class="flex flex-col items-center opacity-70"><i data-lucide="credit-card" size="24"></i><span class="text-xs">رفع</span></div><img class="hidden absolute inset-0 w-full h-full object-cover"/></div></div>
+                            <div class="group"><label class="block text-sm font-bold mb-3 dark:text-slate-300 text-center">الفيش الجنائي</label><div class="file-drop-zone relative h-40 rounded-3xl flex flex-col items-center justify-center cursor-pointer border-2 border-dashed border-slate-300 dark:border-slate-600 group-hover:border-brand-500 bg-white dark:bg-slate-800 overflow-hidden" onclick="document.getElementById('crimRec').click()"><input type="file" id="crimRec" name="criminalRecord" accept="image/*" class="hidden" required onchange="handleFileSelect(this, 'preview-crimRec')"><div id="preview-crimRec" class="flex flex-col items-center opacity-70"><i data-lucide="file-check" size="24"></i><span class="text-xs">رفع</span></div><img class="hidden absolute inset-0 w-full h-full object-cover"/></div></div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="group"><label class="block text-sm font-bold mb-3 dark:text-slate-300 text-center">وجه الرخصة</label><div class="file-drop-zone relative h-40 rounded-3xl flex flex-col items-center justify-center cursor-pointer border-2 border-dashed border-slate-300 dark:border-slate-600 group-hover:border-brand-500 bg-white dark:bg-slate-800 overflow-hidden" onclick="document.getElementById('licenseFront').click()"><input type="file" id="licenseFront" name="licenseFront" accept="image/*" class="hidden" required onchange="handleFileSelect(this, 'preview-licenseFront')"><div id="preview-licenseFront" class="flex flex-col items-center opacity-70"><i data-lucide="image-plus" size="24"></i><span class="text-xs">رفع</span></div><img class="hidden absolute inset-0 w-full h-full object-cover"/></div></div>
+                            <div class="group"><label class="block text-sm font-bold mb-3 dark:text-slate-300 text-center">ظهر الرخصة</label><div class="file-drop-zone relative h-40 rounded-3xl flex flex-col items-center justify-center cursor-pointer border-2 border-dashed border-slate-300 dark:border-slate-600 group-hover:border-brand-500 bg-white dark:bg-slate-800 overflow-hidden" onclick="document.getElementById('licenseBack').click()"><input type="file" id="licenseBack" name="licenseBack" accept="image/*" class="hidden" required onchange="handleFileSelect(this, 'preview-licenseBack')"><div id="preview-licenseBack" class="flex flex-col items-center opacity-70"><i data-lucide="image-plus" size="24"></i><span class="text-xs">رفع</span></div><img class="hidden absolute inset-0 w-full h-full object-cover"/></div></div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 (Car Data) -->
+                    <div class="step-content hidden animate-fade-in-up" id="step3">
+                        
+                        <!-- NEW HELP LINK -->
+                        <div class="mb-8 p-4 bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-800 rounded-2xl flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-brand-100 dark:bg-brand-900/50 rounded-full flex items-center justify-center text-brand-600"><i data-lucide="help-circle"></i></div>
+                                <div>
+                                    <p class="text-sm font-bold text-slate-900 dark:text-white">هل سيارتك مدعومة؟</p>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">تأكد قبل التقديم لتوفير وقتك.</p>
+                                </div>
+                            </div>
+                            <button type="button" onclick="closeModal(); setTimeout(openCarCheckModal, 300)" class="text-xs font-bold text-white bg-slate-900 dark:bg-brand-600 px-4 py-2 rounded-xl hover:opacity-90">افحص الآن</button>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                            <div class="input-group"><input type="text" name="carMake" id="carMake" required placeholder=" " /><label for="carMake">نوع السيارة <span class="text-red-500">*</span></label></div>
+                            <div class="input-group"><input type="text" name="carModel" id="carModel" required placeholder=" " /><label for="carModel">الموديل <span class="text-red-500">*</span></label></div>
+                            <div class="input-group"><input type="number" name="carYear" id="carYear" required placeholder=" " /><label for="carYear">السنة <span class="text-red-500">*</span></label></div>
+                        </div>
+                        
+                        <label class="block text-sm font-bold mb-4 dark:text-slate-300">صور السيارة</label>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                            <div class="group relative aspect-square rounded-3xl bg-slate-100 dark:bg-slate-800 border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-brand-500 cursor-pointer overflow-hidden flex flex-col items-center justify-center" onclick="document.getElementById('carFront').click()"><input type="file" id="carFront" name="carFront" accept="image/*" class="hidden" required onchange="handleFileSelect(this, 'prev-cF')"><div id="prev-cF" class="text-center p-2"><i data-lucide="arrow-up" class="w-6 h-6 mx-auto mb-1 text-slate-400"></i><span class="text-xs font-bold text-slate-500">أمام</span></div><img class="hidden absolute inset-0 w-full h-full object-cover"/></div>
+                            <div class="group relative aspect-square rounded-3xl bg-slate-100 dark:bg-slate-800 border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-brand-500 cursor-pointer overflow-hidden flex flex-col items-center justify-center" onclick="document.getElementById('carBack').click()"><input type="file" id="carBack" name="carBack" accept="image/*" class="hidden" required onchange="handleFileSelect(this, 'prev-cB')"><div id="prev-cB" class="text-center p-2"><i data-lucide="arrow-down" class="w-6 h-6 mx-auto mb-1 text-slate-400"></i><span class="text-xs font-bold text-slate-500">خلف</span></div><img class="hidden absolute inset-0 w-full h-full object-cover"/></div>
+                            <div class="group relative aspect-square rounded-3xl bg-slate-100 dark:bg-slate-800 border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-brand-500 cursor-pointer overflow-hidden flex flex-col items-center justify-center" onclick="document.getElementById('carRight').click()"><input type="file" id="carRight" name="carRight" accept="image/*" class="hidden" required onchange="handleFileSelect(this, 'prev-cR')"><div id="prev-cR" class="text-center p-2"><i data-lucide="arrow-right" class="w-6 h-6 mx-auto mb-1 text-slate-400"></i><span class="text-xs font-bold text-slate-500">يمين</span></div><img class="hidden absolute inset-0 w-full h-full object-cover"/></div>
+                            <div class="group relative aspect-square rounded-3xl bg-slate-100 dark:bg-slate-800 border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-brand-500 cursor-pointer overflow-hidden flex flex-col items-center justify-center" onclick="document.getElementById('carLeft').click()"><input type="file" id="carLeft" name="carLeft" accept="image/*" class="hidden" required onchange="handleFileSelect(this, 'prev-cL')"><div id="prev-cL" class="text-center p-2"><i data-lucide="arrow-left" class="w-6 h-6 mx-auto mb-1 text-slate-400"></i><span class="text-xs font-bold text-slate-500">يسار</span></div><img class="hidden absolute inset-0 w-full h-full object-cover"/></div>
+                        </div>
+                        <div class="bg-brand-50 dark:bg-brand-900/10 p-5 rounded-2xl border border-brand-200 dark:border-brand-800/50"><label class="flex items-start gap-3 cursor-pointer"><input type="checkbox" id="consent" required class="mt-1 w-5 h-5 text-brand-600 rounded focus:ring-brand-500 border-gray-300"><span class="text-sm text-slate-700 dark:text-slate-300 font-medium">أقر بأن جميع البيانات والمستندات المرفقة صحيحة.</span></label></div>
+                    </div>
+
+                    <!-- Nav Buttons -->
+                    <div class="mt-10 flex justify-between items-center border-t border-slate-200 dark:border-slate-700 pt-8">
+                        <button type="button" id="prevBtn" onclick="nextPrev(-1)" class="hidden px-8 py-3 rounded-2xl border-2 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition">السابق</button>
+                        <button type="button" id="nextBtn" onclick="nextPrev(1)" class="ml-auto px-12 py-4 rounded-2xl bg-gradient-to-r from-brand-600 to-brand-500 text-white font-bold hover:shadow-xl hover:shadow-brand-500/20 transition-all flex items-center gap-3 transform hover:-translate-y-1"><span>التالي</span><i data-lucide="arrow-left" class="w-5 h-5"></i></button>
+                    </div>
+                    <!-- Loading ... -->
+                    <div id="loadingState" class="absolute inset-0 bg-white/95 dark:bg-slate-900/95 z-50 hidden flex-col items-center justify-center rounded-[3rem] backdrop-blur-md">
+                         <div class="relative w-24 h-24 mb-6"><div class="absolute inset-0 rounded-full border-4 border-slate-200 dark:border-slate-700"></div><div class="absolute inset-0 rounded-full border-4 border-brand-500 border-t-transparent animate-spin"></div><div class="absolute inset-0 flex items-center justify-center"><i data-lucide="upload-cloud" class="w-8 h-8 text-brand-500 animate-pulse"></i></div></div>
+                        <h4 class="text-2xl font-black text-slate-900 dark:text-white mb-2">جاري المعالجة</h4><p class="text-slate-500 text-center max-w-xs">نقوم بتشفير البيانات ورفع المستندات...</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- NEW MODAL: Car Checker -->
+    <div id="carCheckModal" class="modal fixed inset-0 z-[60] flex items-center justify-center px-4 backdrop-blur-xl bg-slate-900/90 overflow-y-auto">
+        <div class="modal-content spotlight-card bg-white dark:bg-slate-900 w-full max-w-4xl rounded-[2.5rem] shadow-2xl relative flex flex-col h-[85vh] my-10 overflow-hidden border border-slate-200 dark:border-slate-700">
+            <!-- Header -->
+            <div class="px-8 py-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-white/50 dark:bg-slate-900/50 backdrop-blur-md z-20">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400">
+                        <i data-lucide="search-check" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-black text-slate-900 dark:text-white">فحص السيارة</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">تأكد من قبول سيارتك قبل التسجيل</p>
+                    </div>
+                </div>
+                <button onclick="closeCarCheckModal()" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-red-50 text-slate-500 hover:text-red-500 flex items-center justify-center transition-colors">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Body -->
+            <div class="flex-1 overflow-hidden relative">
+                <!-- Check Step 1: Select Company -->
+                <div id="checkStep1" class="absolute inset-0 p-8 overflow-y-auto custom-scrollbar transition-transform duration-500 ease-in-out">
+                    <h4 class="text-2xl font-bold text-center mb-8 text-slate-900 dark:text-white">اختر الشركة التي تريد العمل معها</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div onclick="selectCompany('uber')" class="cursor-pointer group relative bg-slate-50 dark:bg-slate-800 p-6 rounded-3xl border-2 border-transparent hover:border-black dark:hover:border-white transition-all hover:shadow-xl">
+                            <div class="h-20 flex items-center justify-center mb-4">
+                                <span class="text-4xl font-black text-slate-900 dark:text-white">Uber</span>
+                            </div>
+                            <div class="absolute top-4 right-4 w-6 h-6 rounded-full border-2 border-slate-300 group-hover:bg-slate-900 group-hover:border-slate-900 transition-colors"></div>
+                        </div>
+                        <div onclick="selectCompany('careem')" class="cursor-pointer group relative bg-green-50 dark:bg-green-900/10 p-6 rounded-3xl border-2 border-transparent hover:border-green-500 transition-all hover:shadow-xl">
+                            <div class="h-20 flex items-center justify-center mb-4">
+                                <span class="text-4xl font-black text-green-600">Careem</span>
+                            </div>
+                            <div class="absolute top-4 right-4 w-6 h-6 rounded-full border-2 border-green-200 group-hover:bg-green-500 group-hover:border-green-500 transition-colors"></div>
+                        </div>
+                        <div onclick="selectCompany('indrive')" class="cursor-pointer group relative bg-pink-50 dark:bg-pink-900/10 p-6 rounded-3xl border-2 border-transparent hover:border-pink-500 transition-all hover:shadow-xl">
+                            <div class="h-20 flex items-center justify-center mb-4">
+                                <span class="text-4xl font-black text-pink-600">inDrive</span>
+                            </div>
+                            <div class="absolute top-4 right-4 w-6 h-6 rounded-full border-2 border-pink-200 group-hover:bg-pink-500 group-hover:border-pink-500 transition-colors"></div>
+                        </div>
+                        <div onclick="selectCompany('didi')" class="cursor-pointer group relative bg-orange-50 dark:bg-orange-900/10 p-6 rounded-3xl border-2 border-transparent hover:border-orange-500 transition-all hover:shadow-xl">
+                            <div class="h-20 flex items-center justify-center mb-4">
+                                <span class="text-4xl font-black text-orange-600">DiDi</span>
+                            </div>
+                            <div class="absolute top-4 right-4 w-6 h-6 rounded-full border-2 border-orange-200 group-hover:bg-orange-500 group-hover:border-orange-500 transition-colors"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Check Step 2: Split View (Sidebar + Grid) -->
+                <div id="checkStep2" class="absolute inset-0 flex translate-x-full transition-transform duration-500 ease-in-out">
+                    <!-- Sidebar (Makes) -->
+                    <div class="w-1/3 bg-slate-50 dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 overflow-y-auto custom-scrollbar p-4">
+                        <h5 class="text-sm font-bold text-slate-500 mb-4 px-2">ماركة السيارة</h5>
+                        <div id="makesList" class="space-y-2">
+                            <!-- Items injected via JS -->
+                        </div>
+                    </div>
+                    <!-- Main (Models) -->
+                    <div class="w-2/3 p-6 overflow-y-auto bg-white dark:bg-slate-950">
+                        <div class="flex items-center gap-2 mb-6">
+                            <button onclick="prevCheckStep()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800"><i data-lucide="arrow-right" class="w-5 h-5"></i></button>
+                            <h5 class="font-bold text-xl" id="selectedMakeTitle">موديلات...</h5>
+                        </div>
+                        <div id="modelsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- Cards injected via JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Check Step 3: Success -->
+                <div id="checkStep3" class="absolute inset-0 flex flex-col items-center justify-center p-10 translate-x-full transition-transform duration-500 ease-in-out bg-white dark:bg-slate-900">
+                    <div class="w-24 h-24 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-green-600 dark:text-green-400 mb-6 animate-bounce-slow">
+                        <i data-lucide="check-circle-2" class="w-12 h-12"></i>
+                    </div>
+                    <h4 class="text-3xl font-black text-slate-900 dark:text-white mb-2 text-center">مبروك! سيارتك مقبولة</h4>
+                    <p class="text-slate-500 text-center mb-10 max-w-md">السيارة <span id="finalCarName" class="font-bold text-slate-900 dark:text-white">Hyundai Elantra</span> مقبولة للعمل في <span id="finalCompany" class="font-bold text-brand-500">Uber</span>.</p>
+                    
+                    <div class="flex gap-4">
+                        <button onclick="closeCarCheckModal()" class="px-6 py-3 rounded-xl border border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300">إغلاق</button>
+                        <button onclick="goToApplication()" class="px-10 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold shadow-lg shadow-brand-500/30 flex items-center gap-2">
+                            <span>التقديم الآن</span>
+                            <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        lucide.createIcons();
+
+        const swiper = new Swiper('.marquee-swiper', {
+            // الإعدادات الأساسية للـ Marquee
+            slidesPerView: 'auto', // يسمح بعرض الكروت بحجمها الطبيعي
+            spaceBetween: 0, // المسافة صفر لأننا نستخدم Padding داخل الكروت
+            loop: true, // تفعيل التكرار اللانهائي (أساس الماركي)
+            
+            // سرعة ثابتة ومستمرة
+            speed: 3000, // سرعة بطيئة للحركة (كلما زاد الرقم قلت السرعة)
+            
+            // إعدادات التشغيل التلقائي الخطي
+            autoplay: {
+                delay: 0, // لا يوجد توقف بين السلايدات
+                disableOnInteraction: false, // لا يتوقف عند السحب
+                pauseOnMouseEnter: true, // يتوقف عند تحويم الماوس (ميزة رائعة للتفاعل)
+            },
+
+            // النقاط (Pagination)
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true,
+            },
+
+            // تحسين تجربة المستخدم
+            grabCursor: true,
+            mousewheelControl: true,
+            keyboardControl: true,
+        });
+        
+        new Swiper('.testimonials-swiper', {
+                loop: true,
+                speed: 800,
+                spaceBetween: 30,
+                grabCursor: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-btn-next',
+                    prevEl: '.swiper-btn-prev',
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    }
+                }
+            });
+        // =========================================================
+        //  REPLACE THIS WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
+        // =========================================================
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxbCfJ6uLuT_wuBBtJJqHS_1AmQRCyBOdq29qPN2o9m6HXyjSXUe5eYVqyqul9VyVSepg/exec'; 
+
+        // 1. Validation Setup
+        let validator;
+        document.addEventListener("DOMContentLoaded", function() {
+            validator = new JustValidate('#recruitmentForm', {
+                validateBeforeSubmitting: true,
+            });
+
+            // Rules for Step 1
+            validator
+                .addField('#firstName', [{ rule: 'required', errorMessage: 'حقل مطلوب' }])
+                .addField('#middleName', [{ rule: 'required', errorMessage: 'حقل مطلوب' }])
+                .addField('#lastName', [{ rule: 'required', errorMessage: 'حقل مطلوب' }])
+                .addField('#nationalId', [
+                    { rule: 'required', errorMessage: 'مطلوب' },
+                    { rule: 'minLength', value: 14, errorMessage: 'يجب أن يكون 14 رقماً' },
+                    { rule: 'maxLength', value: 14, errorMessage: 'يجب أن يكون 14 رقماً' },
+                    { rule: 'number', errorMessage: 'أرقام فقط' }
+                ])
+                .addField('#age', [
+                    { rule: 'required', errorMessage: 'مطلوب' },
+                    { rule: 'minNumber', value: 18, errorMessage: 'أكبر من 18' },
+                    { rule: 'maxNumber', value: 75, errorMessage: 'أقل من 75' }
+                ])
+                .addField('#gender', [{ rule: 'required', errorMessage: 'اختر الجنس' }]);
+                
+            // Fetch Car Data
+            fetchCarData();
+            
+            // Auto Check Saved Status
+            initStatusCheck();
+        });
+
+        // 2. Scroll Logic
+        window.onscroll = function() {
+            // Progress Bar
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("scroll-progress").style.width = scrolled + "%";
+
+            // Scroll To Top Button
+            const btn = document.getElementById("scrollToTopBtn");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btn.classList.add("visible");
+            } else {
+                btn.classList.remove("visible");
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 3. Multi-Step Form Logic
+        let currentTab = 0;
+        const tabs = document.getElementsByClassName("step-content");
+        const indicators = document.getElementsByClassName("step-indicator");
+        
+        showTab(currentTab);
+
+        function showTab(n) {
+            for (let i = 0; i < tabs.length; i++) tabs[i].classList.add('hidden');
+            tabs[n].classList.remove('hidden');
+
+            // Update Indicators
+            for (let i = 0; i < indicators.length; i++) {
+                const circle = indicators[i].querySelector('div');
+                const text = indicators[i].querySelector('span');
+                if (i <= n) {
+                    circle.classList.remove('bg-slate-200', 'dark:bg-slate-700', 'text-slate-500');
+                    circle.classList.add('bg-brand-500', 'text-white', 'shadow-lg', 'shadow-brand-500/40');
+                    text.classList.remove('text-slate-400');
+                    text.classList.add('text-brand-600', 'dark:text-brand-400');
+                } else {
+                    circle.classList.add('bg-slate-200', 'dark:bg-slate-700', 'text-slate-500');
+                    circle.classList.remove('bg-brand-500', 'text-white', 'shadow-lg', 'shadow-brand-500/40');
+                    text.classList.add('text-slate-400');
+                    text.classList.remove('text-brand-600', 'dark:text-brand-400');
+                }
+            }
+
+            const prevBtn = document.getElementById("prevBtn");
+            const nextBtn = document.getElementById("nextBtn");
+
+            if (n == 0) prevBtn.classList.add('hidden');
+            else prevBtn.classList.remove('hidden');
+
+            if (n == (tabs.length - 1)) {
+                nextBtn.innerHTML = `<span>إرسال الطلب</span> <i data-lucide="send" class="w-5 h-5"></i>`;
+                nextBtn.classList.add('bg-green-600', 'hover:bg-green-700');
+                nextBtn.classList.remove('from-brand-600', 'to-brand-500');
+            } else {
+                nextBtn.innerHTML = `<span>التالي</span> <i data-lucide="arrow-left" class="w-5 h-5"></i>`;
+                nextBtn.classList.remove('bg-green-600', 'hover:bg-green-700');
+                nextBtn.classList.add('bg-gradient-to-r', 'from-brand-600', 'to-brand-500');
+            }
+            lucide.createIcons();
+        }
+
+        async function nextPrev(n) {
+            // If going back, just go back
+            if (n == -1) {
+                currentTab += n;
+                showTab(currentTab);
+                return;
+            }
+
+            // Validation based on current Tab
+            let valid = true;
+            if (currentTab === 0) {
+                // Step 1: Use JustValidate trigger
+                const isValid = await validator.revalidate(); 
+                if (!isValid) return; // JustValidate handles UI errors
+            } 
+            else if (currentTab === 1) {
+                // Step 2: File Validation (Manual)
+                const files = ['idFront', 'idBack', 'crimRec', 'licenseFront', 'licenseBack'];
+                files.forEach(id => {
+                    const el = document.getElementById(id);
+                    const parent = el.parentElement;
+                    if (!el.files.length) {
+                        valid = false;
+                        parent.style.borderColor = "#ef4444";
+                        parent.classList.add("animate-pulse");
+                    } else {
+                        parent.style.borderColor = "";
+                        parent.classList.remove("animate-pulse");
+                    }
+                });
+                if(!valid) {
+                    showToast("يرجى رفع جميع الصور المطلوبة", "error");
+                    return;
+                }
+            }
+            else if (currentTab === 2) {
+                // Step 3: Car Data (Manual check for simplicity in mixed structure)
+                const inputs = ['carMake', 'carModel', 'carYear'];
+                inputs.forEach(id => {
+                    const el = document.getElementById(id);
+                    if(!el.value) {
+                        valid = false;
+                        el.classList.add('just-validate-error-field');
+                    } else {
+                        el.classList.remove('just-validate-error-field');
+                    }
+                });
+                const carFiles = ['carFront', 'carBack', 'carRight', 'carLeft'];
+                carFiles.forEach(id => {
+                    const el = document.getElementById(id);
+                    const parent = el.parentElement;
+                    if (!el.files.length) {
+                        valid = false;
+                        parent.style.borderColor = "#ef4444";
+                    } else {
+                        parent.style.borderColor = "";
+                    }
+                });
+                const consent = document.getElementById('consent');
+                if(!consent.checked) {
+                    valid = false;
+                    showToast("يجب الموافقة على الشروط", "error");
+                }
+
+                if(!valid) {
+                    showToast("يرجى استكمال بيانات السيارة", "error");
+                    return;
+                }
+            }
+
+            // If we reached here and next is clicked
+            if (currentTab + n >= tabs.length) {
+                submitForm();
+                return false;
+            }
+            currentTab += n;
+            showTab(currentTab);
+        }
+
+        // --- Other Utility Functions (Toast, Theme, etc) ---
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            let iconHTML = type === 'success' ? `<div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600"><i data-lucide="check-circle" class="w-5 h-5"></i></div>` : `<div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-600"><i data-lucide="x-circle" class="w-5 h-5"></i></div>`;
+            let toastClass = type === 'success' ? 'toast-success' : 'toast-error';
+            toast.className = `toast ${toastClass}`;
+            toast.innerHTML = `${iconHTML}<div class="flex-1 font-bold text-slate-700 dark:text-slate-200 text-sm">${message}</div><div class="toast-progress"><div class="toast-progress-bar" style="animation-duration: 4000ms"></div></div>`;
+            container.appendChild(toast);
+            lucide.createIcons();
+            requestAnimationFrame(() => toast.classList.add('show'));
+            setTimeout(() => { toast.style.transform = 'translateY(-20px) scale(0.9)'; toast.style.opacity = '0'; setTimeout(() => toast.remove(), 400); }, 4000);
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) { html.classList.remove('dark'); localStorage.setItem('theme', 'light'); } else { html.classList.add('dark'); localStorage.setItem('theme', 'dark'); }
+        }
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); }
+
+        function openModal() { document.getElementById('applicationModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('applicationModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+
+        function handleFileSelect(input, previewId) {
+            const container = document.getElementById(previewId);
+            const parent = input.parentElement;
+            const img = parent.querySelector('img');
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    img.src = e.target.result;
+                    img.classList.remove('hidden');
+                    if(container) container.classList.add('opacity-0');
+                    parent.classList.add('border-brand-500', 'ring-2', 'ring-brand-200');
+                    parent.style.borderColor = ""; // Clear error color
+                    showToast("تم رفع الملف بنجاح", "success");
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        // --- File Conversion Helper ---
+        const toBase64 = file => new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = error => reject(error);
+        });
+
+        // --- SUBMIT LOGIC ---
+        async function submitForm() {
+            if(SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+                alert("يرجى إضافة رابط سكربت جوجل (Web App URL) في الكود أولاً (السطر 940 تقريباً).");
+                return;
+            }
+
+            const loading = document.getElementById("loadingState");
+            loading.classList.remove("hidden");
+            loading.classList.add("flex");
+
+            try {
+                // Collect Form Data
+                const data = {
+                    action: "register", // Action for Apps Script
+                    firstName: document.getElementById('firstName').value,
+                    middleName: document.getElementById('middleName').value,
+                    lastName: document.getElementById('lastName').value,
+                    nationalId: document.getElementById('nationalId').value,
+                    age: document.getElementById('age').value,
+                    gender: document.getElementById('gender').value,
+                    
+                    carMake: document.getElementById('carMake').value,
+                    carModel: document.getElementById('carModel').value,
+                    carYear: document.getElementById('carYear').value,
+                    consent: document.getElementById('consent').checked,
+                    
+                    files: {
+                        idFront: await toBase64(document.getElementById('idFront').files[0]),
+                        idBack: await toBase64(document.getElementById('idBack').files[0]),
+                        criminalRecord: await toBase64(document.getElementById('crimRec').files[0]),
+                        licenseFront: await toBase64(document.getElementById('licenseFront').files[0]),
+                        licenseBack: await toBase64(document.getElementById('licenseBack').files[0]),
+                        
+                        carFront: await toBase64(document.getElementById('carFront').files[0]),
+                        carBack: await toBase64(document.getElementById('carBack').files[0]),
+                        carRight: await toBase64(document.getElementById('carRight').files[0]),
+                        carLeft: await toBase64(document.getElementById('carLeft').files[0]),
+                    }
+                };
+
+                // Save NID to local storage on submit for convenience
+                localStorage.setItem('savedNationalId', data.nationalId);
+
+                // Send to Google Script
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if(result.result === 'success') {
+                    showToast("تم استلام طلبك بنجاح! سيتم التواصل معك قريباً", "success");
+                    loading.innerHTML = `<i data-lucide="check-circle" class="w-16 h-16 text-green-500 mb-4"></i><h4 class="text-2xl font-bold">تم الإرسال!</h4>`;
+                    lucide.createIcons();
+                    setTimeout(() => {
+                        closeModal();
+                        window.location.reload(); // Reload will trigger auto-check
+                    }, 3000);
+                } 
+                else if (result.result === 'duplicate') {
+                    loading.classList.add("hidden"); 
+                    
+                    const duplicateModal = document.createElement('div');
+                    duplicateModal.className = "fixed inset-0 z-[70] flex items-center justify-center px-4 bg-black/60 backdrop-blur-sm animate-fade-in-up";
+                    duplicateModal.innerHTML = `
+                        <div class="bg-white dark:bg-slate-900 p-8 rounded-[2rem] max-w-md w-full text-center shadow-2xl border border-slate-200 dark:border-slate-800">
+                            <div class="w-20 h-20 bg-yellow-100 dark:bg-yellow-900/30 rounded-full flex items-center justify-center mx-auto mb-6 text-yellow-600 dark:text-yellow-500">
+                                <i data-lucide="user-check" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-3">مسجل بالفعل!</h3>
+                            <p class="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
+                                بياناتك موجودة لدينا بالفعل. لا تقلق، سيقوم فريقنا بمراجعة طلبك والتواصل معك قريباً عبر الواتساب.
+                            </p>
+                            <button onclick="this.closest('.fixed').remove(); closeModal();" class="w-full py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl font-bold hover:opacity-90 transition">
+                                حسناً، فهمت
+                            </button>
+                        </div>
+                    `;
+                    document.body.appendChild(duplicateModal);
+                    lucide.createIcons();
+                } else {
+                    throw new Error(result.error);
+                }
+
+            } catch (error) {
+                console.error(error);
+                loading.classList.add("hidden");
+                showToast("حدث خطأ أثناء الإرسال: " + error.message, "error");
+            }
+        }
+        
+        // --- 2. Hero Typewriter Effect (Preserved) ---
+        class TypeWriter {
+            constructor(el, toRotate, period) { this.toRotate = toRotate; this.el = el; this.loopNum = 0; this.period = parseInt(period, 10) || 2000; this.txt = ''; this.tick(); this.isDeleting = false; }
+            tick() {
+                let i = this.loopNum % this.toRotate.length; let fullTxt = this.toRotate[i];
+                if (this.isDeleting) { this.txt = fullTxt.substring(0, this.txt.length - 1); } else { this.txt = fullTxt.substring(0, this.txt.length + 1); }
+                this.el.innerHTML = this.txt;
+                let delta = 200 - Math.random() * 100;
+                if (this.isDeleting) { delta /= 2; }
+                if (!this.isDeleting && this.txt === fullTxt) { delta = this.period; this.isDeleting = true; } else if (this.isDeleting && this.txt === '') { this.isDeleting = false; this.loopNum++; delta = 500; }
+                setTimeout(() => this.tick(), delta);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => { const elements = document.getElementsByClassName('type-text'); const toRotate = ["أرباح حقيقية", "حرية مالية", "مستقبل أفضل", "دخل إضافي"]; for (let i = 0; i < elements.length; i++) { new TypeWriter(elements[i], toRotate, 2000); } 
+        // Icons Gen
+        const iconsContainer = document.getElementById('bg-icons-container'); const icons = ['car', 'map-pin', 'navigation', 'zap', 'shield-check', 'wallet', 'star', 'users', 'globe']; 
+        if(iconsContainer) {
+            for (let i = 0; i < 30; i++) { const iconName = icons[Math.floor(Math.random() * icons.length)]; const el = document.createElement('div'); el.className = 'bg-icon'; el.innerHTML = `<i data-lucide="${iconName}"></i>`; el.style.left = `${Math.random() * 100}%`; el.style.top = `${Math.random() * 100}%`; el.style.fontSize = `${Math.random() * 2 + 1}rem`; el.style.setProperty('--duration', `${Math.random() * 20 + 10}s`); el.style.setProperty('--delay', `${Math.random() * 5}s`); iconsContainer.appendChild(el); }
+        }
+        lucide.createIcons();
+        });
+        
+        // --- Calculator & Reveal Logic (Preserved) ---
+        function updateEarnings() {
+            const hours = document.getElementById('hoursRange').value;
+            const daily = hours * 100; const monthly = daily * 26;
+            document.getElementById('hoursVal').innerText = hours;
+            const dailyEl = document.getElementById('dailyEarn'); const monthlyEl = document.getElementById('monthlyEarn');
+            dailyEl.innerText = daily.toLocaleString(); monthlyEl.innerText = monthly.toLocaleString();
+        }
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('reveal-visible'); }); }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal-hidden').forEach((el) => { observer.observe(el); });
+        const cards = document.querySelectorAll('.spotlight-card');
+        cards.forEach(card => { card.addEventListener('mousemove', e => { const rect = card.getBoundingClientRect(); card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`); card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`); }); });
+    
+    // --- NEW: Car Check Modal Logic with FETCH ---
+        
+        let allCarData = {}; // This will hold the fetched data
+
+        // Function to Fetch Data
+        async function fetchCarData() {
+            try {
+                const response = await fetch('cars.json');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                allCarData = await response.json();
+                console.log("Car data loaded:", allCarData);
+            } catch (error) {
+                console.error("Failed to fetch car data:", error);
+                // showToast("حدث خطأ في تحميل بيانات السيارات", "error"); // Optional: Don't annoy user if just visiting
+            }
+        }
+
+        let selectedCompany = '';
+        let selectedMake = '';
+
+        function openCarCheckModal() {
+            document.getElementById('carCheckModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Reset
+            document.getElementById('checkStep1').style.transform = 'translateX(0)';
+            document.getElementById('checkStep2').style.transform = 'translateX(100%)';
+            document.getElementById('checkStep3').style.transform = 'translateX(100%)';
+        }
+
+        function closeCarCheckModal() {
+            document.getElementById('carCheckModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function selectCompany(company) {
+            selectedCompany = company;
+            // Go to Step 2
+            document.getElementById('checkStep1').style.transform = 'translateX(-100%)';
+            document.getElementById('checkStep2').style.transform = 'translateX(0)';
+            renderMakes();
+            
+            // Default select first make if available
+            const companyData = allCarData[company];
+            if (companyData) {
+                const firstMake = Object.keys(companyData)[0];
+                if (firstMake) selectMake(firstMake);
+            }
+        }
+
+        function prevCheckStep() {
+            document.getElementById('checkStep1').style.transform = 'translateX(0)';
+            document.getElementById('checkStep2').style.transform = 'translateX(100%)';
+        }
+
+        function renderMakes() {
+            const list = document.getElementById('makesList');
+            list.innerHTML = '';
+            
+            const companyData = allCarData[selectedCompany];
+            if (!companyData) {
+                list.innerHTML = '<p class="text-center text-slate-500">لا توجد بيانات متاحة</p>';
+                return;
+            }
+
+            Object.keys(companyData).forEach(make => {
+                const btn = document.createElement('button');
+                btn.className = `w-full text-right px-4 py-3 rounded-xl text-sm font-bold transition-all flex justify-between items-center hover:bg-slate-100 dark:hover:bg-slate-800 ${make === selectedMake ? 'bg-brand-50 text-brand-600 dark:bg-slate-800' : 'text-slate-600 dark:text-slate-400'}`;
+                btn.onclick = () => selectMake(make);
+                btn.innerHTML = `<span>${make}</span> <i data-lucide="chevron-left" class="w-4 h-4"></i>`;
+                list.appendChild(btn);
+            });
+            lucide.createIcons();
+        }
+
+        function selectMake(make) {
+            selectedMake = make;
+            document.getElementById('selectedMakeTitle').innerText = `موديلات ${make}`;
+            renderMakes(); // Re-render to update active state
+            
+            const grid = document.getElementById('modelsGrid');
+            grid.innerHTML = '';
+            
+            // Mock images for visual appeal (Generic Icon)
+            const carImage = "https://cdn-icons-png.flaticon.com/512/3202/3202926.png"; 
+
+            const models = allCarData[selectedCompany][make];
+
+            if (models && models.length > 0) {
+                models.forEach(model => {
+                    const card = document.createElement('div');
+                    card.className = "bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl p-4 hover:border-brand-500 cursor-pointer transition-all group";
+                    card.onclick = () => finishCheck(model);
+                    card.innerHTML = `
+                        <div class="h-24 flex items-center justify-center mb-2">
+                            <img src="${carImage}" class="h-full object-contain group-hover:scale-110 transition-transform">
+                        </div>
+                        <div class="text-center">
+                            <p class="font-bold text-slate-900 dark:text-white">${model}</p>
+                            <span class="text-[10px] text-green-600 bg-green-100 dark:bg-green-900/30 px-2 py-0.5 rounded-full mt-1 inline-block">مقبولة</span>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            } else {
+                 grid.innerHTML = '<p class="col-span-2 text-center text-slate-500 py-10">لا توجد موديلات متاحة لهذه الماركة حالياً</p>';
+            }
+        }
+
+        function finishCheck(model) {
+            document.getElementById('finalCarName').innerText = `${selectedMake} ${model}`;
+            document.getElementById('finalCompany').innerText = selectedCompany.toUpperCase();
+            
+            document.getElementById('checkStep2').style.transform = 'translateX(-100%)';
+            document.getElementById('checkStep3').style.transform = 'translateX(0)';
+        }
+
+        function goToApplication() {
+            closeCarCheckModal();
+            setTimeout(() => {
+                openModal();
+            }, 300);
+        }
+
+        // ===============================================
+        //  NEW: Auto Status Check (Persistence Logic)
+        // ===============================================
+        
+        function initStatusCheck() {
+            const savedNID = localStorage.getItem('savedNationalId');
+            if (savedNID) {
+                // Auto-fill input
+                const input = document.getElementById('statusNationalId');
+                if(input) {
+                    input.value = savedNID;
+                    // Trigger check automatically to get LATEST status from server
+                    // Use a small timeout to ensure DOM is ready and look natural
+                    setTimeout(() => checkApplicationStatus(true), 500); 
+                }
+            }
+        }
+
+        // Updated Function: Accepts 'isAuto' to reduce UI flicker on auto-load
+        async function checkApplicationStatus(isAuto = false) {
+            const nationalIdInput = document.getElementById('statusNationalId');
+            const resultDiv = document.getElementById('statusResult');
+            const nationalId = nationalIdInput.value.trim();
+
+            if (nationalId.length !== 14 || isNaN(nationalId)) {
+                if(!isAuto) {
+                    showToast("يرجى إدخال رقم قومي صحيح (14 رقم)", "error");
+                    nationalIdInput.parentElement.parentElement.classList.add('ring-2', 'ring-red-500');
+                    setTimeout(() => nationalIdInput.parentElement.parentElement.classList.remove('ring-2', 'ring-red-500'), 2000);
+                }
+                return;
+            }
+
+            // Save for later
+            localStorage.setItem('savedNationalId', nationalId);
+
+            resultDiv.classList.remove('hidden');
+            resultDiv.className = "mt-10 max-w-lg mx-auto";
+            // Skeleton Loader
+            resultDiv.innerHTML = `
+                <div class="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-xl border border-slate-100 dark:border-slate-700 animate-pulse">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 bg-slate-200 dark:bg-slate-700 rounded-2xl"></div>
+                        <div class="flex-1 space-y-3">
+                            <div class="h-4 bg-slate-200 dark:bg-slate-700 rounded w-1/3"></div>
+                            <div class="h-6 bg-slate-200 dark:bg-slate-700 rounded w-2/3"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            requestAnimationFrame(() => {
+                resultDiv.classList.remove('translate-y-4', 'opacity-0');
+            });
+
+            try {
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    body: JSON.stringify({ action: "check_status", nationalId: nationalId })
+                });
+
+                const data = await response.json();
+                resultDiv.innerHTML = '';
+
+                if (data.result === "success") {
+                    // === SMART STATUS MAPPING ===
+                    let statusStr = (data.status || "").toLowerCase();
+                    // Get new detailed fields from sheet (Column I & J)
+                    let detailedStatus = data.detailedStatus || ""; 
+                    let agentName = data.csAgent || "";
+
+                    // Default Config (Pending/Under Review)
+                    let config = {
+                        color: "yellow",
+                        bg: "bg-yellow-50 dark:bg-yellow-900/10",
+                        border: "border-yellow-200 dark:border-yellow-700/50",
+                        text: "text-yellow-700 dark:text-yellow-400",
+                        iconBg: "bg-yellow-100 dark:bg-yellow-900/30",
+                        iconColor: "text-yellow-600 dark:text-yellow-400",
+                        icon: "clock",
+                        title: "طلبك قيد المراجعة",
+                        desc: "جاري فحص البيانات والمستندات من قبل المختصين."
+                    };
+
+                    // 1. Accepted / Active
+                    if (statusStr.includes("accept") || statusStr.includes("مقبول") || statusStr.includes("active") || statusStr.includes("نشط") || statusStr.includes("تم")) {
+                        config = {
+                            color: "green",
+                            bg: "bg-green-50 dark:bg-green-900/10",
+                            border: "border-green-200 dark:border-green-700/50",
+                            text: "text-green-700 dark:text-green-400",
+                            iconBg: "bg-green-100 dark:bg-green-900/30",
+                            iconColor: "text-green-600 dark:text-green-400",
+                            icon: "check-circle-2",
+                            title: "ألف مبروك! تم القبول",
+                            desc: "تم تفعيل حسابك بنجاح. يمكنك الآن بدء العمل واستقبال الرحلات."
+                        };
+                    } 
+                    // 2. Rejected
+                    else if (statusStr.includes("reject") || statusStr.includes("مرفوض") || statusStr.includes("block")) {
+                        config = {
+                            color: "red",
+                            bg: "bg-red-50 dark:bg-red-900/10",
+                            border: "border-red-200 dark:border-red-700/50",
+                            text: "text-red-700 dark:text-red-400",
+                            iconBg: "bg-red-100 dark:bg-red-900/30",
+                            iconColor: "text-red-600 dark:text-red-400",
+                            icon: "x-circle",
+                            title: "نعتذر، الطلب مرفوض",
+                            desc: "يرجى التواصل مع خدمة العملاء لمعرفة أسباب الرفض أو إعادة التقديم."
+                        };
+                    }
+                    // 3. Contact / Missing Info
+                    else if (statusStr.includes("missing") || statusStr.includes("نقص") || statusStr.includes("call") || statusStr.includes("تواصل")) {
+                        config = {
+                            color: "blue",
+                            bg: "bg-blue-50 dark:bg-blue-900/10",
+                            border: "border-blue-200 dark:border-blue-700/50",
+                            text: "text-blue-700 dark:text-blue-400",
+                            iconBg: "bg-blue-100 dark:bg-blue-900/30",
+                            iconColor: "text-blue-600 dark:text-blue-400",
+                            icon: "phone-call",
+                            title: "إجراء مطلوب",
+                            desc: "يوجد تحديث بخصوص طلبك، يرجى مراجعة التفاصيل أدناه."
+                        };
+                    }
+
+                    // --- Dynamic Message Logic ---
+                    // If an agent name is assigned in the sheet, override/append the description
+                    let agentHtml = "";
+                    if (agentName && agentName.trim() !== "") {
+                        // Change icon to headset if agent is assigned and status is not final (like accepted/rejected)
+                        if (!statusStr.includes("accept") && !statusStr.includes("reject")) {
+                             config.icon = "headset";
+                             config.title = "جاري المتابعة معك";
+                        }
+                        
+                        agentHtml = `
+                            <div class="mt-3 p-3 bg-white/60 dark:bg-black/20 rounded-xl border border-dashed border-slate-300 dark:border-slate-700 flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-brand-100 dark:bg-brand-900/50 flex items-center justify-center text-brand-600">
+                                    <i data-lucide="user" class="w-4 h-4"></i>
+                                </div>
+                                <div class="text-xs">
+                                    <p class="text-slate-500 dark:text-slate-400 font-bold">مسؤول المتابعة</p>
+                                    <p class="text-slate-800 dark:text-white font-black text-sm">${agentName}</p>
+                                </div>
+                            </div>
+                            <p class="text-sm font-bold text-brand-600 dark:text-brand-400 mt-2">سيتم التواصل معك قريباً من قبل المختص.</p>
+                        `;
+                    }
+
+                    // If detailed status exists in sheet, use it as the main description
+                    if (detailedStatus && detailedStatus.trim() !== "") {
+                        config.desc = detailedStatus;
+                    }
+
+                    // Render Card
+                    resultDiv.innerHTML = `
+                        <div class="relative overflow-hidden rounded-3xl p-6 ${config.bg} border ${config.border} shadow-lg transition-all duration-500 hover:scale-[1.02]">
+                            <i data-lucide="${config.icon}" class="absolute -left-4 -bottom-4 w-32 h-32 ${config.text} opacity-10 rotate-12"></i>
+                            <div class="relative z-10 flex items-start gap-5 text-right">
+                                <div class="w-16 h-16 rounded-2xl ${config.iconBg} flex items-center justify-center shrink-0 shadow-inner">
+                                    <i data-lucide="${config.icon}" class="w-8 h-8 ${config.iconColor}"></i>
+                                </div>
+                                <div class="flex-1 pt-1">
+                                    <div class="flex justify-between items-start">
+                                        <h4 class="text-2xl font-black ${config.text} mb-2">${config.title}</h4>
+                                        <span class="text-[10px] font-bold uppercase tracking-wider ${config.text} bg-white/50 dark:bg-black/20 px-2 py-1 rounded-lg">آخر تحديث</span>
+                                    </div>
+                                    <p class="font-bold text-slate-700 dark:text-slate-300 mb-1">أهلاً كابتن ${data.name.split(' ')[0]}</p>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-medium">${config.desc}</p>
+                                    ${agentHtml}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                } else {
+                    // Not Found
+                    localStorage.removeItem('savedNationalId'); // Clear invalid ID
+                    resultDiv.innerHTML = `
+                        <div class="bg-slate-50 dark:bg-slate-800/50 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-lg text-center">
+                            <div class="w-16 h-16 bg-slate-200 dark:bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce-slow">
+                                <i data-lucide="search-x" class="w-8 h-8 text-slate-500 dark:text-slate-400"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-800 dark:text-white mb-2">الرقم غير مسجل</h4>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">لم نعثر على طلب مرتبط بهذا الرقم القومي.</p>
+                            <button onclick="document.getElementById('statusNationalId').focus(); openModal();" class="text-brand-600 dark:text-brand-400 font-bold hover:underline">
+                                تسجيل طلب جديد؟
+                            </button>
+                        </div>
+                    `;
+                }
+                lucide.createIcons();
+
+            } catch (error) {
+                console.error(error);
+                resultDiv.innerHTML = `
+                    <div class="p-4 rounded-2xl bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-800 text-center font-bold">
+                        <i data-lucide="wifi-off" class="w-6 h-6 mx-auto mb-2"></i>
+                        حدث خطأ في الاتصال، حاول مرة أخرى.
+                    </div>
+                `;
+                lucide.createIcons();
+            }
+        }
+    </script>
+</body>
+</html>

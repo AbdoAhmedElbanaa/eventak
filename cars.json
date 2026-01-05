@@ -1,0 +1,46 @@
+{
+  "uber": {
+    "Hyundai": ["Elantra CN7", "Elantra AD", "Tucson", "Creta", "Accent RB", "Ioniq"],
+    "Kia": ["Cerato", "Sportage", "Grand Cerato", "Sorento"],
+    "Toyota": ["Corolla", "Fortuner", "C-HR", "Belta"],
+    "Nissan": ["Sunny N17", "Sentra", "Juke", "Qashqai"],
+    "Chevrolet": ["Optra", "Captiva", "Cruze"],
+    "MG": ["MG 5", "MG 6", "ZS", "RX5", "HS"],
+    "Renault": ["Megane", "Kadjar", "Stepway"],
+    "Peugeot": ["3008", "5008", "508"],
+    "Chery": ["Tiggo 7", "Tiggo 8", "Arrizo 5 (Highline)"]
+  },
+  "careem": {
+    "Hyundai": ["Verna", "Elantra", "Accent", "Tucson", "Creta", "i20"],
+    "Kia": ["Cerato", "Rio", "Pegas", "Sportage", "Carens"],
+    "Chevrolet": ["Aveo", "Optra", "Lanos", "Captiva"],
+    "Nissan": ["Sunny", "Sentra"],
+    "Renault": ["Logan", "Sandero", "Megane"],
+    "BYD": ["F3", "L3"],
+    "Chery": ["Arrizo 5", "Tiggo 3", "Envy"],
+    "Lada": ["Granta"],
+    "Geely": ["Emgrand 7", "Imperial"]
+  },
+  "indrive": {
+    "Hyundai": ["Verna", "Elantra", "Accent", "Matrix", "i10", "Getz"],
+    "Kia": ["Cerato", "Picanto", "Rio", "Spectra"],
+    "Chevrolet": ["Lanos", "Aveo", "Optra"],
+    "Daewoo": ["Lanos", "Nubira", "Juliet"],
+    "Mitsubishi": ["Lancer Puma", "Lancer Shark"],
+    "Nissan": ["Sunny", "Tiida"],
+    "Renault": ["Logan", "Clio"],
+    "Chery": ["Envy", "A11", "Tiggo"],
+    "BYD": ["F3"],
+    "Suzuki": ["Maruti", "Alto", "Swift"]
+  },
+  "didi": {
+    "Hyundai": ["Elantra", "Accent RB", "Verna", "Tucson"],
+    "Kia": ["Cerato", "Sportage", "Rio"],
+    "Nissan": ["Sunny", "Sentra"],
+    "Chevrolet": ["Optra", "Aveo"],
+    "MG": ["MG 5", "ZS"],
+    "Chery": ["Arrizo 5", "Tiggo 3"],
+    "Suzuki": ["Dzire", "Ciaz", "Ertiga"],
+    "Renault": ["Logan", "Sandero"]
+  }
+}
