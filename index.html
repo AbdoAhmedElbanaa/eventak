@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
@@ -124,239 +125,753 @@
         }
     </script>
 
-    <style>
-        /* === Core Styles === */
-        body { overflow-x: hidden; }
+<style>
+    /* ==========================================================================
+   فهرس المحتويات (Table of Contents):
+   0. المتغيرات ونظام السمات (Variables & Theme System) [جديد]
+   1. الأساسيات وشريط التمرير (Core & Scrollbar)
+   2. النماذج وحقول الإدخال (Forms & Inputs)
+   3. أشرطة ومؤشرات التمرير (Scroll Indicators & Buttons)
+   4. البطاقات وتأثيرات الزجاج (Cards & Glassmorphism)
+   5. الإشعارات والنوافذ المنبثقة (Toasts & Modals)
+   6. العناصر التفاعلية والشرائح (Interactive Elements & Swiper)
+   7. الخلفيات والتأثيرات البصرية (Backgrounds & Visual Effects)
+   8. الرسوم المتحركة (Animations & Keyframes)
+   ========================================================================== */
 
-        /* === Premium Custom Scrollbar === */
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a; 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #f97316 0%, #c2410c 100%);
-            border-radius: 10px;
-            border: 3px solid #0f172a; /* Creates padding effect */
-            background-clip: content-box;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, #fb923c 0%, #ea580c 100%);
-            border: 2px solid #0f172a;
-        }
+/* ==========================================================================
+   0. المتغيرات ونظام السمات (Variables & Theme System)
+   ========================================================================== */
 
-        /* Floating Label Styles */
-        .input-group {
-            position: relative;
-            margin-bottom: 1.5rem;
-        }
-        .input-group input, .input-group select {
-            width: 100%;
-            padding: 1.25rem 1rem 0.5rem;
-            background: rgba(255, 255, 255, 0.5);
-            border: 1px solid rgba(203, 213, 225, 0.6);
-            border-radius: 1rem;
-            outline: none;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(4px);
-            font-size: 1rem;
-            color: #1e293b;
-        }
-        .dark .input-group input, .dark .input-group select {
-            background: rgba(15, 23, 42, 0.6);
-            border-color: rgba(51, 65, 85, 0.6);
-            color: white;
-        }
-        .input-group label {
-            position: absolute;
-            top: 50%;
-            right: 1rem;
-            transform: translateY(-50%);
-            color: #64748b;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            pointer-events: none;
-            font-weight: 500;
-        }
-        .dark .input-group label { color: #94a3b8; }
+:root {
+    /* --- لوحة الألوان الأساسية (Color Palette) --- */
+    --color-brand-500: #f97316;    /* البرتقالي الأساسي */
+    --color-brand-600: #ea580c;    /* برتقالي داكن للتحويم */
+    --color-brand-400: #fb923c;    /* برتقالي فاتح */
+    --color-brand-700: #c2410c;    /* برتقالي أغمق للتدرجات */
+    
+    --color-slate-900: #0f172a;    /* كحلي غامق جداً (خلفية شريط التمرير) */
+    --color-slate-800: #1e293b;    /* كحلي غامق (نص المدخلات) */
+    --color-slate-700: #334155;    /* رمادي مزرق */
+    --color-slate-500: #64748b;    /* رمادي متوسط (التسميات) */
+    --color-slate-400: #94a3b8;    /* رمادي فاتح */
+    --color-slate-200: #e2e8f0;    /* رمادي فاتح جداً */
+    --color-white: #ffffff;
 
-        /* Label Float Logic */
-        .input-group input:focus, 
-        .input-group input:not(:placeholder-shown),
-        .input-group select:focus,
-        .input-group select:has(option:checked:not([value=""])) {
-            border-color: #f97316;
-            box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1);
-            background: rgba(255, 255, 255, 0.9);
-        }
-        .dark .input-group input:focus,
-        .dark .input-group select:focus {
-            background: rgba(15, 23, 42, 0.9);
-        }
+    /* --- ألوان الحالة (Status Colors) --- */
+    --color-success: #10b981;
+    --color-error: #ef4444;
+    --color-info: #3b82f6;
 
-        .input-group input:focus + label,
-        .input-group input:not(:placeholder-shown) + label,
-        .input-group select:focus + label,
-        .input-group select:has(option:checked:not([value=""])) + label {
-            top: 0.75rem;
-            transform: translateY(0);
-            font-size: 0.75rem;
-            color: #f97316;
-            font-weight: 700;
-        }
+    /* --- التدرجات اللونية (Gradients) --- */
+    --gradient-primary: linear-gradient(135deg, var(--color-brand-500), var(--color-brand-600));
+    --gradient-scrollbar: linear-gradient(180deg, var(--color-brand-500) 0%, var(--color-brand-700) 100%);
+    --gradient-scrollbar-hover: linear-gradient(180deg, var(--color-brand-400) 0%, var(--color-brand-600) 100%);
+    --gradient-progress: linear-gradient(90deg, var(--color-brand-500), var(--color-brand-600));
+    --gradient-icon-glow: linear-gradient(135deg, var(--color-brand-500), #ec4899, #8b5cf6);
 
-        /* Validation Error Styles */
-        .just-validate-error-label {
-            color: #ef4444 !important;
-            font-size: 0.8rem !important;
-            margin-top: 0.25rem !important;
-            font-weight: bold;
-        }
-        .input-group input.just-validate-error-field,
-        .input-group select.just-validate-error-field {
-            border-color: #ef4444 !important;
-            box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1) !important;
-        }
+    /* --- متغيرات الوضع النهاري (Light Mode Defaults) --- */
+    /* شريط التمرير */
+    --scrollbar-track-bg: var(--color-slate-900);
+    --scrollbar-thumb-border: var(--color-slate-900);
 
-        /* Scroll To Top Button */
-        #scrollToTopBtn {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            z-index: 99;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #f97316, #ea580c);
-            color: white;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-        }
-        #scrollToTopBtn.visible {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        #scrollToTopBtn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(249, 115, 22, 0.6);
-        }
+    /* حقول الإدخال */
+    --input-bg: rgba(255, 255, 255, 0.5);
+    --input-bg-focus: rgba(255, 255, 255, 0.9);
+    --input-border: rgba(203, 213, 225, 0.6);
+    --input-text: var(--color-slate-800);
+    --input-label: var(--color-slate-500);
+    --input-placeholder: var(--color-slate-400);
+    --input-focus-border: var(--color-brand-500);
+    
+    /* البطاقات والزجاج */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --spotlight-bg: rgba(255, 255, 255, 0.65);
+    --spotlight-border: rgba(255, 255, 255, 0.4);
+    --spotlight-shadow: rgba(31, 38, 135, 0.05);
 
-        /* Scroll Down Icon in Hero */
-        .scroll-down-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            z-index: 30;
-            cursor: pointer;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-        .scroll-down-wrapper:hover { opacity: 1; }
-        .mouse-icon {
-            width: 30px;
-            height: 50px;
-            border: 2px solid currentColor;
-            border-radius: 20px;
-            position: relative;
-        }
-        .mouse-wheel {
-            width: 4px;
-            height: 8px;
-            background: currentColor;
-            border-radius: 2px;
-            position: absolute;
-            top: 8px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: scrollWheel 1.5s infinite;
-        }
-        @keyframes scrollWheel {
-            0% { top: 8px; opacity: 1; }
-            100% { top: 25px; opacity: 0; }
-        }
+    /* الإشعارات */
+    --toast-bg: rgba(255, 255, 255, 0.95);
+    --toast-border: rgba(0, 0, 0, 0.05);
+    --toast-text: var(--color-slate-800);
 
-        /* --- Animations & Effects --- */
-        .hero-icons-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
-        .bg-icon { position: absolute; opacity: 0.05; color: currentColor; animation: float-random var(--duration, 10s) linear infinite; animation-delay: var(--delay, 0s); }
-        .dark .bg-icon { opacity: 0.08; color: white; }
-        #scroll-progress { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, #f97316, #ea580c); z-index: 100; transition: width 0.1s ease-out; box-shadow: 0 0 10px #f97316; }
-        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.5); }
-        .dark .glass { background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); }
-        .spotlight-card { position: relative; background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05); overflow: hidden; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .dark .spotlight-card { background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4); }
-        .spotlight-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: inherit; padding: 1.5px; background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(249, 115, 22, 0.4), transparent 40%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity 0.5s ease; pointer-events: none; z-index: 2; }
-        .spotlight-card:hover::before { opacity: 1; }
-        .spotlight-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 40px -5px rgba(249, 115, 22, 0.15); border-color: rgba(249, 115, 22, 0.3); }
-        .typewriter-cursor { display: inline-block; width: 3px; background-color: #f97316; animation: blink 1s step-end infinite; margin-right: 2px; vertical-align: middle; height: 1em; }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-        .hover-reveal-icon { opacity: 0; transition: all 0.5s ease; transform: scale(0.5); }
-        .group:hover .hover-reveal-icon { opacity: 1; transform: scale(1); animation: breathe 2s infinite ease-in-out alternate; }
-        #toast-container { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; display: flex; flex-direction: column; gap: 10px; pointer-events: none; }
-        .toast { pointer-events: auto; min-width: 300px; padding: 16px 20px; border-radius: 16px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1); display: flex; align-items: center; gap: 12px; transform: translateY(-50px) scale(0.9); opacity: 0; transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); border: 1px solid rgba(0,0,0,0.05); overflow: hidden; position: relative; }
-        .dark .toast { background: rgba(30, 41, 59, 0.95); border: 1px solid rgba(255,255,255,0.1); color: white; }
-        .toast.show { transform: translateY(0) scale(1); opacity: 1; }
-        .toast-success { border-right: 4px solid #10b981; }
-        .toast-error { border-right: 4px solid #ef4444; }
-        .toast-info { border-right: 4px solid #3b82f6; }
-        .toast-progress { position: absolute; bottom: 0; left: 0; height: 3px; background: rgba(0,0,0,0.1); width: 100%; }
-        .dark .toast-progress { background: rgba(255,255,255,0.2); }
-        .toast-progress-bar { height: 100%; width: 100%; background: currentColor; transform-origin: left; animation: toastProgress linear forwards; }
-        @keyframes toastProgress { to { transform: scaleX(0); } }
-        .reveal-hidden { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); filter: blur(5px); }
-        .reveal-visible { opacity: 1; transform: translateY(0); filter: blur(0); }
-        .delay-100 { transition-delay: 100ms; } .delay-200 { transition-delay: 200ms; } .delay-300 { transition-delay: 300ms; }
-        .modal { transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1); opacity: 0; visibility: hidden; }
-        .modal.active { opacity: 1; visibility: visible; }
-        .modal-content { transform: scale(0.95) translateY(20px); transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
-        .modal.active .modal-content { transform: scale(1) translateY(0); }
-        .btn-shimmer { position: relative; overflow: hidden; }
-        .btn-shimmer::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--tw-bg-shimmer-gradient); background-size: 200% 100%; animation: shimmer 3s infinite; pointer-events: none; }
-        .file-drop-zone { background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='24' ry='24' stroke='%23F97316FF' stroke-width='2' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); transition: all 0.3s ease; }
-        .file-drop-zone:hover { background-color: rgba(249, 115, 22, 0.05); transform: translateY(-2px); background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='24' ry='24' stroke='%23F97316FF' stroke-width='3' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); }
-        .icon-wrapper { position: relative; display: inline-flex; align-items: center; justify-content: center; border-radius: 1.5rem; transition: all 0.5s ease; }
-        .icon-wrapper::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(135deg, #f97316, #ec4899, #8b5cf6); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.5; transition: opacity 0.5s ease; }
-        .spotlight-card:hover .icon-wrapper { transform: scale(1.1) rotate(5deg); }
-        .spotlight-card:hover .icon-wrapper::before { opacity: 1; filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.5)); }
-        input[type=range] { -webkit-appearance: none; background: transparent; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 24px; width: 24px; border-radius: 50%; background: #f97316; cursor: pointer; margin-top: -10px; box-shadow: 0 0 10px rgba(249, 115, 22, 0.5); transition: transform 0.2s; }
-        input[type=range]:hover::-webkit-slider-thumb { transform: scale(1.2); }
-        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: #e2e8f0; border-radius: 2px; }
-        .dark input[type=range]::-webkit-slider-runnable-track { background: #334155; }
-        
-        /* New Glass Card for Status Section */
-        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.5); }
-        .dark .glass-card { background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.05); }
-         /* جعل حركة السلايدر خطية ومستمرة (Marquee Effect) */
-        .swiper-wrapper {
-            transition-timing-function: linear !important;
-        }
+    /* عناصر أخرى */
+    --range-track-bg: var(--color-slate-200);
+    --bg-icon-opacity: 0.05;
+    --bg-icon-color: currentColor;
+}
 
-        .swiper-pagination-bullet {
-            width: 10px;
-            height: 10px;
-            background: #94a3b8;
-            opacity: 0.4;
-            transition: all 0.4s ease;
-        }
-        .swiper-pagination-bullet-active {
-            width: 35px;
-            border-radius: 10px;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            opacity: 1;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-        }
-    </style>
+/* --- متغيرات الوضع الليلي (Dark Mode Overrides) --- */
+.dark {
+    /* حقول الإدخال - ليلي */
+    --input-bg: rgba(15, 23, 42, 0.6);
+    --input-bg-focus: rgba(15, 23, 42, 0.9);
+    --input-border: rgba(51, 65, 85, 0.6);
+    --input-text: var(--color-white);
+    --input-label: var(--color-slate-400);
+
+    /* البطاقات والزجاج - ليلي */
+    --glass-bg: rgba(15, 23, 42, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.05);
+    --spotlight-bg: rgba(15, 23, 42, 0.6);
+    --spotlight-border: rgba(255, 255, 255, 0.08);
+    --spotlight-shadow: rgba(0, 0, 0, 0.4);
+
+    /* الإشعارات - ليلي */
+    --toast-bg: rgba(30, 41, 59, 0.95);
+    --toast-border: rgba(255, 255, 255, 0.1);
+    --toast-text: var(--color-white);
+
+    /* عناصر أخرى - ليلي */
+    --range-track-bg: var(--color-slate-700);
+    --bg-icon-opacity: 0.08;
+    --bg-icon-color: var(--color-white);
+}
+
+/* ==========================================================================
+   1. الأساسيات وشريط التمرير (Core & Scrollbar)
+   ========================================================================== */
+
+/* تنسيقات الجسم الأساسية */
+body { 
+    overflow-x: hidden; 
+}
+
+/* --- تخصيص شريط التمرير الفاخر (Premium Custom Scrollbar) --- */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-bg); 
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-scrollbar);
+    border-radius: 10px;
+    border: 3px solid var(--scrollbar-thumb-border); /* إنشاء تأثير الحشوة (Padding) */
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gradient-scrollbar-hover);
+    border: 2px solid var(--scrollbar-thumb-border);
+}
+
+/* شريط التقدم العلوي عند التمرير */
+#scroll-progress { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 0%; 
+    height: 3px; 
+    background: var(--gradient-progress); 
+    z-index: 100; 
+    transition: width 0.1s ease-out; 
+    box-shadow: 0 0 10px var(--color-brand-500); 
+}
+
+/* ==========================================================================
+   2. النماذج وحقول الإدخال (Forms & Inputs)
+   ========================================================================== */
+
+/* حاوية حقل الإدخال */
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+/* تنسيق الحقول وقوائم الاختيار */
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 1.25rem 1rem 0.5rem;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    font-size: 1rem;
+    color: var(--input-text);
+}
+
+/* الوضع الليلي للحقول (يتم التحكم به الآن عبر المتغيرات في .dark بالأعلى) */
+.dark .input-group input, .dark .input-group select {
+    background: var(--input-bg);
+    border-color: var(--input-border);
+    color: var(--input-text);
+}
+
+/* تنسيق التسمية (Label) */
+.input-group label {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    color: var(--input-label);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    font-weight: 500;
+}
+
+.dark .input-group label { color: var(--input-label); }
+
+/* منطق تعويم التسمية (Floating Label Logic) عند التركيز أو وجود نص */
+.input-group input:focus, 
+.input-group input:not(:placeholder-shown),
+.input-group select:focus,
+.input-group select:has(option:checked:not([value=""])) {
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1); /* شفافية اللون الأساسي */
+    background: var(--input-bg-focus);
+}
+
+.dark .input-group input:focus,
+.dark .input-group select:focus {
+    background: var(--input-bg-focus);
+}
+
+/* تحريك التسمية للأعلى */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group select:focus + label,
+.input-group select:has(option:checked:not([value=""])) + label {
+    top: 0.75rem;
+    transform: translateY(0);
+    font-size: 0.75rem;
+    color: var(--input-focus-border);
+    font-weight: 700;
+}
+
+/* --- رسائل التحقق من الأخطاء (Validation Errors) --- */
+.just-validate-error-label {
+    color: var(--color-error) !important;
+    font-size: 0.8rem !important;
+    margin-top: 0.25rem !important;
+    font-weight: bold;
+}
+
+.input-group input.just-validate-error-field,
+.input-group select.just-validate-error-field {
+    border-color: var(--color-error) !important;
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1) !important;
+}
+
+/* --- شريط المدى (Range Slider) --- */
+input[type=range] { -webkit-appearance: none; background: transparent; }
+
+input[type=range]::-webkit-slider-thumb { 
+    -webkit-appearance: none; 
+    height: 24px; 
+    width: 24px; 
+    border-radius: 50%; 
+    background: var(--color-brand-500); 
+    cursor: pointer; 
+    margin-top: -10px; 
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.5); 
+    transition: transform 0.2s; 
+}
+
+input[type=range]:hover::-webkit-slider-thumb { transform: scale(1.2); }
+
+input[type=range]::-webkit-slider-runnable-track { 
+    width: 100%; 
+    height: 4px; 
+    cursor: pointer; 
+    background: var(--range-track-bg); 
+    border-radius: 2px; 
+}
+
+.dark input[type=range]::-webkit-slider-runnable-track { background: var(--range-track-bg); }
+
+/* --- منطقة إسقاط الملفات (File Drop Zone) --- */
+.file-drop-zone { 
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='24' ry='24' stroke='%23F97316FF' stroke-width='2' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); 
+    transition: all 0.3s ease; 
+}
+
+.file-drop-zone:hover { 
+    background-color: rgba(249, 115, 22, 0.05); 
+    transform: translateY(-2px); 
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='24' ry='24' stroke='%23F97316FF' stroke-width='3' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); 
+}
+
+/* ==========================================================================
+   3. أشرطة ومؤشرات التمرير (Scroll Indicators & Buttons)
+   ========================================================================== */
+
+/* زر الصعود للأعلى (Scroll To Top Button) */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 99;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    color: var(--color-white);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+#scrollToTopBtn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#scrollToTopBtn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(249, 115, 22, 0.6);
+}
+
+/* أيقونة التمرير للأسفل في الهيرو (Scroll Down Icon) */
+.scroll-down-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 30;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.scroll-down-wrapper:hover { opacity: 1; }
+
+.mouse-icon {
+    width: 30px;
+    height: 50px;
+    border: 2px solid currentColor;
+    border-radius: 20px;
+    position: relative;
+}
+
+.mouse-wheel {
+    width: 4px;
+    height: 8px;
+    background: currentColor;
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollWheel 1.5s infinite;
+}
+
+/* ==========================================================================
+   4. البطاقات وتأثيرات الزجاج (Cards & Glassmorphism)
+   ========================================================================== */
+
+/* تأثير الزجاج العام */
+.glass { 
+    background: var(--glass-bg); 
+    backdrop-filter: blur(20px); 
+    border: 1px solid var(--glass-border); 
+}
+
+.dark .glass { 
+    background: var(--glass-bg); 
+    border: 1px solid var(--glass-border); 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+}
+
+/* بطاقة زجاجية جديدة لقسم الحالة */
+.glass-card { 
+    background: var(--glass-bg); 
+    backdrop-filter: blur(20px); 
+    border: 1px solid var(--glass-border); 
+}
+
+.dark .glass-card { 
+    background: var(--glass-bg); 
+    border: 1px solid var(--glass-border); 
+}
+
+/* بطاقة "بقعة الضوء" (Spotlight Card) */
+.spotlight-card { 
+    position: relative; 
+    background: var(--spotlight-bg); 
+    backdrop-filter: blur(16px); 
+    border: 1px solid var(--spotlight-border); 
+    box-shadow: 0 8px 32px 0 var(--spotlight-shadow); 
+    overflow: hidden; 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+.dark .spotlight-card { 
+    background: var(--spotlight-bg); 
+    border: 1px solid var(--spotlight-border); 
+    box-shadow: 0 8px 32px 0 var(--spotlight-shadow); 
+}
+
+.spotlight-card::before { 
+    content: ""; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    border-radius: inherit; 
+    padding: 1.5px; 
+    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(249, 115, 22, 0.4), transparent 40%); 
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); 
+    -webkit-mask-composite: xor; 
+    mask-composite: exclude; 
+    opacity: 0; 
+    transition: opacity 0.5s ease; 
+    pointer-events: none; 
+    z-index: 2; 
+}
+
+.spotlight-card:hover::before { opacity: 1; }
+.spotlight-card:hover { 
+    transform: translateY(-10px) scale(1.02); 
+    box-shadow: 0 20px 40px -5px rgba(249, 115, 22, 0.15); 
+    border-color: rgba(249, 115, 22, 0.3); 
+}
+
+/* غلاف الأيقونات داخل البطاقات */
+.icon-wrapper { 
+    position: relative; 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 1.5rem; 
+    transition: all 0.5s ease; 
+}
+
+.icon-wrapper::before { 
+    content: ''; 
+    position: absolute; 
+    inset: 0; 
+    border-radius: inherit; 
+    padding: 2px; 
+    background: var(--gradient-icon-glow); 
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); 
+    -webkit-mask-composite: xor; 
+    mask-composite: exclude; 
+    opacity: 0.5; 
+    transition: opacity 0.5s ease; 
+}
+
+.spotlight-card:hover .icon-wrapper { transform: scale(1.1) rotate(5deg); }
+.spotlight-card:hover .icon-wrapper::before { 
+    opacity: 1; 
+    filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.5)); 
+}
+
+/* ==========================================================================
+   5. الإشعارات والنوافذ المنبثقة (Toasts & Modals)
+   ========================================================================== */
+
+/* حاوية الإشعارات (Toast Container) */
+#toast-container { 
+    position: fixed; 
+    top: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 1000; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+    pointer-events: none; 
+}
+
+/* تصميم الإشعار الفردي */
+.toast { 
+    pointer-events: auto; 
+    min-width: 300px; 
+    padding: 16px 20px; 
+    border-radius: 16px; 
+    background: var(--toast-bg); 
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1); 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    transform: translateY(-50px) scale(0.9); 
+    opacity: 0; 
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
+    border: 1px solid var(--toast-border); 
+    overflow: hidden; 
+    position: relative; 
+}
+
+.dark .toast { 
+    background: var(--toast-bg); 
+    border: 1px solid var(--toast-border); 
+    color: var(--toast-text); 
+}
+
+.toast.show { transform: translateY(0) scale(1); opacity: 1; }
+
+/* أنواع الإشعارات */
+.toast-success { border-right: 4px solid var(--color-success); }
+.toast-error { border-right: 4px solid var(--color-error); }
+.toast-info { border-right: 4px solid var(--color-info); }
+
+/* شريط تقدم الإشعار */
+.toast-progress { 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    height: 3px; 
+    background: rgba(0,0,0,0.1); 
+    width: 100%; 
+}
+
+.dark .toast-progress { background: rgba(255,255,255,0.2); }
+
+.toast-progress-bar { 
+    height: 100%; 
+    width: 100%; 
+    background: currentColor; 
+    transform-origin: left; 
+    animation: toastProgress linear forwards; 
+}
+
+/* النوافذ المنبثقة (Modals) */
+.modal { 
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+    opacity: 0; 
+    visibility: hidden; 
+}
+
+.modal.active { opacity: 1; visibility: visible; }
+
+.modal-content { 
+    transform: scale(0.95) translateY(20px); 
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); 
+}
+
+.modal.active .modal-content { transform: scale(1) translateY(0); }
+
+/* ==========================================================================
+   6. العناصر التفاعلية والشرائح (Interactive Elements & Swiper)
+   ========================================================================== */
+
+/* أزرار السيارات (Car Buttons) مع استخدام Apply */
+.car-btn.active {
+    @apply border-brand-500 bg-brand-500/10;
+}
+.car-btn.active svg {
+    @apply text-brand-600 dark:text-brand-400;
+}
+.car-btn.active span {
+    @apply text-slate-900 dark:text-white;
+}
+
+/* تأثير اللمعان للأزرار (Button Shimmer) */
+.btn-shimmer { position: relative; overflow: hidden; }
+
+.btn-shimmer::after { 
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: var(--tw-bg-shimmer-gradient); 
+    background-size: 200% 100%; 
+    animation: shimmer 3s infinite; 
+    pointer-events: none; 
+}
+
+/* تنسيقات السلايدر (Swiper) */
+.swiper-wrapper {
+    transition-timing-function: linear !important;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: var(--color-slate-400);
+    opacity: 0.4;
+    transition: all 0.4s ease;
+}
+
+.swiper-pagination-bullet-active {
+    width: 35px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--color-info), #8b5cf6);
+    opacity: 1;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* ==========================================================================
+   7. الخلفيات والتأثيرات البصرية (Backgrounds & Visual Effects)
+   ========================================================================== */
+
+/* خلفية الأيقونات (Hero Icons Background) */
+.hero-icons-bg { 
+    position: absolute; 
+    inset: 0; 
+    overflow: hidden; 
+    pointer-events: none; 
+    z-index: 0; 
+}
+
+.bg-icon { 
+    position: absolute; 
+    opacity: var(--bg-icon-opacity); 
+    color: var(--bg-icon-color); 
+    animation: float-random var(--duration, 10s) linear infinite; 
+    animation-delay: var(--delay, 0s); 
+}
+
+.dark .bg-icon { opacity: var(--bg-icon-opacity); color: var(--bg-icon-color); }
+
+/* مؤشر الكتابة (Typewriter Cursor) */
+.typewriter-cursor { 
+    display: inline-block; 
+    width: 3px; 
+    background-color: var(--color-brand-500); 
+    animation: blink 1s step-end infinite; 
+    margin-right: 2px; 
+    vertical-align: middle; 
+    height: 1em; 
+}
+
+/* أيقونة الظهور عند التحويم (Hover Reveal Icon) */
+.hover-reveal-icon { 
+    opacity: 0; 
+    transition: all 0.5s ease; 
+    transform: scale(0.5); 
+}
+
+.group:hover .hover-reveal-icon { 
+    opacity: 1; 
+    transform: scale(1); 
+    animation: breathe 2s infinite ease-in-out alternate; 
+}
+
+/* تأثيرات الظهور عند التمرير (Scroll Reveal) */
+.reveal-hidden { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); 
+    filter: blur(5px); 
+}
+
+.reveal-visible { 
+    opacity: 1; 
+    transform: translateY(0); 
+    filter: blur(0); 
+}
+
+/* تأخيرات الحركة (Transition Delays) */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+
+/* فئات مساعدة (Utility Classes) */
+.perspective-1000 { perspective: 1000px; }
+.animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+.animate-float-medium { animation: float-medium 4s ease-in-out infinite; }
+.animate-float-fast { animation: float-fast 3s ease-in-out infinite; }
+
+/* ==========================================================================
+   8. الرسوم المتحركة (Animations & Keyframes)
+   ========================================================================== */
+
+/* حركة عجلة الماوس */
+@keyframes scrollWheel {
+    0% { top: 8px; opacity: 1; }
+    100% { top: 25px; opacity: 0; }
+}
+
+/* حركة وميض المؤشر */
+@keyframes blink { 
+    0%, 100% { opacity: 1; } 
+    50% { opacity: 0; } 
+}
+
+/* حركة تقدم شريط الإشعار */
+@keyframes toastProgress { 
+    to { transform: scaleX(0); } 
+}
+
+/* حركة اللمعان */
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+}
+
+/* (ملاحظة: يوجد تكرار لـ shimmer في الكود الأصلي، تم الحفاظ عليهما كما هما) */
+@keyframes shimmer {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* حركة المسح (Scan) */
+@keyframes scan {
+    0% { transform: translateY(-150%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(150%); opacity: 0; }
+}
+
+/* حركة التحميل (Loading) */
+@keyframes loading {
+    0% { width: 0%; opacity: 1; }
+    50% { width: 100%; opacity: 1; }
+    100% { width: 100%; opacity: 0; }
+}
+
+/* حركات العوم المختلفة (Float Animations) */
+@keyframes float-slow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes float-medium {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes float-fast {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+
+    /* 1. Scroll Reveals (The Core Magic) */
+    .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); /* Ease Out Expo */
+    }
+    
+    .reveal-on-scroll-right {
+        opacity: 0;
+        transform: translateX(-30px);
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .is-visible {
+        opacity: 1 !important;
+        transform: translate(0, 0) !important;
+    }
+
+    /* Delays */
+    .delay-100 { transition-delay: 0.1s; }
+    .delay-200 { transition-delay: 0.2s; }
+    .delay-300 { transition-delay: 0.3s; }
+    .delay-400 { transition-delay: 0.4s; }
+
+
+</style>
 </head>
 <body class="bg-gray-50 text-slate-800 dark:bg-dark-bg dark:text-slate-100 transition-colors duration-500 font-sans overflow-x-hidden selection:bg-brand-500 selection:text-white">
 
@@ -1007,13 +1522,6 @@
     </div>
 </section>
 
-<style>
-    @keyframes shimmer {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(200%); }
-    }
-</style>
-
     <!-- Services Section -->
     <section id="features" class="relative py-24 bg-slate-50 dark:bg-[#0B1120] overflow-hidden">
     <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-500/10 blur-[100px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
@@ -1042,47 +1550,124 @@
                         </p>
                     </div>
 
-                    <div class="relative group mt-8">
-                        <div class="absolute inset-0 bg-gradient-to-r from-brand-500 to-blue-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
-                        <div class="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-2xl overflow-hidden">
-                            <div class="flex items-center justify-between mb-6">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                                    </div>
-                                    <div>
-                                        <div class="h-2.5 w-24 bg-slate-200 dark:bg-slate-800 rounded mb-1"></div>
-                                        <div class="h-2 w-16 bg-slate-100 dark:bg-slate-800 rounded"></div>
-                                    </div>
-                                </div>
-                                <div class="h-8 w-16 rounded-full bg-green-500/10 text-green-500 flex items-center justify-center text-xs font-bold">نشط الآن</div>
-                            </div>
-                            
-                            <div class="grid grid-cols-2 gap-4 mb-6">
-                                <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-2xl border border-slate-100 dark:border-slate-700">
-                                    <div class="text-xs text-slate-500 mb-1">الأرباح اليومية</div>
-                                    <div class="text-xl font-bold text-slate-900 dark:text-white">450 ج.م</div>
-                                </div>
-                                <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-2xl border border-slate-100 dark:border-slate-700">
-                                    <div class="text-xs text-slate-500 mb-1">عدد الرحلات</div>
-                                    <div class="text-xl font-bold text-slate-900 dark:text-white">12 رحلة</div>
-                                </div>
-                            </div>
+                    <div class="relative w-full max-w-sm mx-auto perspective-1000 group mt-12 lg:mt-0">
+    
+    <div class="absolute inset-0 bg-gradient-to-tr from-brand-500 to-purple-600 rounded-[3rem] blur-[60px] opacity-40 group-hover:opacity-60 transition duration-700 animate-pulse-slow"></div>
 
-                            <div class="relative h-24 w-full overflow-hidden">
-                                <svg class="w-full h-full text-brand-500" viewBox="0 0 100 40" preserveAspectRatio="none">
-                                    <path d="M0 30 Q 10 25, 20 28 T 40 15 T 60 20 T 80 5 T 100 15" fill="none" stroke="currentColor" stroke-width="2" />
-                                    <path d="M0 30 Q 10 25, 20 28 T 40 15 T 60 20 T 80 5 T 100 15 V 40 H 0 Z" fill="url(#gradient-chart)" opacity="0.2" />
-                                    <defs>
-                                        <linearGradient id="gradient-chart" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="0%" stop-color="currentColor" />
-                                            <stop offset="100%" stop-color="transparent" />
-                                        </linearGradient>
-                                    </defs>
-                                </svg>
-                            </div>
-                        </div>
+    <div class="absolute -top-8 -right-8 z-0 animate-float-slow opacity-80">
+        <div class="w-16 h-16 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center justify-center rotate-12">
+            <i data-lucide="map-pin" class="w-8 h-8 text-red-500 fill-red-500/20"></i>
+        </div>
+    </div>
+    
+    <div class="absolute -bottom-6 -left-6 z-0 animate-float-medium opacity-80" style="animation-delay: 1s;">
+        <div class="w-14 h-14 bg-white dark:bg-slate-800 rounded-full shadow-xl border border-slate-100 dark:border-slate-700 flex items-center justify-center -rotate-12">
+            <i data-lucide="coins" class="w-7 h-7 text-yellow-500 fill-yellow-500/20"></i>
+        </div>
+    </div>
+
+    <div class="relative z-10 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border border-white/50 dark:border-slate-700/50 rounded-[2.5rem] p-6 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] group-hover:-translate-y-2">
+        
+        <div class="flex items-center justify-between mb-8">
+            <div class="flex items-center gap-4">
+                <div class="relative">
+                    <div class="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden border-2 border-white dark:border-slate-700 shadow-sm">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Ahmed" alt="Captain" class="w-full h-full transform scale-110">
                     </div>
+                    <span class="absolute -bottom-1 -right-1 flex h-4 w-4">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-4 w-4 border-2 border-white dark:border-slate-900 bg-green-500"></span>
+                    </span>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-lg leading-tight">كابتن أحمد</h4>
+                    <div class="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
+                        <i data-lucide="star" class="w-3 h-3 text-yellow-500 fill-yellow-500"></i>
+                        <span>4.9 (متميز)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="px-3 py-1.5 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                <span class="text-xs font-bold text-green-600 dark:text-green-400">نشط الآن</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-800/50 p-4 rounded-3xl border border-slate-200 dark:border-slate-700 relative overflow-hidden group/stat">
+                <div class="absolute top-0 right-0 w-16 h-16 bg-brand-500/5 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover/stat:scale-150"></div>
+                
+                <div class="flex items-center gap-2 mb-2">
+                    <div class="p-1.5 rounded-lg bg-brand-100 dark:bg-brand-900/50 text-brand-600 dark:text-brand-400">
+                        <i data-lucide="wallet" class="w-4 h-4"></i>
+                    </div>
+                    <span class="text-xs font-bold text-slate-500">اليومية</span>
+                </div>
+                <div class="flex items-baseline gap-1">
+                    <span class="text-2xl font-black text-slate-900 dark:text-white">850</span>
+                    <span class="text-xs font-bold text-slate-400">ج.م</span>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-800/50 p-4 rounded-3xl border border-slate-200 dark:border-slate-700 relative overflow-hidden group/stat">
+                <div class="absolute top-0 right-0 w-16 h-16 bg-blue-500/5 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover/stat:scale-150"></div>
+                
+                <div class="flex items-center gap-2 mb-2">
+                    <div class="p-1.5 rounded-lg bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400">
+                        <i data-lucide="car-taxi-front" class="w-4 h-4"></i>
+                    </div>
+                    <span class="text-xs font-bold text-slate-500">الرحلات</span>
+                </div>
+                <div class="flex items-baseline gap-1">
+                    <span class="text-2xl font-black text-slate-900 dark:text-white">14</span>
+                    <span class="text-xs font-bold text-slate-400">رحلة</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative">
+            <div class="flex justify-between items-end mb-2">
+                <span class="text-xs font-bold text-slate-400">أداء اليوم</span>
+                <span class="text-[10px] font-bold text-green-500 bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded-full flex items-center gap-1">
+                    <i data-lucide="trending-up" class="w-3 h-3"></i> +12%
+                </span>
+            </div>
+            
+            <div class="relative h-28 w-full bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-700 overflow-hidden">
+                <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_14px]"></div>
+                
+                <svg class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                    <defs>
+                        <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#6366f1" stop-opacity="0.3"/>
+                            <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M0,80 C20,70 40,90 60,50 S100,60 140,30 S200,40 240,20 S300,30 400,10 V120 H0 Z" fill="url(#chartGradient)" />
+                    <path d="M0,80 C20,70 40,90 60,50 S100,60 140,30 S200,40 240,20 S300,30 400,10" fill="none" stroke="#6366f1" stroke-width="3" stroke-linecap="round" />
+                </svg>
+
+                <div class="absolute top-[20%] right-[20%] flex flex-col items-center animate-float-fast">
+                    <div class="px-2 py-1 bg-slate-900 text-white text-[10px] font-bold rounded-lg mb-1 shadow-lg">150 ج.م</div>
+                    <div class="w-3 h-3 bg-white border-2 border-brand-500 rounded-full shadow-[0_0_10px_rgba(99,102,241,0.5)]"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="absolute -bottom-5 -right-5 z-20 animate-float-slow" style="animation-delay: 2s;">
+        <div class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 py-2 rounded-xl shadow-xl shadow-orange-500/30 flex items-center gap-2 transform rotate-3 hover:rotate-0 transition-transform cursor-default">
+            <i data-lucide="trophy" class="w-5 h-5"></i>
+            <div>
+                <span class="block text-[8px] font-bold opacity-90 uppercase">Rank</span>
+                <span class="block text-xs font-black">Gold Captain</span>
+            </div>
+        </div>
+    </div>
+
+</div>
                 </div>
             </div>
 
@@ -1537,18 +2122,6 @@
     </div>
 </section>
 
-<style>
-    /* Add smooth transitions to transforms */
-    .car-btn.active {
-        @apply border-brand-500 bg-brand-500/10;
-    }
-    .car-btn.active svg {
-        @apply text-brand-600 dark:text-brand-400;
-    }
-    .car-btn.active span {
-        @apply text-slate-900 dark:text-white;
-    }
-</style>
 
 
     <!-- NEW SECTION: Check Car Compatibility (Redesigned) -->
@@ -1793,35 +2366,7 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="py-24 bg-white dark:bg-dark-bg border-t border-slate-100 dark:border-slate-800">
-        <div class="max-w-3xl mx-auto px-4">
-            <h2 class="reveal-hidden text-3xl font-black text-center text-slate-900 dark:text-white mb-12">الأسئلة الشائعة</h2>
-            <div class="space-y-4">
-                <details class="group spotlight-card rounded-2xl p-4 cursor-pointer reveal-hidden delay-100">
-                    <summary class="flex justify-between items-center font-bold text-lg text-slate-800 dark:text-white list-none relative z-10">
-                        <span>ما هي الأوراق المطلوبة للتقديم؟</span>
-                        <span class="transition-transform duration-300 group-open:rotate-180"><i data-lucide="chevron-down"></i></span>
-                    </summary>
-                    <div class="text-slate-500 dark:text-slate-400 mt-3 leading-relaxed relative z-10 animate-fade-in-up">نحتاج فقط إلى: صورة البطاقة الشخصية (سارية)، صورة رخصة القيادة (سارية)، صورة رخصة السيارة، وفيش جنائي حديث (لم يمر عليه 3 أشهر).</div>
-                </details>
-                <details class="group spotlight-card rounded-2xl p-4 cursor-pointer reveal-hidden delay-200">
-                    <summary class="flex justify-between items-center font-bold text-lg text-slate-800 dark:text-white list-none relative z-10">
-                        <span>هل يشترط أن تكون السيارة باسمي؟</span>
-                        <span class="transition-transform duration-300 group-open:rotate-180"><i data-lucide="chevron-down"></i></span>
-                    </summary>
-                    <div class="text-slate-500 dark:text-slate-400 mt-3 leading-relaxed relative z-10 animate-fade-in-up">لا يشترط ذلك. يمكنك العمل بسيارة أحد الأقارب أو سيارة إيجار بشرط وجود توكيل إدارة أو عقد إيجار ساري.</div>
-                </details>
-                <details class="group spotlight-card rounded-2xl p-4 cursor-pointer reveal-hidden delay-300">
-                    <summary class="flex justify-between items-center font-bold text-lg text-slate-800 dark:text-white list-none relative z-10">
-                        <span>متى يتم تفعيل الحساب؟</span>
-                        <span class="transition-transform duration-300 group-open:rotate-180"><i data-lucide="chevron-down"></i></span>
-                    </summary>
-                    <div class="text-slate-500 dark:text-slate-400 mt-3 leading-relaxed relative z-10 animate-fade-in-up">يتم مراجعة الأوراق وتفعيل الحساب عادةً خلال 24 ساعة من تقديم الطلب، وفي بعض الحالات يتم التفعيل في نفس اليوم.</div>
-                </details>
-            </div>
-        </div>
-    </section>
+
 
     <!-- NEW SECTION: Status Check (Updated Design) -->
     <section id="status-check" class="relative py-32 overflow-hidden bg-slate-50 dark:bg-[#0B1120]">
@@ -1952,22 +2497,6 @@
     </div>
 </section>
 
-<style>
-    @keyframes scan {
-        0% { transform: translateY(-150%); opacity: 0; }
-        50% { opacity: 1; }
-        100% { transform: translateY(150%); opacity: 0; }
-    }
-    @keyframes loading {
-        0% { width: 0%; opacity: 1; }
-        50% { width: 100%; opacity: 1; }
-        100% { width: 100%; opacity: 0; }
-    }
-    @keyframes shimmer {
-        0% { transform: translateX(100%); }
-        100% { transform: translateX(-100%); }
-    }
-</style>
 <section id="testimonials" class="py-24 relative overflow-hidden bg-white dark:bg-dark-bg border-t border-slate-100 dark:border-slate-800">
         <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-500/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
         <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
@@ -2112,23 +2641,432 @@
             </div>
         </div>
     </section>
+    <!-- FAQ Section -->
+<section id="faq" class="relative py-32 overflow-hidden bg-slate-50 dark:bg-[#0B1120]">
+    
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-500/5 rounded-full blur-[100px] mix-blend-multiply dark:mix-blend-screen animate-pulse-slow"></div>
+        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[100px] mix-blend-multiply dark:mix-blend-screen animate-pulse-slow" style="animation-delay: 2s"></div>
+        
+        <div class="absolute top-20 left-[10%] text-slate-200 dark:text-slate-800 text-9xl font-black opacity-20 rotate-12 animate-float-slow">?</div>
+        <div class="absolute bottom-40 right-[5%] text-slate-200 dark:text-slate-800 text-8xl font-black opacity-20 -rotate-12 animate-float-medium">?</div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
+            
+            <div class="lg:col-span-5 lg:sticky lg:top-32 h-fit">
+                
+                <div class="reveal-on-scroll inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm mb-8">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+                    </span>
+                    <span class="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">مركز المساعدة</span>
+                </div>
+
+                <h2 class="reveal-on-scroll delay-100 text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 leading-tight">
+                    لديك أسئلة؟ <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-l from-brand-600 to-purple-600">لدينا الإجابات.</span>
+                </h2>
+                
+                <p class="reveal-on-scroll delay-200 text-lg text-slate-600 dark:text-slate-400 mb-10 leading-relaxed">
+                    جمعنا لك أكثر الاستفسارات شيوعاً حول التسجيل، الأوراق، ونظام العمل لتوفير وقتك.
+                </p>
+
+                <div class="reveal-on-scroll delay-300 relative w-full h-64">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+                        <div class="w-24 h-24 rounded-3xl bg-gradient-to-br from-brand-500 to-purple-600 p-1 shadow-2xl shadow-brand-500/30 animate-float-slow">
+                            <div class="w-full h-full bg-white dark:bg-slate-900 rounded-[1.3rem] flex items-center justify-center">
+                                <i data-lucide="headphones" class="w-10 h-10 text-brand-600 dark:text-brand-400"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="absolute top-0 right-0 z-10 animate-float-medium">
+                        <div class="bg-white dark:bg-slate-800 px-4 py-3 rounded-2xl rounded-bl-none shadow-lg border border-slate-100 dark:border-slate-700 max-w-[180px]">
+                            <div class="flex items-center gap-2 mb-1">
+                                <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                                <span class="text-[10px] text-slate-400 font-bold">Support</span>
+                            </div>
+                            <p class="text-xs font-bold text-slate-700 dark:text-slate-200">متاحين 24/7 للمساعدة</p>
+                        </div>
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 z-30 animate-float-fast">
+                        <div class="bg-brand-600 text-white px-4 py-3 rounded-2xl rounded-tr-none shadow-xl max-w-[180px]">
+                            <p class="text-xs font-bold">كيف أبدأ العمل؟ 🚀</p>
+                        </div>
+                    </div>
+                    
+                    <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-20" style="z-index: 0;">
+                        <path d="M50 50 Q 150 150 250 50" stroke="currentColor" fill="none" class="text-brand-500" stroke-dasharray="4 4" />
+                    </svg>
+                </div>
+
+                <div class="reveal-on-scroll delay-300 mt-8 pt-8 border-t border-slate-200 dark:border-slate-800">
+                    <p class="text-sm text-slate-500 mb-4 font-bold">لم تجد إجابتك؟</p>
+                    <a href="#contact" class="group inline-flex items-center gap-2 text-brand-600 dark:text-brand-400 font-black hover:underline">
+                        تحدث مع فريق الدعم
+                        <i data-lucide="arrow-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 space-y-4">
+                
+                <details class="reveal-on-scroll-right delay-100 group faq-card open:bg-white open:dark:bg-slate-900 open:ring-1 open:ring-brand-500/50 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md rounded-[1.5rem] border border-slate-200 dark:border-slate-800 overflow-hidden transition-all duration-300 hover:border-brand-500/30">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none select-none">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-50 dark:bg-brand-900/20 flex items-center justify-center text-brand-600 dark:text-brand-400 group-open:bg-brand-600 group-open:text-white transition-colors duration-300">
+                                <i data-lucide="file-text" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-lg font-bold text-slate-800 dark:text-white group-open:text-brand-600 dark:group-open:text-brand-400 transition-colors">ما هي الأوراق المطلوبة؟</span>
+                        </div>
+                        <span class="w-8 h-8 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-400 transition-transform duration-300 group-open:rotate-180 group-open:bg-brand-500 group-open:text-white group-open:border-transparent">
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 pr-[4.5rem] text-slate-600 dark:text-slate-300 leading-relaxed grid grid-rows-[0fr] group-open:grid-rows-[1fr] transition-[grid-template-rows] duration-500">
+                        <div class="overflow-hidden">
+                            <p>نحتاج فقط إلى المستندات الأساسية التالية لضمان قانونية العمل:</p>
+                            <ul class="mt-3 space-y-2 text-sm">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> صورة البطاقة الشخصية (سارية).</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> صورة رخصة القيادة (سارية).</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> صورة رخصة السيارة.</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> فيش جنائي حديث.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="reveal-on-scroll-right delay-200 group faq-card open:bg-white open:dark:bg-slate-900 open:ring-1 open:ring-blue-500/50 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md rounded-[1.5rem] border border-slate-200 dark:border-slate-800 overflow-hidden transition-all duration-300 hover:border-blue-500/30">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none select-none">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400 group-open:bg-blue-600 group-open:text-white transition-colors duration-300">
+                                <i data-lucide="car-front" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-lg font-bold text-slate-800 dark:text-white group-open:text-blue-600 dark:group-open:text-blue-400 transition-colors">هل يشترط أن تكون السيارة باسمي؟</span>
+                        </div>
+                        <span class="w-8 h-8 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-400 transition-transform duration-300 group-open:rotate-180 group-open:bg-blue-500 group-open:text-white group-open:border-transparent">
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 pr-[4.5rem] text-slate-600 dark:text-slate-300 leading-relaxed grid grid-rows-[0fr] group-open:grid-rows-[1fr] transition-[grid-template-rows] duration-500">
+                        <div class="overflow-hidden">
+                            <p>لا، لا يشترط ذلك تماماً. يمكنك العمل بسيارة:</p>
+                            <div class="flex gap-2 mt-3 flex-wrap">
+                                <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-bold">سيارة الوالد/الوالدة</span>
+                                <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-bold">سيارة صديق</span>
+                                <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-bold">سيارة إيجار</span>
+                            </div>
+                            <p class="mt-3 text-sm text-slate-500">فقط نحتاج إلى <span class="text-blue-600 font-bold">توكيل إدارة</span> للسيارة.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="reveal-on-scroll-right delay-300 group faq-card open:bg-white open:dark:bg-slate-900 open:ring-1 open:ring-purple-500/50 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md rounded-[1.5rem] border border-slate-200 dark:border-slate-800 overflow-hidden transition-all duration-300 hover:border-purple-500/30">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none select-none">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600 dark:text-purple-400 group-open:bg-purple-600 group-open:text-white transition-colors duration-300">
+                                <i data-lucide="zap" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-lg font-bold text-slate-800 dark:text-white group-open:text-purple-600 dark:group-open:text-purple-400 transition-colors">متى يتم تفعيل الحساب؟</span>
+                        </div>
+                        <span class="w-8 h-8 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-400 transition-transform duration-300 group-open:rotate-180 group-open:bg-purple-500 group-open:text-white group-open:border-transparent">
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 pr-[4.5rem] text-slate-600 dark:text-slate-300 leading-relaxed grid grid-rows-[0fr] group-open:grid-rows-[1fr] transition-[grid-template-rows] duration-500">
+                        <div class="overflow-hidden">
+                            <p>نظامنا آلي وسريع، في أغلب الحالات يتم التفعيل في نفس اليوم:</p>
+                            <div class="mt-3 grid grid-cols-2 gap-3">
+                                <div class="p-3 bg-purple-50 dark:bg-purple-900/10 rounded-xl border border-purple-100 dark:border-purple-800/50 text-center">
+                                    <div class="text-2xl font-black text-purple-600 mb-1">24h</div>
+                                    <div class="text-xs text-slate-500">الحد الأقصى</div>
+                                </div>
+                                 <div class="p-3 bg-green-50 dark:bg-green-900/10 rounded-xl border border-green-100 dark:border-green-800/50 text-center">
+                                    <div class="text-2xl font-black text-green-600 mb-1">1h</div>
+                                    <div class="text-xs text-slate-500">للمستندات الكاملة</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                 <details class="reveal-on-scroll-right delay-400 group faq-card open:bg-white open:dark:bg-slate-900 open:ring-1 open:ring-yellow-500/50 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md rounded-[1.5rem] border border-slate-200 dark:border-slate-800 overflow-hidden transition-all duration-300 hover:border-yellow-500/30">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none select-none">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-yellow-50 dark:bg-yellow-900/20 flex items-center justify-center text-yellow-600 dark:text-yellow-400 group-open:bg-yellow-600 group-open:text-white transition-colors duration-300">
+                                <i data-lucide="wallet" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-lg font-bold text-slate-800 dark:text-white group-open:text-yellow-600 dark:group-open:text-yellow-400 transition-colors">كيف يتم تحصيل الأرباح؟</span>
+                        </div>
+                        <span class="w-8 h-8 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-400 transition-transform duration-300 group-open:rotate-180 group-open:bg-yellow-500 group-open:text-white group-open:border-transparent">
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 pr-[4.5rem] text-slate-600 dark:text-slate-300 leading-relaxed grid grid-rows-[0fr] group-open:grid-rows-[1fr] transition-[grid-template-rows] duration-500">
+                        <div class="overflow-hidden">
+                            <p>لديك الحرية الكاملة في اختيار طريقة استلام أموالك:</p>
+                            <ul class="mt-3 flex gap-4 text-sm font-bold">
+                                <li class="flex items-center gap-2"><div class="w-2 h-2 bg-yellow-500 rounded-full"></div> فودافون كاش</li>
+                                <li class="flex items-center gap-2"><div class="w-2 h-2 bg-yellow-500 rounded-full"></div> انستا باي</li>
+                                <li class="flex items-center gap-2"><div class="w-2 h-2 bg-yellow-500 rounded-full"></div> حساب بنكي</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* 1. Scroll Reveals (The Core Magic) */
+    .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); /* Ease Out Expo */
+    }
+    
+    .reveal-on-scroll-right {
+        opacity: 0;
+        transform: translateX(-30px);
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .is-visible {
+        opacity: 1 !important;
+        transform: translate(0, 0) !important;
+    }
+
+    /* Delays */
+    .delay-100 { transition-delay: 0.1s; }
+    .delay-200 { transition-delay: 0.2s; }
+    .delay-300 { transition-delay: 0.3s; }
+    .delay-400 { transition-delay: 0.4s; }
+
+    /* 2. Continuous Floating Animations */
+    @keyframes float-slow {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+    }
+    @keyframes float-medium {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-12px); }
+    }
+    @keyframes float-fast {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
+    }
+    
+    .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+    .animate-float-medium { animation: float-medium 4s ease-in-out infinite; }
+    .animate-float-fast { animation: float-fast 3s ease-in-out infinite; }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        lucide.createIcons();
+
+        // Simple Intersection Observer to trigger CSS Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15 // Trigger when 15% of element is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Run once
+                }
+            });
+        }, observerOptions);
+
+        // Select all elements to animate
+        const animatedElements = document.querySelectorAll('.reveal-on-scroll, .reveal-on-scroll-right');
+        animatedElements.forEach(el => observer.observe(el));
+    });
+</script>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 text-white py-16 border-t border-slate-800 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-600 via-brand-400 to-yellow-500"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div class="w-20 h-20 bg-gradient-to-br from-brand-600 to-brand-800 rounded-3xl flex items-center justify-center font-bold text-3xl mx-auto mb-8 shadow-2xl shadow-brand-500/20">E</div>
-            <h2 class="text-3xl font-black mb-6">EVENTAK Group</h2>
-            <p class="text-slate-400 mb-8 max-w-lg mx-auto">نحن نساعدك في بناء مستقبل أفضل من خلال تحويل سيارتك إلى مشروع مربح ومستدام.</p>
-            <div class="flex justify-center gap-6 mb-10">
-                <a href="#" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-all transform hover:scale-110"><i data-lucide="facebook"></i></a>
-                <a href="#" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-all transform hover:scale-110"><i data-lucide="instagram"></i></a>
-                <a href="#" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-all transform hover:scale-110"><i data-lucide="message-circle"></i></a>
-                <a href="#" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-all transform hover:scale-110"><i data-lucide="phone"></i></a>
+    <footer class="relative bg-[#050914] pt-24 pb-12 overflow-hidden border-t border-slate-800/50">
+
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand-500/5 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[120px]"></div>
+
+        <i data-lucide="map" class="absolute top-20 right-10 text-slate-800/50 w-40 h-40 -rotate-12 opacity-50"></i>
+        <i data-lucide="steering-wheel" class="absolute bottom-20 left-10 text-slate-800/50 w-64 h-64 rotate-12 opacity-30"></i>
+    </div>
+
+    <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-brand-500/50 to-transparent"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+
+            <div class="space-y-6">
+                <div class="flex items-center gap-3 group">
+                    <div class="relative w-14 h-14 bg-gradient-to-br from-brand-600 to-brand-800 rounded-2xl flex items-center justify-center shadow-lg shadow-brand-500/20 group-hover:shadow-brand-500/40 transition-all duration-500 group-hover:scale-105">
+                        <span class="font-black text-2xl text-white">E</span>
+                        <div class="absolute inset-0 border border-white/20 rounded-2xl scale-125 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500"></div>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-black text-white leading-none tracking-tight">EVENTAK</h2>
+                        <span class="text-xs font-bold text-brand-500 tracking-widest uppercase">Group</span>
+                    </div>
+                </div>
+
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    الشريك الاستراتيجي الأول لكباتن النقل الذكي في الشرق الأوسط. نحول قيادتك إلى رحلة نجاح مستدامة.
+                </p>
+
+                <div class="flex gap-4">
+                    <a href="#" class="group w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:border-brand-500 hover:text-white transition-all duration-300">
+                        <i data-lucide="facebook" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                    </a>
+                    <a href="#" class="group w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-pink-600 hover:border-pink-500 hover:text-white transition-all duration-300">
+                        <i data-lucide="instagram" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                    </a>
+                    <a href="#" class="group w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:border-blue-500 hover:text-white transition-all duration-300">
+                        <i data-lucide="linkedin" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                    </a>
+                </div>
             </div>
-            <p class="text-slate-600 text-sm">جميع الحقوق محفوظة © 2024 EVENTAK Group</p>
+
+            <div>
+                <h3 class="text-white font-bold text-lg mb-8 relative inline-block">
+                    روابط سريعة
+                    <span class="absolute -bottom-2 right-0 w-1/2 h-1 bg-brand-500 rounded-full"></span>
+                </h3>
+                <ul class="space-y-4">
+                    <li>
+                        <a href="#about" class="group flex items-center gap-2 text-slate-400 hover:text-brand-400 transition-colors">
+                            <i data-lucide="chevron-left" class="w-4 h-4 text-brand-500/50 group-hover:-translate-x-1 transition-transform"></i>
+                            عن الشركة
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#calculator" class="group flex items-center gap-2 text-slate-400 hover:text-brand-400 transition-colors">
+                            <i data-lucide="chevron-left" class="w-4 h-4 text-brand-500/50 group-hover:-translate-x-1 transition-transform"></i>
+                            حاسبة الأرباح
+                            <span class="text-[10px] font-bold bg-green-500/10 text-green-500 px-2 py-0.5 rounded-full border border-green-500/20">جديد</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#careers" class="group flex items-center gap-2 text-slate-400 hover:text-brand-400 transition-colors">
+                            <i data-lucide="chevron-left" class="w-4 h-4 text-brand-500/50 group-hover:-translate-x-1 transition-transform"></i>
+                            التوظيف
+                            <span class="flex h-2 w-2 relative">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#faq" class="group flex items-center gap-2 text-slate-400 hover:text-brand-400 transition-colors">
+                            <i data-lucide="chevron-left" class="w-4 h-4 text-brand-500/50 group-hover:-translate-x-1 transition-transform"></i>
+                            الأسئلة الشائعة
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-white font-bold text-lg mb-8 relative inline-block">
+                    الدعم والخدمات
+                    <span class="absolute -bottom-2 right-0 w-1/2 h-1 bg-blue-500 rounded-full"></span>
+                </h3>
+                <ul class="space-y-4">
+                    <li>
+                        <a href="#" class="group flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-slate-600 group-hover:text-blue-500 transition-colors"></i>
+                            خدمات التأمين
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="group flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors">
+                            <i data-lucide="wrench" class="w-4 h-4 text-slate-600 group-hover:text-blue-500 transition-colors"></i>
+                            مراكز الصيانة
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#status-check" class="group flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors">
+                            <i data-lucide="search" class="w-4 h-4 text-slate-600 group-hover:text-blue-500 transition-colors"></i>
+                            متابعة الطلب
+                            <span class="text-[10px] font-bold bg-blue-500/10 text-blue-500 px-2 py-0.5 rounded-full border border-blue-500/20">Online</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-purple-600 rounded-2xl blur opacity-20"></div>
+                <div class="relative bg-slate-900/80 backdrop-blur-xl border border-slate-800 p-6 rounded-2xl overflow-hidden group hover:border-brand-500/30 transition-colors">
+                    
+                    <div class="absolute -top-10 -left-10 w-32 h-32 bg-brand-500/10 rounded-full blur-2xl"></div>
+
+                    <h3 class="text-white font-bold text-lg mb-6">تواصل معنا الآن</h3>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center text-green-500 border border-green-500/20 group-hover:scale-110 transition-transform">
+                                <i data-lucide="phone-call" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold">الخط الساخن</p>
+                                <p class="text-white font-mono font-bold text-lg tracking-wider hover:text-brand-500 transition-colors cursor-pointer">19xxx</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-500 border border-purple-500/20 group-hover:scale-110 transition-transform">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold">المقر الرئيسي</p>
+                                <p class="text-slate-300 text-sm">القاهرة الجديدة، التجمع الخامس</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-6 border-t border-slate-800">
+                        <p class="text-xs text-slate-400 mb-2">اشترك في النشرة الإخبارية</p>
+                        <div class="flex relative">
+                            <input type="email" placeholder="بريدك الإلكتروني" class="w-full bg-slate-950 border border-slate-800 rounded-lg py-2 px-3 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors pl-10">
+                            <button class="absolute left-1 top-1 bottom-1 aspect-square bg-brand-600 hover:bg-brand-500 text-white rounded-md flex items-center justify-center transition-colors">
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
-    </footer>
+
+        <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-slate-500 text-sm">
+                جميع الحقوق محفوظة © 2024 <span class="text-white font-bold">EVENTAK Group</span>
+            </p>
+            
+            <div class="flex gap-6 text-sm">
+                <a href="#" class="text-slate-500 hover:text-white transition-colors">الشروط والأحكام</a>
+                <a href="#" class="text-slate-500 hover:text-white transition-colors">سياسة الخصوصية</a>
+                <a href="#" class="text-slate-500 hover:text-white transition-colors">ملفات تعريف الارتباط</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
 
     <!-- MODAL: Application Form -->
     <div id="applicationModal" class="modal fixed inset-0 z-50 flex items-center justify-center px-4 backdrop-blur-xl bg-slate-900/80 overflow-y-auto">
