@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
@@ -427,29 +428,54 @@
                 </div>
                 
                 <!-- Desktop Menu (Floating Pills) -->
-                <div class="hidden lg:flex items-center p-1.5 rounded-2xl bg-slate-100/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 backdrop-blur-sm reveal-hidden delay-100">
-                    
-                    <a href="#about" class="relative group/link px-6 py-3 rounded-xl overflow-hidden transition-all duration-300 hover:bg-white dark:hover:bg-slate-700">
-                        <span class="relative z-10 text-sm font-bold text-slate-600 dark:text-slate-300 group-hover/link:text-brand-600 dark:group-hover/link:text-brand-400 transition-colors">عن الشركة</span>
-                        <!-- Floating Icon -->
-                        <i data-lucide="building-2" class="absolute top-[150%] left-1/2 -translate-x-1/2 text-brand-500/10 dark:text-brand-400/10 w-10 h-10 group-hover/link:top-1/2 group-hover/link:-translate-y-1/2 transition-all duration-500 ease-out rotate-12 group-hover/link:rotate-0"></i>
-                    </a>
+                <div class="hidden lg:flex items-center gap-1 p-2 rounded-full bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-lg shadow-slate-200/20 dark:shadow-none reveal-hidden delay-100">
 
-                    <a href="#features" class="relative group/link px-6 py-3 rounded-xl overflow-hidden transition-all duration-300 hover:bg-white dark:hover:bg-slate-700">
-                        <span class="relative z-10 text-sm font-bold text-slate-600 dark:text-slate-300 group-hover/link:text-brand-600 dark:group-hover/link:text-brand-400 transition-colors">الخدمات</span>
-                        <i data-lucide="zap" class="absolute top-[150%] left-1/2 -translate-x-1/2 text-brand-500/10 dark:text-brand-400/10 w-10 h-10 group-hover/link:top-1/2 group-hover/link:-translate-y-1/2 transition-all duration-500 ease-out -rotate-12 group-hover/link:rotate-0"></i>
-                    </a>
+    <a href="#about" class="relative group px-6 py-3 rounded-full overflow-hidden transition-all duration-300">
+        
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-500/10 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+        
+        <i data-lucide="building-2" class="absolute -bottom-2 -left-2 w-12 h-12 text-brand-500/20 rotate-12 scale-50 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 ease-out origin-bottom-left"></i>
 
-                    <a href="#whyus" class="relative group/link px-6 py-3 rounded-xl overflow-hidden transition-all duration-300 hover:bg-white dark:hover:bg-slate-700">
-                        <span class="relative z-10 text-sm font-bold text-slate-600 dark:text-slate-300 group-hover/link:text-brand-600 dark:group-hover/link:text-brand-400 transition-colors">لماذا نحن</span>
-                        <i data-lucide="star" class="absolute top-[150%] left-1/2 -translate-x-1/2 text-brand-500/10 dark:text-brand-400/10 w-10 h-10 group-hover/link:top-1/2 group-hover/link:-translate-y-1/2 transition-all duration-500 ease-out rotate-45 group-hover/link:rotate-0"></i>
-                    </a>
+        <div class="relative z-10 flex items-center gap-2">
+            <i data-lucide="building-2" class="w-4 h-4 text-slate-400 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors duration-300"></i>
+            <span class="text-sm font-bold text-slate-600 dark:text-slate-300 group-hover:text-brand-700 dark:group-hover:text-brand-300 transition-colors">عن الشركة</span>
+        </div>
+    </a>
 
-                    <a href="#calculator" class="relative group/link px-6 py-3 rounded-xl overflow-hidden transition-all duration-300 hover:bg-white dark:hover:bg-slate-700">
-                        <span class="relative z-10 text-sm font-bold text-slate-600 dark:text-slate-300 group-hover/link:text-brand-600 dark:group-hover/link:text-brand-400 transition-colors">احسب دخلك</span>
-                        <i data-lucide="calculator" class="absolute top-[150%] left-1/2 -translate-x-1/2 text-brand-500/10 dark:text-brand-400/10 w-10 h-10 group-hover/link:top-1/2 group-hover/link:-translate-y-1/2 transition-all duration-500 ease-out -rotate-6 group-hover/link:rotate-0"></i>
-                    </a>
-                </div>
+    <a href="#features" class="relative group px-6 py-3 rounded-full overflow-hidden transition-all duration-300">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+        
+        <i data-lucide="zap" class="absolute -bottom-2 -left-2 w-12 h-12 text-blue-500/20 -rotate-12 scale-50 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 ease-out origin-bottom-left"></i>
+
+        <div class="relative z-10 flex items-center gap-2">
+            <i data-lucide="zap" class="w-4 h-4 text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300"></i>
+            <span class="text-sm font-bold text-slate-600 dark:text-slate-300 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">الخدمات</span>
+        </div>
+    </a>
+
+    <a href="#whyus" class="relative group px-6 py-3 rounded-full overflow-hidden transition-all duration-300">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+        
+        <i data-lucide="star" class="absolute -bottom-2 -left-2 w-12 h-12 text-purple-500/20 rotate-45 scale-50 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 ease-out origin-bottom-left"></i>
+
+        <div class="relative z-10 flex items-center gap-2">
+            <i data-lucide="star" class="w-4 h-4 text-slate-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300"></i>
+            <span class="text-sm font-bold text-slate-600 dark:text-slate-300 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors">لماذا نحن</span>
+        </div>
+    </a>
+
+    <a href="#calculator" class="relative group px-6 py-3 rounded-full overflow-hidden transition-all duration-300">
+        <div class="absolute inset-0 bg-gradient-to-r from-green-500/10 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+        
+        <i data-lucide="calculator" class="absolute -bottom-2 -left-2 w-12 h-12 text-green-500/20 -rotate-6 scale-50 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 ease-out origin-bottom-left"></i>
+
+        <div class="relative z-10 flex items-center gap-2">
+            <i data-lucide="calculator" class="w-4 h-4 text-slate-400 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-300"></i>
+            <span class="text-sm font-bold text-slate-600 dark:text-slate-300 group-hover:text-green-700 dark:group-hover:text-green-300 transition-colors">احسب دخلك</span>
+        </div>
+    </a>
+
+</div>
 
                 <!-- Actions -->
                 <div class="flex items-center gap-4 reveal-hidden delay-200">
@@ -473,7 +499,7 @@
                         <!-- Icon Circle with Animation -->
                         <div class="relative z-10 w-8 h-8 rounded-full bg-white/10 dark:bg-slate-900/10 flex items-center justify-center group-hover:bg-white/20 transition-all duration-300 overflow-hidden">
                             <!-- Icon 1: Steering Wheel (Exits Up) -->
-                            <i data-lucide="steering-wheel" class="absolute w-4 h-4 text-brand-500 dark:text-brand-600 group-hover:text-white transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0"></i>
+                            <i data-lucide="user-round-plus" class="absolute w-4 h-4 text-brand-500 dark:text-brand-600 group-hover:text-white transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0"></i>
                             <!-- Icon 2: Rocket (Enters from Bottom) -->
                             <i data-lucide="rocket" class="absolute w-4 h-4 text-white translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-75"></i>
                         </div>
@@ -792,175 +818,411 @@
     </section>
 
     <!-- About Company Section -->
-    <section id="about" class="py-24 relative overflow-hidden bg-slate-50 dark:bg-black/40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <!-- Text Area -->
-                <div class="lg:w-1/2 reveal-hidden">
-                    <div class="inline-flex items-center gap-2 mb-6">
-                        <div class="w-12 h-1 bg-brand-500 rounded-full"></div>
-                        <span class="text-brand-600 font-bold uppercase tracking-widest text-sm">هوية الشركة</span>
-                    </div>
-                    <h2 class="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-8 leading-tight">
-                        نحن <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-400">EVENTAK Group</span> <br>
-                        شركاء النجاح
-                    </h2>
-                    <div class="glass-card p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 backdrop-blur-xl relative overflow-hidden">
-                        <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6 relative z-10 text-justify">
-                            تأسست EVENTAK Group لتكون الجسر الآمن والموثوق بين الكباتن وكبرى شركات النقل الذكي في الشرق الأوسط. نحن لسنا مجرد وكيل، بل منظومة متكاملة تهدف إلى تمكين السائقين من تحقيق أقصى دخل ممكن مع توفير بيئة عمل قانونية وآمنة.
-                        </p>
-                        <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed relative z-10 text-justify">
-                            هويتنا مبنية على الشفافية المطلقة، السرعة في الإجراءات، والدعم المستمر. نحن نؤمن بأن الكابتن هو شريك أساسي في النجاح، ولذلك سخرنا كل إمكانياتنا التكنولوجية والإدارية لخدمته.
-                        </p>
-                        
-                        <i data-lucide="target" class="absolute top-4 left-4 text-brand-500/10 w-24 h-24 animate-spin-slow"></i>
-                        <i data-lucide="fingerprint" class="absolute bottom-4 right-4 text-slate-500/10 w-32 h-32"></i>
-                    </div>
-                </div>
+    <section id="about" class="relative py-32 overflow-hidden bg-slate-50 dark:bg-[#0B1120]">
+    
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-500/10 blur-[120px] rounded-full mix-blend-multiply dark:mix-blend-soft-light animate-pulse-slow"></div>
+        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-500/10 blur-[120px] rounded-full mix-blend-multiply dark:mix-blend-soft-light animate-pulse-slow" style="animation-delay: 2s;"></div>
+        
+        <i data-lucide="compass" class="absolute top-20 left-10 w-16 h-16 text-brand-300/20 dark:text-brand-700/20 animate-float-slow rotate-12"></i>
+        <i data-lucide="share-2" class="absolute bottom-40 right-20 w-24 h-24 text-purple-300/20 dark:text-purple-700/20 animate-float-slow -rotate-12" style="animation-delay: 1.5s;"></i>
+    </div>
+
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="text-center mb-20">
+            <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-white/50 dark:bg-slate-800/50 backdrop-blur-md border border-brand-500/20 shadow-sm">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+                </span>
+                <span class="text-brand-600 dark:text-brand-400 font-bold uppercase tracking-widest text-xs md:text-sm">هوية الشركة والرسالة</span>
+            </div>
+            <h2 class="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-8 leading-tight">
+                نحن <span class="relative inline-block px-2">
+                    <span class="absolute inset-0 bg-gradient-to-r from-brand-500/20 to-purple-500/20 blur-lg transform -skew-y-3"></span>
+                    <span class="relative text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-brand-500 to-purple-600">EVENTAK Group</span>
+                </span> <br>
+                محرك النجاح لقطاع النقل الذكي
+            </h2>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-16 items-center">
+            
+            <div class="lg:col-span-5 space-y-6">
                 
-                <!-- Visual Area -->
-                <div class="lg:w-1/2 relative reveal-hidden delay-200">
-                    <div class="relative z-10">
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="space-y-4 translate-y-8">
-                                <div class="bg-brand-600 rounded-[2rem] p-6 text-white text-center transform hover:-translate-y-2 transition-transform duration-500 shadow-xl shadow-brand-500/20">
-                                    <i data-lucide="award" class="w-10 h-10 mx-auto mb-2"></i>
-                                    <h4 class="font-bold text-xl">الريادة</h4>
-                                    <p class="text-white/80 text-sm">وكيل رقم 1 في مصر</p>
-                                </div>
-                                <div class="glass-card bg-white dark:bg-slate-800 rounded-[2rem] p-6 text-center border border-slate-200 dark:border-slate-700 transform hover:-translate-y-2 transition-transform duration-500">
-                                    <i data-lucide="users" class="w-10 h-10 mx-auto mb-2 text-blue-500"></i>
-                                    <h4 class="font-bold text-xl dark:text-white">المجتمع</h4>
-                                    <p class="text-slate-500 text-sm">+5000 كابتن</p>
-                                </div>
+                <div class="group relative p-8 rounded-[2.5rem] bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 transition-all duration-500 hover:border-brand-500/50 hover:shadow-2xl hover:shadow-brand-500/10 flex flex-col">
+                    <div class="flex items-start gap-5 mb-6">
+                        <div class="flex-shrink-0 w-14 h-14 rounded-2xl bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                            <i data-lucide="refrigerator" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">مهمتنا: الجسر الآمن</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed text-justify">
+                                بناء جسر موثوق يربط الكابتن بشركات النقل (Uber, Careem, inDrive) لضمان حقوق الطرفين.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-auto pt-6 border-t border-slate-200/50 dark:border-slate-700/50">
+                        <div class="flex items-center justify-between relative px-2">
+                            <div class="flex flex-col items-center gap-1 z-10">
+                                <div class="w-3 h-3 bg-slate-300 dark:bg-slate-600 rounded-full group-hover:bg-brand-500 transition-colors duration-500"></div>
+                                <span class="text-[10px] uppercase font-bold text-slate-400">الكابتن</span>
                             </div>
-                            <div class="space-y-4">
-                                <div class="glass-card bg-white dark:bg-slate-800 rounded-[2rem] p-6 text-center border border-slate-200 dark:border-slate-700 transform hover:-translate-y-2 transition-transform duration-500">
-                                    <i data-lucide="globe" class="w-10 h-10 mx-auto mb-2 text-purple-500"></i>
-                                    <h4 class="font-bold text-xl dark:text-white">التغطية</h4>
-                                    <p class="text-slate-500 text-sm">جميع المحافظات</p>
-                                </div>
-                                <div class="bg-slate-900 dark:bg-white rounded-[2rem] p-6 text-white dark:text-slate-900 text-center transform hover:-translate-y-2 transition-transform duration-500 shadow-xl">
-                                    <i data-lucide="heart-handshake" class="w-10 h-10 mx-auto mb-2"></i>
-                                    <h4 class="font-bold text-xl">الثقة</h4>
-                                    <p class="opacity-80 text-sm">شراكة مستدامة</p>
-                                </div>
+                            
+                            <div class="absolute left-4 right-4 top-1.5 h-[2px] bg-slate-200 dark:bg-slate-700 overflow-hidden">
+                                <div class="w-1/2 h-full bg-brand-500 absolute top-0 left-0 -translate-x-full group-hover:animate-[shimmer_2s_infinite]"></div>
+                            </div>
+
+                            <div class="z-10 bg-white dark:bg-slate-800 p-1 rounded-full border border-slate-200 dark:border-slate-700 group-hover:border-brand-500 group-hover:scale-110 transition-all duration-500">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-slate-400 group-hover:text-brand-500 transition-colors"></i>
+                            </div>
+
+                            <div class="flex flex-col items-center gap-1 z-10">
+                                <div class="w-3 h-3 bg-slate-300 dark:bg-slate-600 rounded-full group-hover:bg-brand-500 transition-colors duration-500"></div>
+                                <span class="text-[10px] uppercase font-bold text-slate-400">الشركة</span>
                             </div>
                         </div>
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-r from-brand-500/20 to-purple-500/20 rounded-full blur-[100px] z-0 animate-pulse-glow"></div>
+                </div>
+
+                <div class="group relative p-8 rounded-[2.5rem] bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 transition-all duration-500 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/10 flex flex-col">
+                    <div class="flex items-start gap-5 mb-6">
+                        <div class="flex-shrink-0 w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                            <i data-lucide="scale" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">قيمنا: الشفافية والدعم</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed text-justify">
+                                الوضوح المالي المطلق، لا رسوم خفية، ودعم فني متواصل لحل المشكلات فور حدوثها.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-slate-200/50 dark:border-slate-700/50">
+                        <div class="flex items-center gap-3">
+                            <div class="flex-1 space-y-2">
+                                <div class="flex items-center justify-between text-[10px] text-slate-500">
+                                    <span>المصداقية</span>
+                                    <span class="text-purple-600 font-bold">100%</span>
+                                </div>
+                                <div class="w-full h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                                    <div class="h-full bg-purple-500 w-0 group-hover:w-full transition-all duration-1000 ease-out"></div>
+                                </div>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center group-hover:bg-green-500 group-hover:text-white text-green-500 transition-all duration-500 rotate-0 group-hover:rotate-12">
+                                <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="lg:col-span-7 relative mt-20 lg:mt-0">
+                <div class="relative w-full aspect-square flex items-center justify-center">
+                    
+                    <div class="absolute inset-0 flex items-center justify-center opacity-30 dark:opacity-20 pointer-events-none">
+                        <div class="w-[85%] h-[85%] rounded-full border border-dashed border-slate-400/50 dark:border-slate-500/50 animate-[spin_60s_linear_infinite]"></div>
+                        <div class="absolute w-[55%] h-[55%] rounded-full border border-brand-500/30 animate-[spin_40s_linear_infinite_reverse]"></div>
+                    </div>
+
+                    <div class="absolute z-20 p-2 rounded-full bg-white dark:bg-slate-900 shadow-[0_0_50px_rgba(37,99,235,0.3)] animate-pulse-glow">
+                        <div class="w-32 h-32 rounded-full bg-gradient-to-br from-brand-600 to-purple-600 flex flex-col items-center justify-center text-white p-4 text-center relative overflow-hidden group cursor-default">
+                            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20 mix-blend-overlay"></div>
+                            <i data-lucide="map-pin" class="w-10 h-10 mb-1 opacity-90 group-hover:scale-110 transition-transform"></i>
+                            <span class="font-black text-xl tracking-tighter leading-none">EVENTAK</span>
+                            <div class="absolute inset-0 border-4 border-white/20 rounded-full border-t-white/60 animate-spin-slow"></div>
+                        </div>
+                    </div>
+
+                    <div class="absolute top-[5%] right-[5%] md:top-[12%] md:right-[10%] z-20 hover:z-30 transition-all duration-300 hover:scale-105">
+                        <div class="group bg-brand-600 dark:bg-brand-500 rounded-[2rem] p-5 w-48 text-white text-center shadow-xl relative overflow-hidden">
+                            <div class="absolute -right-4 -top-4 text-white/10 group-hover:rotate-12 transition-transform duration-700">
+                                <i data-lucide="crown" class="w-24 h-24"></i>
+                            </div>
+                            
+                            <i data-lucide="award" class="w-8 h-8 mx-auto mb-2 relative z-10 group-hover:animate-bounce"></i>
+                            <h4 class="font-bold text-lg relative z-10">الريادة</h4>
+                            <p class="text-white/80 text-xs relative z-10 mb-2">وكيل رقم 1 في مصر</p>
+                            
+                            <div class="inline-flex items-center gap-1 bg-white/20 px-2 py-1 rounded-lg backdrop-blur-sm relative z-10">
+                                <span class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
+                                <span class="text-[10px] font-bold">Top Ranked</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="absolute top-[5%] left-[5%] md:top-[12%] md:left-[10%] z-20 hover:z-30 transition-all duration-300 hover:scale-105">
+                        <div class="group glass-card bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-[2rem] p-5 w-48 text-center border border-blue-200 shadow-lg relative overflow-hidden">
+                            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#3b82f6 1px, transparent 1px); background-size: 8px 8px;"></div>
+                            
+                            <i data-lucide="users" class="w-8 h-8 mx-auto mb-2 text-blue-500 group-hover:scale-110 transition-transform"></i>
+                            <h4 class="font-bold text-lg dark:text-white">المجتمع</h4>
+                            <p class="text-slate-500 text-xs mb-3">+5000 كابتن</p>
+                            
+                            <div class="flex justify-center -space-x-2 rtl:space-x-reverse relative z-10">
+                                <div class="w-6 h-6 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-[8px]">A</div>
+                                <div class="w-6 h-6 rounded-full bg-slate-300 border-2 border-white flex items-center justify-center text-[8px]">B</div>
+                                <div class="w-6 h-6 rounded-full bg-blue-500 text-white border-2 border-white flex items-center justify-center text-[8px]">+5k</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="absolute bottom-[5%] right-[5%] md:bottom-[12%] md:right-[10%] z-20 hover:z-30 transition-all duration-300 hover:scale-105">
+                        <div class="group glass-card bg-slate-900 dark:bg-white rounded-[2rem] p-5 w-48 text-center border border-slate-700 shadow-lg relative overflow-hidden">
+                            <i data-lucide="heart-handshake" class="w-8 h-8 mx-auto mb-2 text-white dark:text-slate-900"></i>
+                            <h4 class="font-bold text-lg text-white dark:text-slate-900">الثقة</h4>
+                            <p class="text-slate-300 dark:text-slate-600 text-xs mb-2">شراكة مستدامة</p>
+                            
+                            <div class="h-6 flex items-center justify-center gap-1 opacity-50 group-hover:opacity-100 transition-opacity">
+                                <div class="w-1 h-2 bg-green-500 rounded-full animate-[pulse_1s_infinite]"></div>
+                                <div class="w-1 h-4 bg-green-500 rounded-full animate-[pulse_1s_infinite_0.2s]"></div>
+                                <div class="w-1 h-3 bg-green-500 rounded-full animate-[pulse_1s_infinite_0.4s]"></div>
+                                <span class="text-[8px] text-green-500 ml-1">Active</span>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="absolute bottom-[5%] left-[5%] md:bottom-[12%] md:left-[10%] z-20 hover:z-30 transition-all duration-300 hover:scale-105">
+                        <div class="group glass-card bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-[2rem] p-5 w-48 text-center border border-purple-200 shadow-lg relative overflow-hidden">
+                             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-purple-500/20 rounded-full scale-0 group-hover:scale-150 transition-transform duration-1000"></div>
+                             
+                            <i data-lucide="globe" class="w-8 h-8 mx-auto mb-2 text-purple-500 group-hover:rotate-180 transition-transform duration-700"></i>
+                            <h4 class="font-bold text-lg dark:text-white">التغطية</h4>
+                            <p class="text-slate-500 text-xs mb-2">جميع المحافظات</p>
+                            
+                            <div class="flex justify-center gap-2 mt-2">
+                                <i data-lucide="map-pin" class="w-3 h-3 text-purple-500 animate-bounce" style="animation-delay: 0s"></i>
+                                <i data-lucide="map-pin" class="w-3 h-3 text-purple-400 animate-bounce" style="animation-delay: 0.2s"></i>
+                                <i data-lucide="map-pin" class="w-3 h-3 text-purple-300 animate-bounce" style="animation-delay: 0.4s"></i>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+    @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(200%); }
+    }
+</style>
 
     <!-- Services Section -->
-    <section id="features" class="py-24 bg-white dark:bg-dark-bg relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-20">
-                <h2 class="reveal-hidden text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6">خدمات متكاملة <span class="text-brand-500">للكابتن المحترف</span></h2>
-                <p class="reveal-hidden delay-100 text-slate-600 dark:text-slate-400 text-xl max-w-2xl mx-auto">باقة خدمات حصرية مصممة خصيصاً لتلبية احتياجاتك</p>
+    <section id="features" class="relative py-24 bg-slate-50 dark:bg-[#0B1120] overflow-hidden">
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-500/10 blur-[100px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/10 blur-[100px] rounded-full pointer-events-none translate-y-1/2 -translate-x-1/2"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="flex flex-col lg:flex-row gap-12 lg:gap-20">
+            
+            <div class="lg:w-5/12">
+                <div class="lg:sticky lg:top-32 space-y-8">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-600 dark:text-brand-400 text-xs font-bold">
+                            <span class="relative flex h-2 w-2">
+                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                              <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+                            </span>
+                            مميزات حصرية للكابتن
+                        </div>
+                        <h2 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white leading-tight">
+                            كل ما تحتاجه <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-l from-brand-500 to-blue-600">للنجاح في مكان واحد</span>
+                        </h2>
+                        <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                            نقدم لك بيئة عمل متكاملة تجمع بين الأمان القانوني، السيولة المالية، والدعم التقني المستمر. ركز في القيادة واترك الباقي علينا.
+                        </p>
+                    </div>
+
+                    <div class="relative group mt-8">
+                        <div class="absolute inset-0 bg-gradient-to-r from-brand-500 to-blue-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
+                        <div class="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-2xl overflow-hidden">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                    </div>
+                                    <div>
+                                        <div class="h-2.5 w-24 bg-slate-200 dark:bg-slate-800 rounded mb-1"></div>
+                                        <div class="h-2 w-16 bg-slate-100 dark:bg-slate-800 rounded"></div>
+                                    </div>
+                                </div>
+                                <div class="h-8 w-16 rounded-full bg-green-500/10 text-green-500 flex items-center justify-center text-xs font-bold">نشط الآن</div>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-2xl border border-slate-100 dark:border-slate-700">
+                                    <div class="text-xs text-slate-500 mb-1">الأرباح اليومية</div>
+                                    <div class="text-xl font-bold text-slate-900 dark:text-white">520 ر.س</div>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-2xl border border-slate-100 dark:border-slate-700">
+                                    <div class="text-xs text-slate-500 mb-1">عدد الرحلات</div>
+                                    <div class="text-xl font-bold text-slate-900 dark:text-white">12 رحلة</div>
+                                </div>
+                            </div>
+
+                            <div class="relative h-24 w-full overflow-hidden">
+                                <svg class="w-full h-full text-brand-500" viewBox="0 0 100 40" preserveAspectRatio="none">
+                                    <path d="M0 30 Q 10 25, 20 28 T 40 15 T 60 20 T 80 5 T 100 15" fill="none" stroke="currentColor" stroke-width="2" />
+                                    <path d="M0 30 Q 10 25, 20 28 T 40 15 T 60 20 T 80 5 T 100 15 V 40 H 0 Z" fill="url(#gradient-chart)" opacity="0.2" />
+                                    <defs>
+                                        <linearGradient id="gradient-chart" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="currentColor" />
+                                            <stop offset="100%" stop-color="transparent" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Protection -->
-                <div class="spotlight-card p-10 rounded-[2.5rem] group reveal-hidden delay-100 border border-slate-100 dark:border-slate-800 hover:border-brand-500/50 dark:hover:border-brand-500/50 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-500/10 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
-                    <div class="icon-wrapper w-20 h-20 bg-white dark:bg-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none mb-8 relative z-20 group-hover:scale-110 transition-transform duration-500">
-                        <i data-lucide="shield-check" class="w-10 h-10 text-brand-600 dark:text-brand-400" stroke="url(#brand-gradient)"></i>
-                    </div>
-                    <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-4 relative z-20">حماية قانونية وأمان</h3>
-                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6 relative z-20 text-sm">نضمن لك عقوداً قانونية موثقة تحمي كافة مستحقاتك المالية. فريقنا القانوني جاهز للتدخل وحل أي نزاعات.</p>
-                    <ul class="space-y-2 relative z-20 text-sm text-slate-600 dark:text-slate-300">
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> عقود رسمية موثقة</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> دعم قانوني مجاني</li>
-                    </ul>
-                    <i data-lucide="lock" class="hover-reveal-icon absolute top-10 left-10 text-brand-500/20 w-12 h-12 z-10" style="--tx: 20px; --ty: -30px; --r: 15deg;"></i>
-                    <i data-lucide="file-check" class="hover-reveal-icon absolute bottom-10 right-10 text-brand-500/20 w-16 h-16 z-10" style="--tx: -15px; --ty: -40px; --r: -10deg; animation-delay: 0.5s"></i>
-                </div>
+            <div class="lg:w-7/12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                <!-- Activation -->
-                <div class="spotlight-card p-10 rounded-[2.5rem] group reveal-hidden delay-200 border border-slate-100 dark:border-slate-800 hover:border-blue-500/50 dark:hover:border-blue-500/50 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
-                    <div class="icon-wrapper w-20 h-20 bg-white dark:bg-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none mb-8 relative z-20 group-hover:scale-110 transition-transform duration-500">
-                        <i data-lucide="zap" class="w-10 h-10 text-blue-600 dark:text-blue-400" stroke="url(#blue-gradient)"></i>
-                    </div>
-                    <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-4 relative z-20">تفعيل فوري للحساب</h3>
-                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6 relative z-20 text-sm">نظام إلكتروني متطور يربطك مباشرة بقواعد بيانات الشركات لضمان تفعيل حسابك في دقائق معدودة.</p>
-                    <ul class="space-y-2 relative z-20 text-sm text-slate-600 dark:text-slate-300">
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i> تفعيل في نفس اليوم</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i> قبول فوري للمستندات</li>
-                    </ul>
-                    <i data-lucide="clock" class="hover-reveal-icon absolute top-12 left-8 text-blue-500/20 w-14 h-14 z-10" style="--tx: 10px; --ty: -20px; --r: 20deg;"></i>
-                    <i data-lucide="check-square" class="hover-reveal-icon absolute bottom-8 right-12 text-blue-500/20 w-10 h-10 z-10" style="--tx: -20px; --ty: 20px; --r: -15deg; animation-delay: 0.3s"></i>
-                </div>
-
-                <!-- Finance -->
-                <div class="spotlight-card p-10 rounded-[2.5rem] group reveal-hidden delay-300 border border-slate-100 dark:border-slate-800 hover:border-purple-500/50 dark:hover:border-purple-500/50 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
-                    <div class="icon-wrapper w-20 h-20 bg-white dark:bg-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none mb-8 relative z-20 group-hover:scale-110 transition-transform duration-500">
-                        <i data-lucide="wallet" class="w-10 h-10 text-purple-600 dark:text-purple-400" stroke="url(#purple-gradient)"></i>
-                    </div>
-                    <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-4 relative z-20">حلول مالية مرنة</h3>
-                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6 relative z-20 text-sm">تحكم كامل في أرباحك. اختر نظام السحب اليومي أو الأسبوعي. محفظة إلكترونية ذكية لاستلام الأموال.</p>
-                    <ul class="space-y-2 relative z-20 text-sm text-slate-600 dark:text-slate-300">
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-purple-500"></i> سحب يومي</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-purple-500"></i> تقارير أرباح مفصلة</li>
-                    </ul>
-                    <i data-lucide="banknote" class="hover-reveal-icon absolute top-8 left-12 text-purple-500/20 w-16 h-16 z-10" style="--tx: 30px; --ty: 10px; --r: 45deg;"></i>
-                    <i data-lucide="coins" class="hover-reveal-icon absolute bottom-12 right-8 text-purple-500/20 w-12 h-12 z-10" style="--tx: -10px; --ty: -30px; --r: -10deg; animation-delay: 0.7s"></i>
-                </div>
-
-                <!-- Support -->
-                <div class="spotlight-card p-10 rounded-[2.5rem] group reveal-hidden delay-100 border border-slate-100 dark:border-slate-800 hover:border-green-500/50 dark:hover:border-green-500/50 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
-                    <div class="icon-wrapper w-20 h-20 bg-white dark:bg-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none mb-8 relative z-20 group-hover:scale-110 transition-transform duration-500">
-                        <i data-lucide="headphones" class="w-10 h-10 text-green-600 dark:text-green-400"></i>
-                    </div>
-                    <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-4 relative z-20">دعم فني متخصص</h3>
-                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6 relative z-20 text-sm">فريق دعم بشري وليس آلي، متاح 24/7. نساعدك في فك البلوك، حل مشاكل التطبيقات، والتعامل مع شكاوى العملاء.</p>
-                    <ul class="space-y-2 relative z-20 text-sm text-slate-600 dark:text-slate-300">
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> دعم واتساب وهاتف</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> حل مشاكل البلوك</li>
-                    </ul>
-                    <i data-lucide="message-circle" class="hover-reveal-icon absolute top-6 left-10 text-green-500/20 w-12 h-12 z-10" style="--tx: 20px; --ty: -20px; --r: 10deg;"></i>
-                    <i data-lucide="phone-call" class="hover-reveal-icon absolute bottom-10 right-6 text-green-500/20 w-14 h-14 z-10" style="--tx: -10px; --ty: 10px; --r: -20deg; animation-delay: 0.2s"></i>
-                </div>
-
-                <!-- Maintenance -->
-                <div class="spotlight-card p-10 rounded-[2.5rem] group reveal-hidden delay-200 border border-slate-100 dark:border-slate-800 hover:border-red-500/50 dark:hover:border-red-500/50 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
-                    <div class="icon-wrapper w-20 h-20 bg-white dark:bg-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none mb-8 relative z-20 group-hover:scale-110 transition-transform duration-500">
-                        <i data-lucide="wrench" class="w-10 h-10 text-red-600 dark:text-red-400"></i>
-                    </div>
-                    <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-4 relative z-20">خدمات الصيانة</h3>
-                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6 relative z-20 text-sm">شبكة واسعة من مراكز الصيانة المعتمدة تقدم خصومات تصل إلى 30% لكباتن إيفنتك. تشمل الزيوت والإطارات.</p>
-                    <ul class="space-y-2 relative z-20 text-sm text-slate-600 dark:text-slate-300">
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-red-500"></i> خصومات حصرية</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-red-500"></i> مراكز معتمدة</li>
-                    </ul>
-                    <i data-lucide="settings" class="hover-reveal-icon absolute top-10 left-8 text-red-500/20 w-16 h-16 z-10" style="--tx: 10px; --ty: 20px; --r: 90deg;"></i>
-                    <i data-lucide="tool" class="hover-reveal-icon absolute bottom-8 right-10 text-red-500/20 w-10 h-10 z-10" style="--tx: -15px; --ty: -15px; --r: 0deg; animation-delay: 0.6s"></i>
-                </div>
-
-                <!-- Rewards -->
-                <div class="spotlight-card p-10 rounded-[2.5rem] group reveal-hidden delay-300 border border-slate-100 dark:border-slate-800 hover:border-yellow-500/50 dark:hover:border-yellow-500/50 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
-                    <div class="icon-wrapper w-20 h-20 bg-white dark:bg-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none mb-8 relative z-20 group-hover:scale-110 transition-transform duration-500">
-                        <i data-lucide="trophy" class="w-10 h-10 text-yellow-600 dark:text-yellow-400"></i>
-                    </div>
-                    <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-4 relative z-20">مكافآت وبونص</h3>
-                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6 relative z-20 text-sm">نقدر مجهودك! برامج مكافآت شهرية للكباتن الأكثر تحقيقاً للرحلات. سحوبات على جوائز قيمة وبونص إضافي.</p>
-                    <ul class="space-y-2 relative z-20 text-sm text-slate-600 dark:text-slate-300">
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-yellow-500"></i> بونص شهري</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-yellow-500"></i> مسابقات وجوائز</li>
-                    </ul>
-                    <i data-lucide="gift" class="hover-reveal-icon absolute top-8 left-10 text-yellow-500/20 w-12 h-12 z-10" style="--tx: 25px; --ty: -15px; --r: 10deg;"></i>
-                    <i data-lucide="star" class="hover-reveal-icon absolute bottom-12 right-8 text-yellow-500/20 w-14 h-14 z-10" style="--tx: -10px; --ty: 20px; --r: 30deg; animation-delay: 0.4s"></i>
+    <div class="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500/50 dark:hover:border-brand-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-brand-500/5 hover:-translate-y-1 flex flex-col">
+        <div class="w-14 h-14 rounded-2xl bg-brand-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">حماية قانونية شاملة</h3>
+        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4 flex-grow">
+            عقود موثقة ودعم قانوني لحماية مستحقاتك وحل أي نزاعات قد تواجهها.
+        </p>
+        
+        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-400">حالة العقد</span>
+            <div class="relative flex items-center gap-2 bg-slate-50 dark:bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-100 dark:border-slate-700">
+                <div class="w-3 h-4 border-2 border-slate-300 rounded-[1px] bg-white group-hover:border-brand-500 transition-colors"></div>
+                <span class="text-xs font-bold text-slate-600 dark:text-slate-300">موثق 100%</span>
+                <div class="absolute -top-1 -right-1 bg-green-500 text-white rounded-full p-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-0 group-hover:scale-100">
+                    <svg class="w-2 h-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><path d="M20 6L9 17l-5-5"/></svg>
                 </div>
             </div>
         </div>
-    </section>  
+    </div>
+
+    <div class="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 flex flex-col">
+        <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">تفعيل فوري للحساب</h3>
+        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4 flex-grow">
+            اربط حسابك مباشرة بقواعد البيانات وابدأ في استقبال الطلبات في دقائق.
+        </p>
+
+        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-400">حالة الحساب</span>
+            <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-blue-600 dark:text-blue-400 group-hover:opacity-100 opacity-50 transition-opacity">Active</span>
+                <div class="w-8 h-4 rounded-full bg-slate-200 dark:bg-slate-700 relative overflow-hidden transition-colors duration-300 group-hover:bg-blue-500/20">
+                    <div class="absolute top-0.5 left-0.5 w-3 h-3 rounded-full bg-slate-400 group-hover:bg-blue-500 group-hover:translate-x-4 transition-all duration-300 shadow-sm"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500/50 dark:hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/5 hover:-translate-y-1 flex flex-col">
+        <div class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-purple-600 dark:text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">سيولة مالية ومرونة</h3>
+        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4 flex-grow">
+            خيارات سحب يومية أو أسبوعية مع تقارير أرباح مفصلة ومحفظة ذكية.
+        </p>
+
+        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-400">نمو الدخل</span>
+            <div class="flex items-end gap-1 h-6">
+                <div class="w-1.5 bg-purple-200 dark:bg-purple-900/50 rounded-t-sm h-2 group-hover:h-3 transition-all duration-500 delay-75"></div>
+                <div class="w-1.5 bg-purple-300 dark:bg-purple-800/50 rounded-t-sm h-3 group-hover:h-5 transition-all duration-500 delay-100"></div>
+                <div class="w-1.5 bg-purple-500 dark:bg-purple-600 rounded-t-sm h-4 group-hover:h-full transition-all duration-500 delay-150"></div>
+                <svg class="w-3 h-3 text-green-500 opacity-0 group-hover:opacity-100 -translate-y-1 group-hover:translate-y-0 transition-all duration-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 15l-6-6-6 6"/></svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-green-500/50 dark:hover:border-green-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-green-500/5 hover:-translate-y-1 flex flex-col">
+        <div class="w-14 h-14 rounded-2xl bg-green-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-green-600 dark:text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">دعم فني 24/7</h3>
+        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4 flex-grow">
+            فريق متخصص لمساعدتك في حل مشاكل الحظر والتطبيقات في أي وقت.
+        </p>
+
+        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-400">محادثة مباشرة</span>
+            <div class="flex items-center gap-1.5">
+                <div class="w-6 h-4 bg-slate-100 dark:bg-slate-800 rounded-tr-lg rounded-tl-lg rounded-bl-lg flex items-center justify-center">
+                    <div class="w-3 h-[2px] bg-slate-300"></div>
+                </div>
+                <div class="w-6 h-4 bg-green-500 rounded-tr-lg rounded-tl-lg rounded-br-lg flex items-center justify-center opacity-50 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300 delay-100">
+                    <div class="flex gap-[2px]">
+                        <span class="w-1 h-1 bg-white rounded-full animate-bounce" style="animation-delay: 0ms"></span>
+                        <span class="w-1 h-1 bg-white rounded-full animate-bounce" style="animation-delay: 150ms"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-red-500/50 dark:hover:border-red-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/5 hover:-translate-y-1 flex flex-col">
+        <div class="w-14 h-14 rounded-2xl bg-red-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-red-600 dark:text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">رعاية وصيانة</h3>
+        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4 flex-grow">
+            خصومات حصرية تصل لـ 30% على الزيوت والإطارات في مراكز معتمدة.
+        </p>
+
+        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-400">فحص دوري</span>
+            <div class="relative w-8 h-8 flex items-center justify-center">
+                 <svg class="w-6 h-6 text-slate-300 group-hover:text-red-500 transition-colors duration-300 group-hover:animate-[spin_3s_linear_infinite]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+        </div>
+    </div>
+
+     <div class="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-yellow-500/50 dark:hover:border-yellow-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-yellow-500/5 hover:-translate-y-1 flex flex-col">
+        <div class="w-14 h-14 rounded-2xl bg-yellow-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-yellow-600 dark:text-yellow-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a1 1 0 0 1 0-5H6"/><path d="M18 9h1.5a1 1 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978"/><path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978"/><path d="M12 2a5 5 0 0 0-5 5v7a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5z"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">مكافآت وبونص</h3>
+        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4 flex-grow">
+            نظام مكافآت شهري للكباتن المتميزين وسحوبات قيمة.
+        </p>
+
+        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-400">نقاط الولاء</span>
+            <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-yellow-600 dark:text-yellow-400">+500 pt</span>
+                <div class="relative">
+                    <svg class="w-5 h-5 text-yellow-500 fill-yellow-500 group-hover:scale-125 transition-transform duration-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <div class="absolute -top-1 -right-1 w-1 h-1 bg-white rounded-full animate-ping opacity-0 group-hover:opacity-100"></div>
+                    <div class="absolute -bottom-1 -left-1 w-1 h-1 bg-white rounded-full animate-ping delay-100 opacity-0 group-hover:opacity-100"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section> 
 
     <!-- Why Us Section -->
     <section id="whyus" class="py-24 bg-slate-900 text-white relative overflow-hidden">
@@ -977,84 +1239,318 @@
                 <p class="text-slate-400 text-lg max-w-2xl mx-auto">لأننا نقدم لك أكثر من مجرد فرصة عمل، نحن نبني معك مستقبلاً مستداماً.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Card 1 -->
-                <div class="group relative bg-white/5 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition-all duration-500 overflow-hidden hover:-translate-y-2">
-                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-brand-500/20 rounded-full blur-2xl group-hover:bg-brand-500/30 transition-all"></div>
-                    <div class="relative z-10">
-                        <div class="w-14 h-14 bg-brand-500/20 rounded-2xl flex items-center justify-center text-brand-500 mb-6 group-hover:scale-110 transition-transform">
-                            <i data-lucide="wallet" class="w-7 h-7"></i>
-                        </div>
-                        <h4 class="text-xl font-bold mb-3">شفافية مالية</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">نظامنا المالي واضح وشفاف 100%. بدون أي رسوم خفية أو خصومات غير مبررة.</p>
-                    </div>
-                </div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-                <!-- Card 2 -->
-                <div class="group relative bg-white/5 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition-all duration-500 overflow-hidden hover:-translate-y-2">
-                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-blue-500/20 rounded-full blur-2xl group-hover:bg-blue-500/30 transition-all"></div>
-                    <div class="relative z-10">
-                        <div class="w-14 h-14 bg-blue-500/20 rounded-2xl flex items-center justify-center text-blue-500 mb-6 group-hover:scale-110 transition-transform">
-                            <i data-lucide="layout-grid" class="w-7 h-7"></i>
-                        </div>
-                        <h4 class="text-xl font-bold mb-3">تغطية شاملة</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">نعمل مع جميع تطبيقات النقل الذكي الكبرى (Uber, Careem, inDrive, DiDi) لزيادة فرصك.</p>
-                    </div>
-                </div>
+    <div class="group relative bg-white/5 backdrop-blur-md p-6 pt-8 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition-all duration-500 overflow-hidden hover:-translate-y-2 flex flex-col">
+        <div class="absolute -right-4 -top-4 w-24 h-24 bg-brand-500/20 rounded-full blur-2xl group-hover:bg-brand-500/30 transition-all"></div>
+        
+        <div class="relative z-10 mb-6">
+            <div class="w-14 h-14 bg-brand-500/20 rounded-2xl flex items-center justify-center text-brand-500 mb-6 group-hover:scale-110 transition-transform">
+                <i data-lucide="wallet" class="w-7 h-7"></i>
+            </div>
+            <h4 class="text-xl font-bold mb-3 text-white">شفافية مالية</h4>
+            <p class="text-slate-400 text-sm leading-relaxed">نظامنا المالي واضح وشفاف 100%. بدون أي رسوم خفية أو خصومات غير مبررة.</p>
+        </div>
 
-                <!-- Card 3 -->
-                <div class="group relative bg-white/5 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition-all duration-500 overflow-hidden hover:-translate-y-2">
-                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-purple-500/20 rounded-full blur-2xl group-hover:bg-purple-500/30 transition-all"></div>
-                    <div class="relative z-10">
-                        <div class="w-14 h-14 bg-purple-500/20 rounded-2xl flex items-center justify-center text-purple-500 mb-6 group-hover:scale-110 transition-transform">
-                            <i data-lucide="smartphone" class="w-7 h-7"></i>
-                        </div>
-                        <h4 class="text-xl font-bold mb-3">تطبيق ذكي</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">تطبيق خاص للكباتن لمتابعة الأرباح، الرحلات، والتواصل مع الدعم الفني لحظياً.</p>
-                    </div>
+        <div class="mt-auto pt-6 border-t border-white/5 relative h-24 overflow-hidden rounded-xl bg-black/20">
+            <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#fbbf24 1px, transparent 1px); background-size: 10px 10px;"></div>
+            
+            <div class="absolute left-1/2 -translate-x-1/2 w-3/4 bg-slate-100 rounded-t-lg shadow-lg p-3 transition-transform duration-700 ease-out translate-y-full group-hover:translate-y-2">
+                <div class="w-8 h-1 bg-slate-300 rounded-full mx-auto mb-3"></div>
+                <div class="flex justify-between items-center text-[10px] text-slate-500 mb-1">
+                    <span>إجمالي الرحلة</span>
+                    <span class="font-bold text-slate-800">50.00</span>
                 </div>
-
-                <!-- Card 4 -->
-                <div class="group relative bg-white/5 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition-all duration-500 overflow-hidden hover:-translate-y-2">
-                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-green-500/20 rounded-full blur-2xl group-hover:bg-green-500/30 transition-all"></div>
-                    <div class="relative z-10">
-                        <div class="w-14 h-14 bg-green-500/20 rounded-2xl flex items-center justify-center text-green-500 mb-6 group-hover:scale-110 transition-transform">
-                            <i data-lucide="shield-check" class="w-7 h-7"></i>
-                        </div>
-                        <h4 class="text-xl font-bold mb-3">أمان وظيفي</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">كيان قانوني مسجل يضمن حقوقك، ويوفر لك مظلة حماية اجتماعية وقانونية.</p>
-                    </div>
+                <div class="flex justify-between items-center text-[10px] text-slate-500 mb-1">
+                    <span>العمولة</span>
+                    <span class="font-bold text-red-500">-0.00</span>
+                </div>
+                <div class="w-full border-b border-dashed border-slate-300 my-2"></div>
+                <div class="flex justify-between items-center text-xs font-bold text-brand-600">
+                    <span>صافي ربحك</span>
+                    <span>50.00</span>
+                </div>
+                <div class="absolute -top-2 -right-2 bg-green-500 text-white rounded-full p-0.5 scale-0 group-hover:scale-100 transition-transform delay-300 duration-300">
+                    <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><path d="M20 6L9 17l-5-5"/></svg>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="group relative bg-white/5 backdrop-blur-md p-6 pt-8 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition-all duration-500 overflow-hidden hover:-translate-y-2 flex flex-col">
+        <div class="absolute -right-4 -top-4 w-24 h-24 bg-blue-500/20 rounded-full blur-2xl group-hover:bg-blue-500/30 transition-all"></div>
+        
+        <div class="relative z-10 mb-6">
+            <div class="w-14 h-14 bg-blue-500/20 rounded-2xl flex items-center justify-center text-blue-500 mb-6 group-hover:scale-110 transition-transform">
+                <i data-lucide="layout-grid" class="w-7 h-7"></i>
+            </div>
+            <h4 class="text-xl font-bold mb-3 text-white">تغطية شاملة</h4>
+            <p class="text-slate-400 text-sm leading-relaxed">نعمل مع جميع تطبيقات النقل الذكي الكبرى لزيادة فرصك في كل مكان.</p>
+        </div>
+
+        <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-center relative h-24">
+            <div class="absolute w-20 h-20 border border-blue-500/20 rounded-full animate-[ping_3s_linear_infinite]"></div>
+            <div class="absolute w-14 h-14 border border-blue-500/40 rounded-full"></div>
+            
+            <div class="relative z-10 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+
+            <div class="absolute w-full h-full animate-[spin_10s_linear_infinite] group-hover:animate-[spin_4s_linear_infinite] transition-[animation-duration]">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -mt-1 w-3 h-3 bg-white rounded-full shadow-lg"></div>
+                <div class="absolute bottom-2 right-4 w-2 h-2 bg-white/50 rounded-full"></div>
+                <div class="absolute bottom-2 left-4 w-2 h-2 bg-white/50 rounded-full"></div>
+            </div>
+            
+            <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <line x1="50%" y1="50%" x2="50%" y2="10%" stroke="rgba(59,130,246,0.3)" stroke-width="1" />
+                <line x1="50%" y1="50%" x2="80%" y2="80%" stroke="rgba(59,130,246,0.3)" stroke-width="1" />
+                <line x1="50%" y1="50%" x2="20%" y2="80%" stroke="rgba(59,130,246,0.3)" stroke-width="1" />
+            </svg>
+        </div>
+    </div>
+
+    <div class="group relative bg-white/5 backdrop-blur-md p-6 pt-8 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition-all duration-500 overflow-hidden hover:-translate-y-2 flex flex-col">
+        <div class="absolute -right-4 -top-4 w-24 h-24 bg-purple-500/20 rounded-full blur-2xl group-hover:bg-purple-500/30 transition-all"></div>
+        
+        <div class="relative z-10 mb-6">
+            <div class="w-14 h-14 bg-purple-500/20 rounded-2xl flex items-center justify-center text-purple-500 mb-6 group-hover:scale-110 transition-transform">
+                <i data-lucide="smartphone" class="w-7 h-7"></i>
+            </div>
+            <h4 class="text-xl font-bold mb-3 text-white">تطبيق ذكي</h4>
+            <p class="text-slate-400 text-sm leading-relaxed">تطبيق خاص للكباتن لمتابعة الأرباح، الرحلات، والتواصل مع الدعم الفني.</p>
+        </div>
+
+        <div class="mt-auto pt-6 border-t border-white/5 flex justify-center relative h-24 items-end">
+            <div class="w-24 h-20 bg-slate-900 border border-slate-700 rounded-t-2xl relative overflow-hidden mx-auto shadow-2xl translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                <div class="absolute inset-0 bg-slate-800 flex flex-col items-center pt-4">
+                    <div class="w-8 h-1 bg-slate-700 rounded-full mb-3"></div>
+                    
+                    <div class="w-20 bg-purple-600 rounded-lg p-1.5 shadow-lg transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100 flex items-center gap-2">
+                        <div class="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
+                            <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-[8px] text-white font-bold leading-none mb-0.5">طلب جديد</span>
+                            <span class="text-[6px] text-purple-200 leading-none">يبعد 2 كم</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="group relative bg-white/5 backdrop-blur-md p-6 pt-8 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition-all duration-500 overflow-hidden hover:-translate-y-2 flex flex-col">
+        <div class="absolute -right-4 -top-4 w-24 h-24 bg-green-500/20 rounded-full blur-2xl group-hover:bg-green-500/30 transition-all"></div>
+        
+        <div class="relative z-10 mb-6">
+            <div class="w-14 h-14 bg-green-500/20 rounded-2xl flex items-center justify-center text-green-500 mb-6 group-hover:scale-110 transition-transform">
+                <i data-lucide="shield-check" class="w-7 h-7"></i>
+            </div>
+            <h4 class="text-xl font-bold mb-3 text-white">أمان وظيفي</h4>
+            <p class="text-slate-400 text-sm leading-relaxed">كيان قانوني مسجل يضمن حقوقك، ويوفر لك مظلة حماية اجتماعية.</p>
+        </div>
+
+        <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-center relative h-24">
+            <div class="relative w-16 h-16 flex items-center justify-center">
+                <div class="absolute inset-0 bg-green-500/20 rounded-full blur-xl scale-50 group-hover:scale-100 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+                
+                <svg class="w-12 h-12 text-green-500 relative z-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" 
+                          class="opacity-30 group-hover:opacity-100 transition-opacity duration-300"/>
+                    <path d="M9 12l2 2 4-4" 
+                          class="origin-center scale-0 group-hover:scale-100 transition-transform duration-500 delay-300 stroke-[3px]" />
+                </svg>
+                
+                <div class="absolute top-0 right-2 w-1 h-1 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-700 delay-100"></div>
+                <div class="absolute bottom-2 left-2 w-1.5 h-1.5 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-700 delay-200"></div>
+            </div>
+            
+            <div class="absolute bottom-0 text-[10px] font-mono text-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-500">
+                VERIFIED
+            </div>
+        </div>
+    </div>
+
+</div>
         </div>
     </section>
 
     <!-- Earnings Calculator Section -->
-    <section id="calculator" class="py-24 bg-white dark:bg-dark-bg border-y border-slate-100 dark:border-slate-800 relative overflow-hidden">
-        <div class="absolute inset-0 bg-brand-500/5 dark:bg-brand-500/10 z-0"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <div class="glass rounded-[3rem] p-10 md:p-16 text-center border border-white/50 dark:border-white/10 shadow-2xl reveal-hidden">
-                <h2 class="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">حاسبة الأرباح المتوقعة</h2>
-                <p class="text-slate-500 dark:text-slate-400 mb-12">حرك المؤشر لتعرف كم يمكنك أن تجني معنا شهرياً</p>
-                <div class="mb-12">
-                    <div class="flex justify-between text-sm font-bold text-slate-500 mb-4 px-2"><span>4 ساعات</span><span>8 ساعات</span><span>12 ساعة</span></div>
-                    <input type="range" min="4" max="12" value="8" step="1" id="hoursRange" class="w-full appearance-none h-4 bg-slate-200 dark:bg-slate-700 rounded-full outline-none opacity-90 transition hover:opacity-100" oninput="updateEarnings()">
-                    <p class="mt-4 font-bold text-brand-600 dark:text-brand-400"><span id="hoursVal">8</span> ساعات عمل يومياً</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div class="spotlight-card p-6 rounded-3xl border border-slate-100 dark:border-slate-800">
-                        <p class="text-slate-500 text-sm font-bold mb-2 relative z-10">الدخل اليومي المتوقع</p>
-                        <p class="text-4xl font-black text-slate-900 dark:text-white relative z-10"><span id="dailyEarn" class="count-up" data-target="800">0</span> <span class="text-base text-slate-400">ج.م</span></p>
+<section id="calculator" class="py-24 bg-slate-50 dark:bg-[#0B1120] relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-brand-500/10 blur-[120px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-500/10 blur-[120px] rounded-full pointer-events-none translate-x-1/2 translate-y-1/2"></div>
+
+    <div class="max-w-6xl mx-auto px-4 relative z-10">
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white dark:bg-slate-800 shadow-lg mb-6 text-brand-500">
+                <i data-lucide="calculator" class="w-8 h-8"></i>
+            </div>
+            <h2 class="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">احسب <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-purple-600">أرباحك المتوقعة</span></h2>
+            <p class="text-slate-500 dark:text-slate-400 text-lg max-w-2xl mx-auto flex items-center justify-center gap-2">
+                <i data-lucide="trending-up" class="w-4 h-4"></i>
+                أدخل تفاصيل عملك ونوع سيارتك لنعطيك تقديراً دقيقاً
+            </p>
+        </div>
+
+        <div class="glass-panel bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl rounded-[3rem] border border-white/20 dark:border-slate-700 shadow-2xl overflow-hidden flex flex-col lg:flex-row">
+            
+            <div class="lg:w-1/2 p-8 md:p-12 border-b lg:border-b-0 lg:border-l border-slate-200 dark:border-slate-800">
+                
+                <div class="mb-10">
+                    <label class="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white mb-4">
+                        <i data-lucide="car" class="w-4 h-4 text-brand-500"></i>
+                        نوع السيارة
+                    </label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <button onclick="setCarType('eco', this)" class="car-btn active group relative p-4 rounded-2xl border-2 border-brand-500 bg-brand-500/5 transition-all duration-300">
+                            <div class="text-center flex flex-col items-center">
+                                <i data-lucide="car-front" class="w-6 h-6 mb-2 text-brand-600 dark:text-brand-400 transition-colors"></i>
+                                <span class="text-xs font-bold text-slate-700 dark:text-slate-300">اقتصادي</span>
+                            </div>
+                        </button>
+                        <button onclick="setCarType('comfort', this)" class="car-btn group relative p-4 rounded-2xl border-2 border-transparent bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all duration-300">
+                            <div class="text-center flex flex-col items-center">
+                                <i data-lucide="armchair" class="w-6 h-6 mb-2 text-slate-500 group-hover:text-brand-500 transition-colors"></i>
+                                <span class="text-xs font-bold text-slate-500 group-hover:text-slate-900 dark:group-hover:text-white">مريح</span>
+                            </div>
+                        </button>
+                        <button onclick="setCarType('van', this)" class="car-btn group relative p-4 rounded-2xl border-2 border-transparent bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all duration-300">
+                            <div class="text-center flex flex-col items-center">
+                                <i data-lucide="bus" class="w-6 h-6 mb-2 text-slate-500 group-hover:text-brand-500 transition-colors"></i>
+                                <span class="text-xs font-bold text-slate-500 group-hover:text-slate-900 dark:group-hover:text-white">عائلي</span>
+                            </div>
+                        </button>
                     </div>
-                    <div class="bg-brand-600 p-6 rounded-3xl text-white shadow-xl shadow-brand-500/30 transform scale-105">
-                        <p class="text-white/80 text-sm font-bold mb-2">الدخل الشهري المتوقع</p>
-                        <p class="text-5xl font-black"><span id="monthlyEarn" class="count-up" data-target="24000">0</span> <span class="text-xl">ج.م</span></p>
+                </div>
+
+                <div class="mb-10">
+                    <div class="flex justify-between items-center mb-4">
+                        <label class="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white">
+                            <i data-lucide="clock" class="w-4 h-4 text-brand-500"></i>
+                            ساعات العمل يومياً
+                        </label>
+                        <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-400 text-sm font-bold">
+                            <i data-lucide="timer" class="w-3.5 h-3.5"></i>
+                            <span id="hoursDisplay">8</span> ساعات
+                        </div>
+                    </div>
+                    <div class="relative h-2 bg-slate-200 dark:bg-slate-700 rounded-full group">
+                        <div id="hoursProgress" class="absolute top-0 right-0 h-full bg-gradient-to-l from-brand-500 to-purple-600 rounded-full w-2/3 pointer-events-none"></div>
+                        <input type="range" min="2" max="14" value="8" step="1" id="hoursInput" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" oninput="updateCalculator()">
+                        <div id="hoursThumb" class="absolute top-1/2 -translate-y-1/2 w-8 h-8 bg-white border-2 border-brand-500 rounded-full shadow-lg pointer-events-none transition-all duration-75 right-[66%] flex items-center justify-center text-brand-500">
+                            <i data-lucide="grip-horizontal" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                    <div class="flex justify-between text-[10px] text-slate-400 mt-3 font-medium px-1">
+                        <span class="flex items-center gap-1"><i data-lucide="sun" class="w-3 h-3"></i> 2 س</span>
+                        <span class="flex items-center gap-1">14 س <i data-lucide="moon" class="w-3 h-3"></i></span>
                     </div>
                 </div>
-                <p class="text-xs text-slate-400 mt-8">* هذه الأرقام تقديرية وتعتمد على نوع السيارة، المنطقة، وتقييم الكابتن.</p>
+
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <label class="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white">
+                            <i data-lucide="calendar-days" class="w-4 h-4 text-purple-500"></i>
+                            أيام العمل شهرياً
+                        </label>
+                        <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 text-sm font-bold">
+                            <i data-lucide="calendar-check" class="w-3.5 h-3.5"></i>
+                            <span id="daysDisplay">26</span> يوم
+                        </div>
+                    </div>
+                    <div class="relative h-2 bg-slate-200 dark:bg-slate-700 rounded-full group">
+                        <div id="daysProgress" class="absolute top-0 right-0 h-full bg-gradient-to-l from-purple-500 to-blue-600 rounded-full w-[86%] pointer-events-none"></div>
+                        <input type="range" min="10" max="30" value="26" step="1" id="daysInput" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" oninput="updateCalculator()">
+                        <div id="daysThumb" class="absolute top-1/2 -translate-y-1/2 w-8 h-8 bg-white border-2 border-purple-500 rounded-full shadow-lg pointer-events-none transition-all duration-75 right-[86%] flex items-center justify-center text-purple-500">
+                            <i data-lucide="grip-horizontal" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                    <div class="flex justify-between text-[10px] text-slate-400 mt-3 font-medium px-1">
+                        <span class="flex items-center gap-1"><i data-lucide="battery-low" class="w-3 h-3"></i> 10 أيام</span>
+                        <span class="flex items-center gap-1">30 يوم <i data-lucide="battery-full" class="w-3 h-3"></i></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="lg:w-1/2 p-8 md:p-12 bg-slate-50/50 dark:bg-black/20 flex flex-col justify-center items-center relative">
+                
+                <div class="relative w-72 h-72 mb-8">
+                    <svg class="w-full h-full -rotate-90 transform" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="6" class="text-slate-200 dark:text-slate-800" />
+                        <circle id="earningCircle" cx="50" cy="50" r="45" fill="none" stroke="url(#gradient)" stroke-width="6" stroke-dasharray="283" stroke-dashoffset="100" stroke-linecap="round" class="transition-[stroke-dashoffset] duration-700 ease-out" />
+                        
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#8B5CF6" />
+                                <stop offset="100%" stop-color="#EC4899" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                    <div class="absolute inset-0 flex flex-col items-center justify-center">
+                        <div class="w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center text-purple-500 mb-2">
+                            <i data-lucide="wallet-cards" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-sm text-slate-500 dark:text-slate-400 font-bold mb-1">صافي الدخل الشهري</span>
+                        <div class="flex items-baseline gap-1">
+                            <span id="monthlyResult" class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight">0</span>
+                            <span class="text-sm font-bold text-slate-400">ج.م</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full grid grid-cols-2 gap-4">
+                    <div class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col items-center text-center group hover:border-brand-500/50 transition-colors">
+                        <div class="w-8 h-8 rounded-full bg-brand-50 dark:bg-brand-500/10 flex items-center justify-center text-brand-600 dark:text-brand-400 mb-2">
+                            <i data-lucide="banknote" class="w-4 h-4"></i>
+                        </div>
+                        <div class="text-xs text-slate-500 mb-1">اليومية المتوقعة</div>
+                        <div class="text-lg font-bold text-brand-600 dark:text-brand-400 flex items-center gap-1">
+                            <span id="dailyResult">0</span> 
+                            <span class="text-xs">ج.م</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col items-center text-center group hover:border-purple-500/50 transition-colors">
+                        <div class="w-8 h-8 rounded-full bg-purple-50 dark:bg-purple-500/10 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-2">
+                            <i data-lucide="gift" class="w-4 h-4"></i>
+                        </div>
+                        <div class="text-xs text-slate-500 mb-1">بونص وحوافز</div>
+                        <div class="text-lg font-bold text-purple-600 dark:text-purple-400 flex items-center gap-1">
+                            <span>+15%</span>
+                            <i data-lucide="trending-up" class="w-3 h-3"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg">
+                    <i data-lucide="info" class="w-4 h-4 text-slate-400 flex-shrink-0"></i>
+                    <p class="text-[10px] text-slate-400 text-center leading-relaxed">
+                        الأرباح تقديرية وتعتمد على ساعات الذروة وتقييم العملاء.
+                    </p>
+                </div>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+    /* Add smooth transitions to transforms */
+    .car-btn.active {
+        @apply border-brand-500 bg-brand-500/10;
+    }
+    .car-btn.active svg {
+        @apply text-brand-600 dark:text-brand-400;
+    }
+    .car-btn.active span {
+        @apply text-slate-900 dark:text-white;
+    }
+</style>
+
 
     <!-- NEW SECTION: Check Car Compatibility (Redesigned) -->
     <section id="check-car" class="py-32 relative overflow-hidden bg-slate-900 border-y border-white/5">
@@ -1329,69 +1825,150 @@
     </section>
 
     <!-- NEW SECTION: Status Check (Updated Design) -->
-    <section id="status-check" class="py-32 relative overflow-hidden bg-slate-50 dark:bg-slate-950 transition-colors duration-500">
-        <!-- Dynamic Background Elements -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <!-- Glowing Orbs -->
-            <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-[100px] animate-pulse-glow mix-blend-multiply dark:mix-blend-screen"></div>
-            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] animate-pulse-glow mix-blend-multiply dark:mix-blend-screen" style="animation-delay: 2s"></div>
-            
-            <!-- Floating 3D-like Icons -->
-            <i data-lucide="search" class="absolute top-20 left-10 text-slate-300 dark:text-slate-800 w-16 h-16 animate-float-slow opacity-60 rotate-12"></i>
-            <i data-lucide="file-search" class="absolute bottom-20 right-10 text-slate-300 dark:text-slate-800 w-24 h-24 animate-float-medium opacity-60 -rotate-12" style="animation-delay: 1s"></i>
-            <i data-lucide="check-circle-2" class="absolute top-40 right-20 text-brand-500/20 w-12 h-12 animate-float-fast opacity-60 rotate-45"></i>
-            
-            <!-- Grid Pattern Overlay -->
-            <div class="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05]"></div>
-        </div>
+    <section id="status-check" class="relative py-32 overflow-hidden bg-slate-50 dark:bg-[#0B1120]">
     
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <!-- Main Card -->
-            <div class="glass-card relative overflow-hidden rounded-[3rem] border border-white/50 dark:border-slate-700/50 shadow-2xl backdrop-blur-xl bg-white/60 dark:bg-slate-900/60 p-8 md:p-16 text-center group transition-all duration-500 hover:shadow-brand-500/10">
-                
-                <!-- Badge -->
-                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-50 dark:bg-brand-900/20 text-brand-600 dark:text-brand-400 text-sm font-bold mb-8 border border-brand-100 dark:border-brand-800/30 shadow-sm">
-                    <span class="relative flex h-2 w-2">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
-                    </span>
-                    خدمة ذاتية فورية
-                </div>
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-0 right-1/4 w-[800px] h-[800px] bg-brand-500/5 rounded-full blur-[120px] animate-pulse-slow mix-blend-multiply dark:mix-blend-screen"></div>
+        <div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[100px] animate-pulse-slow mix-blend-multiply dark:mix-blend-screen" style="animation-delay: 2s"></div>
+        
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
-                <h2 class="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
-                    تابع حالة <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-400">طلبك</span>
-                </h2>
-                
-                <p class="text-slate-600 dark:text-slate-300 text-lg mb-12 max-w-xl mx-auto leading-relaxed">
-                    هل قمت بالتسجيل معنا؟ أدخل رقمك القومي لمعرفة حالة طلبك الحالية (قبول، مراجعة، أو رفض) في ثوانٍ.
-                </p>
-
-                <!-- Input Area -->
-                <div class="max-w-lg mx-auto relative group/input">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-purple-600 rounded-3xl blur opacity-20 group-hover/input:opacity-40 transition duration-500"></div>
-                    <div class="relative flex flex-col sm:flex-row gap-3 bg-white dark:bg-slate-950 p-2 rounded-3xl shadow-lg border border-slate-100 dark:border-slate-800">
-                        <div class="relative flex-1">
-                            <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-400">
-                                <i data-lucide="credit-card" class="w-5 h-5"></i>
-                            </div>
-                            <input type="text" id="statusNationalId" placeholder="الرقم القومي (14 رقم)" maxlength="14" 
-                                class="w-full h-14 pr-12 pl-4 rounded-2xl bg-transparent border-none focus:ring-0 text-lg font-bold text-slate-900 dark:text-white placeholder:text-slate-400/80 placeholder:font-normal text-right">
-                        </div>
-                        <button onclick="checkApplicationStatus()" 
-                            class="h-14 px-8 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl font-black hover:scale-[1.02] active:scale-95 transition-all shadow-xl flex items-center justify-center gap-2 whitespace-nowrap overflow-hidden relative">
-                            <span class="relative z-10">بحث</span>
-                            <i data-lucide="search" class="w-5 h-5 relative z-10"></i>
-                            <div class="absolute inset-0 bg-gradient-to-r from-brand-600 to-brand-500 opacity-0 hover:opacity-10 dark:hover:opacity-20 transition-opacity"></div>
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Result Area (Hidden by default) -->
-                <div id="statusResult" class="hidden mt-10 transition-all duration-700 ease-out transform translate-y-4 opacity-0"></div>
-
+        <i data-lucide="database" class="absolute top-20 right-10 text-slate-300 dark:text-slate-800 w-24 h-24 animate-float-slow rotate-12 opacity-50"></i>
+        <i data-lucide="file-search" class="absolute bottom-40 left-10 text-brand-200 dark:text-brand-900 w-32 h-32 animate-float-medium -rotate-12 opacity-30"></i>
+        <i data-lucide="shield-check" class="absolute top-1/2 right-[10%] text-purple-200 dark:text-purple-900 w-16 h-16 animate-float-fast blur-[2px] opacity-40"></i>
+        
+        <div class="absolute top-32 left-20 px-3 py-1 rounded-full bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 backdrop-blur-sm animate-float-slow shadow-lg" style="animation-delay: 1s;">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400">System Online</span>
             </div>
         </div>
-    </section>
+        <div class="absolute bottom-32 right-32 px-3 py-1 rounded-full bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 backdrop-blur-sm animate-float-slow shadow-lg" style="animation-delay: 2.5s;">
+            <div class="flex items-center gap-2">
+                <i data-lucide="lock" class="w-3 h-3 text-brand-500"></i>
+                <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400">Encrypted 256-bit</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            
+            <div class="relative order-2 lg:order-1">
+                <div class="relative z-10">
+                    <div class="mb-10 text-center lg:text-right">
+                         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-400 text-xs font-bold mb-6 border border-brand-500/20">
+                            <i data-lucide="radio" class="w-4 h-4 animate-pulse"></i>
+                            خدمة ذاتية فورية
+                        </div>
+                        <h2 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 leading-tight">
+                            تابع حالة <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-l from-brand-600 to-purple-600">طلبك لحظة بلحظة</span>
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
+                            أدخل الرقم القومي للتحقق من حالة قبول طلبك في قاعدة البيانات. النظام متصل مباشرة بقسم الموارد البشرية.
+                        </p>
+                    </div>
+
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-purple-600 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                        
+                        <div class="relative bg-white dark:bg-slate-950 p-3 rounded-[2rem] shadow-2xl border border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row gap-2">
+                            
+                            <div class="relative flex-1">
+                                <div class="absolute inset-y-0 right-5 flex items-center pointer-events-none">
+                                    <i data-lucide="scan-line" class="w-6 h-6 text-slate-400 group-focus-within:text-brand-500 transition-colors"></i>
+                                </div>
+                                <input type="text" id="statusNationalId" placeholder="أدخل الرقم القومي (14 رقم)" maxlength="14" 
+                                    class="w-full h-16 pr-14 pl-4 rounded-[1.5rem] bg-slate-50 dark:bg-slate-900/50 border-2 border-transparent focus:border-brand-500/20 focus:bg-white dark:focus:bg-slate-900 focus:ring-0 text-lg font-bold text-slate-900 dark:text-white placeholder:text-slate-400/70 transition-all text-right outline-none">
+                                <div class="absolute inset-y-0 left-4 flex items-center">
+                                    <span class="text-[10px] bg-slate-200 dark:bg-slate-800 text-slate-500 px-2 py-1 rounded-md font-mono hidden sm:block">NAT-ID</span>
+                                </div>
+                            </div>
+
+                            <button onclick="checkApplicationStatus()" class="h-16 px-8 rounded-[1.5rem] bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-black text-lg hover:scale-[1.02] active:scale-95 transition-all shadow-xl flex items-center justify-center gap-3 overflow-hidden relative group/btn">
+                                <span class="relative z-10">فحص</span>
+                                <i data-lucide="arrow-left" class="w-5 h-5 relative z-10 group-hover/btn:-translate-x-1 transition-transform"></i>
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]"></div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="statusResult" class="mt-8"></div>
+                </div>
+            </div>
+
+            <div class="order-1 lg:order-2 relative hidden lg:block">
+                <div class="relative w-full aspect-square flex items-center justify-center">
+                    
+                    <div class="absolute w-[90%] h-[90%] border border-dashed border-slate-300 dark:border-slate-700 rounded-full animate-[spin_60s_linear_infinite]"></div>
+                    <div class="absolute w-[60%] h-[60%] border border-brand-500/20 rounded-full animate-[spin_40s_linear_infinite_reverse]"></div>
+
+                    <div class="relative z-20 w-32 h-32 rounded-3xl bg-white dark:bg-slate-900 shadow-2xl shadow-brand-500/20 flex flex-col items-center justify-center border border-slate-100 dark:border-slate-800 animate-float-slow">
+                        <div class="w-12 h-12 bg-brand-500/10 rounded-xl flex items-center justify-center mb-2 text-brand-600 dark:text-brand-400">
+                            <i data-lucide="server" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-xs font-bold text-slate-500">Processing</span>
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-500/10 to-transparent h-[50%] w-full animate-[scan_3s_linear_infinite] pointer-events-none rounded-3xl"></div>
+                    </div>
+
+                    <div class="absolute top-[10%] left-[10%] bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 w-40 animate-float-medium">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500"><i data-lucide="text-cursor-input" class="w-4 h-4"></i></div>
+                            <span class="text-xs font-bold">1. البيانات</span>
+                        </div>
+                        <div class="h-1.5 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500 w-full animate-[loading_2s_ease-in-out_infinite]"></div>
+                        </div>
+                    </div>
+
+                    <div class="absolute top-[40%] right-[-5%] bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 w-40 animate-float-slow" style="animation-delay: 1s;">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-500"><i data-lucide="fingerprint" class="w-4 h-4"></i></div>
+                            <span class="text-xs font-bold">2. التحقق</span>
+                        </div>
+                        <div class="flex gap-1">
+                            <span class="w-1 h-1 rounded-full bg-purple-500 animate-bounce"></span>
+                            <span class="w-1 h-1 rounded-full bg-purple-500 animate-bounce delay-100"></span>
+                            <span class="w-1 h-1 rounded-full bg-purple-500 animate-bounce delay-200"></span>
+                        </div>
+                    </div>
+
+                    <div class="absolute bottom-[10%] left-[20%] bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 w-40 animate-float-fast" style="animation-delay: 0.5s;">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center text-green-500"><i data-lucide="check-circle" class="w-4 h-4"></i></div>
+                            <span class="text-xs font-bold">3. النتيجة</span>
+                        </div>
+                         <div class="text-[10px] bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full w-fit">Approved</div>
+                    </div>
+
+                    <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-30">
+                        <path d="M100 100 Q 200 200 300 300" stroke="currentColor" fill="none" class="text-slate-400" stroke-dasharray="5,5" />
+                    </svg>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    @keyframes scan {
+        0% { transform: translateY(-150%); opacity: 0; }
+        50% { opacity: 1; }
+        100% { transform: translateY(150%); opacity: 0; }
+    }
+    @keyframes loading {
+        0% { width: 0%; opacity: 1; }
+        50% { width: 100%; opacity: 1; }
+        100% { width: 100%; opacity: 0; }
+    }
+    @keyframes shimmer {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+</style>
 <section id="testimonials" class="py-24 relative overflow-hidden bg-white dark:bg-dark-bg border-t border-slate-100 dark:border-slate-800">
         <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-500/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
         <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
@@ -2195,7 +2772,7 @@
                 setTimeout(() => this.tick(), delta);
             }
         }
-        document.addEventListener('DOMContentLoaded', () => { const elements = document.getElementsByClassName('type-text'); const toRotate = ["أرباح حقيقية", "حرية مالية", "مستقبل أفضل", "دخل إضافي"]; for (let i = 0; i < elements.length; i++) { new TypeWriter(elements[i], toRotate, 2000); } 
+        document.addEventListener('DOMContentLoaded', () => { const elements = document.getElementsByClassName('type-text'); const toRotate = ["أرباح حقيقية", "حرية مالية", "مستقبل أفضل", "دخل إضافي"]; for (let i = 0; i < elements.length; i++) { new TypeWriter(elements[i], toRotate, 2000);updateCalculator();} 
         // Icons Gen
         const iconsContainer = document.getElementById('bg-icons-container'); const icons = ['car', 'map-pin', 'navigation', 'zap', 'shield-check', 'wallet', 'star', 'users', 'globe']; 
         if(iconsContainer) {
@@ -2204,14 +2781,96 @@
         lucide.createIcons();
         });
         
-        // --- Calculator & Reveal Logic (Preserved) ---
-        function updateEarnings() {
-            const hours = document.getElementById('hoursRange').value;
-            const daily = hours * 100; const monthly = daily * 26;
-            document.getElementById('hoursVal').innerText = hours;
-            const dailyEl = document.getElementById('dailyEarn'); const monthlyEl = document.getElementById('monthlyEarn');
-            dailyEl.innerText = daily.toLocaleString(); monthlyEl.innerText = monthly.toLocaleString();
+ // Configuration Base Rates (Profit per hour)
+    const RATES = {
+        eco: 80,      
+        comfort: 110, 
+        van: 140      
+    };
+
+    let currentCar = 'eco';
+
+    function setCarType(type, btn) {
+        currentCar = type;
+        
+        // Reset styles for all buttons
+        document.querySelectorAll('.car-btn').forEach(b => {
+            b.classList.remove('border-brand-500', 'bg-brand-500/10');
+            b.classList.add('border-transparent', 'bg-slate-100', 'dark:bg-slate-800');
+            
+            const icon = b.querySelector('[data-lucide]');
+            icon.classList.remove('text-brand-600', 'dark:text-brand-400');
+            icon.classList.add('text-slate-500');
+            
+            const text = b.querySelector('span');
+            text.classList.remove('text-slate-900', 'dark:text-white');
+            text.classList.add('text-slate-500');
+        });
+
+        // Activate clicked button
+        btn.classList.remove('border-transparent', 'bg-slate-100', 'dark:bg-slate-800');
+        btn.classList.add('border-brand-500', 'bg-brand-500/10');
+        
+        const activeIcon = btn.querySelector('[data-lucide]');
+        activeIcon.classList.remove('text-slate-500');
+        activeIcon.classList.add('text-brand-600', 'dark:text-brand-400');
+
+        const activeText = btn.querySelector('span');
+        activeText.classList.remove('text-slate-500');
+        activeText.classList.add('text-slate-900', 'dark:text-white');
+
+        updateCalculator();
+    }
+
+    function updateCalculator() {
+        const hours = parseInt(document.getElementById('hoursInput').value);
+        const days = parseInt(document.getElementById('daysInput').value);
+
+        updateSliderVisuals('hours', hours, 2, 14);
+        updateSliderVisuals('days', days, 10, 30);
+
+        const hourlyRate = RATES[currentCar];
+        const dailyIncome = hourlyRate * hours;
+        const monthlyIncome = dailyIncome * days;
+
+        animateValue("dailyResult", dailyIncome);
+        animateValue("monthlyResult", monthlyIncome);
+
+        const maxPossible = 60000; 
+        const percentage = Math.min((monthlyIncome / maxPossible) * 100, 100);
+        const circle = document.getElementById('earningCircle');
+        const radius = circle.r.baseVal.value;
+        const circumference = radius * 2 * Math.PI;
+        const offset = circumference - (percentage / 100) * circumference;
+        
+        circle.style.strokeDashoffset = offset;
+    }
+
+    function updateSliderVisuals(id, val, min, max) {
+        document.getElementById(id + 'Display').innerText = val;
+        const percent = ((val - min) / (max - min)) * 100;
+        document.getElementById(id + 'Progress').style.width = percent + '%';
+        document.getElementById(id + 'Thumb').style.right = percent + '%';
+        document.getElementById(id + 'Thumb').style.transform = `translate(50%, -50%)`;
+    }
+
+    function animateValue(id, end) {
+        const obj = document.getElementById(id);
+        const start = parseInt(obj.innerText.replace(/,/g, '')) || 0;
+        if (start === end) return;
+        const duration = 500;
+        const startTime = performance.now();
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = 1 - (1 - progress) * (1 - progress);
+            const value = Math.floor(start + (end - start) * ease);
+            obj.innerText = value.toLocaleString();
+            if (progress < 1) requestAnimationFrame(update);
         }
+        requestAnimationFrame(update);
+    }
+    
         const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('reveal-visible'); }); }, { threshold: 0.1 });
         document.querySelectorAll('.reveal-hidden').forEach((el) => { observer.observe(el); });
         const cards = document.querySelectorAll('.spotlight-card');
@@ -2342,212 +3001,224 @@
             }, 300);
         }
 
-        // ===============================================
-        //  NEW: Auto Status Check (Persistence Logic)
-        // ===============================================
-        
-        function initStatusCheck() {
-            const savedNID = localStorage.getItem('savedNationalId');
-            if (savedNID) {
-                // Auto-fill input
-                const input = document.getElementById('statusNationalId');
-                if(input) {
-                    input.value = savedNID;
-                    // Trigger check automatically to get LATEST status from server
-                    // Use a small timeout to ensure DOM is ready and look natural
-                    setTimeout(() => checkApplicationStatus(true), 500); 
-                }
-            }
+// ===============================================
+//  UPDATED: Auto Status Check (Persistence Logic)
+// ===============================================
+
+function initStatusCheck() {
+    const savedNID = localStorage.getItem('savedNationalId');
+    if (savedNID) {
+        const input = document.getElementById('statusNationalId');
+        if (input) {
+            input.value = savedNID;
+            // Auto-trigger check with a slight delay for visual effect
+            setTimeout(() => checkApplicationStatus(true), 800);
         }
+    }
+}
 
-        // Updated Function: Accepts 'isAuto' to reduce UI flicker on auto-load
-        async function checkApplicationStatus(isAuto = false) {
-            const nationalIdInput = document.getElementById('statusNationalId');
-            const resultDiv = document.getElementById('statusResult');
-            const nationalId = nationalIdInput.value.trim();
+// ===============================================
+//  UPDATED: Check Application Status Logic
+// ===============================================
 
-            if (nationalId.length !== 14 || isNaN(nationalId)) {
-                if(!isAuto) {
-                    showToast("يرجى إدخال رقم قومي صحيح (14 رقم)", "error");
-                    nationalIdInput.parentElement.parentElement.classList.add('ring-2', 'ring-red-500');
-                    setTimeout(() => nationalIdInput.parentElement.parentElement.classList.remove('ring-2', 'ring-red-500'), 2000);
-                }
-                return;
+async function checkApplicationStatus(isAuto = false) {
+    const nationalIdInput = document.getElementById('statusNationalId');
+    const resultDiv = document.getElementById('statusResult');
+    const nationalId = nationalIdInput.value.trim();
+
+    // 1. Validation
+    if (nationalId.length !== 14 || isNaN(nationalId)) {
+        if (!isAuto) {
+            // Visual Error Shake
+            const inputContainer = nationalIdInput.closest('.group');
+            inputContainer.classList.add('animate-[shake_0.5s_ease-in-out]');
+            setTimeout(() => inputContainer.classList.remove('animate-[shake_0.5s_ease-in-out]'), 500);
+            
+            // Show Toast (Assuming showToast function exists)
+            if (typeof showToast === "function") {
+                showToast("يرجى إدخال رقم قومي صحيح (14 رقم)", "error");
+            } else {
+                alert("يرجى إدخال رقم قومي صحيح (14 رقم)");
+            }
+            nationalIdInput.focus();
+        }
+        return;
+    }
+
+    // 2. Save for later
+    localStorage.setItem('savedNationalId', nationalId);
+
+    // 3. Show Loading State (Premium Skeleton)
+    resultDiv.classList.remove('hidden');
+    resultDiv.innerHTML = `
+        <div class="relative overflow-hidden rounded-[2rem] p-8 bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-xl backdrop-blur-md">
+            <div class="flex items-center gap-6 animate-pulse">
+                <div class="w-20 h-20 bg-slate-200 dark:bg-slate-700 rounded-2xl"></div>
+                <div class="flex-1 space-y-4">
+                    <div class="h-6 bg-slate-200 dark:bg-slate-700 rounded-full w-1/3"></div>
+                    <div class="h-4 bg-slate-200 dark:bg-slate-700 rounded-full w-3/4"></div>
+                    <div class="h-10 bg-slate-200 dark:bg-slate-700 rounded-xl w-full mt-4"></div>
+                </div>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_1.5s_infinite]"></div>
+        </div>
+    `;
+
+    try {
+        // 4. Fetch Data
+        const response = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: JSON.stringify({ action: "check_status", nationalId: nationalId })
+        });
+
+        const data = await response.json();
+        resultDiv.innerHTML = ''; // Clear loader
+
+        // 5. Render Result
+        if (data.result === "success") {
+            
+            // --- Logic Mapping ---
+            let statusStr = (data.status || "").toLowerCase();
+            let detailedStatus = data.detailedStatus || ""; 
+            let agentName = data.csAgent || "";
+
+            // Default Config (Pending)
+            let config = {
+                theme: "yellow",
+                bg: "bg-yellow-50 dark:bg-yellow-900/10",
+                border: "border-yellow-200 dark:border-yellow-700/50",
+                text: "text-yellow-700 dark:text-yellow-400",
+                iconBg: "bg-yellow-100 dark:bg-yellow-900/30",
+                icon: "clock",
+                title: "طلبك قيد المراجعة",
+                desc: "جاري فحص البيانات والمستندات من قبل المختصين."
+            };
+
+            // Status Logic
+            if (statusStr.includes("accept") || statusStr.includes("مقبول") || statusStr.includes("active") || statusStr.includes("نشط") || statusStr.includes("تم")) {
+                config = {
+                    theme: "green",
+                    bg: "bg-green-50 dark:bg-green-900/10",
+                    border: "border-green-200 dark:border-green-700/50",
+                    text: "text-green-700 dark:text-green-400",
+                    iconBg: "bg-green-100 dark:bg-green-900/30",
+                    icon: "check-circle-2",
+                    title: "ألف مبروك! تم القبول",
+                    desc: "تم تفعيل حسابك بنجاح. يمكنك الآن بدء العمل."
+                };
+            } 
+            else if (statusStr.includes("reject") || statusStr.includes("مرفوض") || statusStr.includes("block")) {
+                config = {
+                    theme: "red",
+                    bg: "bg-red-50 dark:bg-red-900/10",
+                    border: "border-red-200 dark:border-red-700/50",
+                    text: "text-red-700 dark:text-red-400",
+                    iconBg: "bg-red-100 dark:bg-red-900/30",
+                    icon: "x-circle",
+                    title: "نعتذر، الطلب مرفوض",
+                    desc: "يرجى التواصل مع خدمة العملاء لمعرفة الأسباب."
+                };
+            }
+            else if (statusStr.includes("missing") || statusStr.includes("نقص") || statusStr.includes("call") || statusStr.includes("تواصل")) {
+                config = {
+                    theme: "blue",
+                    bg: "bg-blue-50 dark:bg-blue-900/10",
+                    border: "border-blue-200 dark:border-blue-700/50",
+                    text: "text-blue-700 dark:text-blue-400",
+                    iconBg: "bg-blue-100 dark:bg-blue-900/30",
+                    icon: "phone-call",
+                    title: "إجراء مطلوب",
+                    desc: "يوجد تحديث بخصوص طلبك، يرجى المراجعة."
+                };
             }
 
-            // Save for later
-            localStorage.setItem('savedNationalId', nationalId);
+            // Agent Logic
+            let agentHtml = "";
+            if (agentName && agentName.trim() !== "") {
+                 if (!statusStr.includes("accept") && !statusStr.includes("reject")) {
+                     config.icon = "headset";
+                     config.title = "جاري المتابعة معك";
+                 }
+                agentHtml = `
+                    <div class="mt-4 p-4 rounded-2xl bg-white/60 dark:bg-black/20 border border-dashed border-slate-300 dark:border-slate-700 flex items-center gap-4">
+                        <div class="relative">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-500">
+                                <i data-lucide="user" class="w-5 h-5"></i>
+                            </div>
+                            <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white dark:border-slate-900 rounded-full"></span>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">مسؤول المتابعة</p>
+                            <p class="font-black text-slate-900 dark:text-white">${agentName}</p>
+                        </div>
+                    </div>
+                `;
+            }
 
-            resultDiv.classList.remove('hidden');
-            resultDiv.className = "mt-10 max-w-lg mx-auto";
-            // Skeleton Loader
+            if (detailedStatus) config.desc = detailedStatus;
+
+            // Render Premium Result Card
             resultDiv.innerHTML = `
-                <div class="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-xl border border-slate-100 dark:border-slate-700 animate-pulse">
-                    <div class="flex items-center gap-4">
-                        <div class="w-16 h-16 bg-slate-200 dark:bg-slate-700 rounded-2xl"></div>
-                        <div class="flex-1 space-y-3">
-                            <div class="h-4 bg-slate-200 dark:bg-slate-700 rounded w-1/3"></div>
-                            <div class="h-6 bg-slate-200 dark:bg-slate-700 rounded w-2/3"></div>
+                <div class="relative overflow-hidden rounded-[2.5rem] p-8 ${config.bg} border ${config.border} shadow-2xl transform transition-all duration-500 hover:scale-[1.01] animate-in fade-in slide-in-from-bottom-4 duration-700">
+                    <i data-lucide="${config.icon}" class="absolute -left-10 -bottom-10 w-64 h-64 ${config.text} opacity-5 rotate-12 pointer-events-none"></i>
+                    
+                    <div class="relative z-10 flex flex-col md:flex-row items-start gap-6 text-right">
+                        
+                        <div class="w-20 h-20 rounded-[2rem] ${config.iconBg} flex items-center justify-center shrink-0 shadow-inner group">
+                            <i data-lucide="${config.icon}" class="w-10 h-10 ${config.text} group-hover:scale-110 transition-transform duration-300"></i>
+                        </div>
+
+                        <div class="flex-1 w-full">
+                            <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                                <h4 class="text-3xl font-black ${config.text} tracking-tight">${config.title}</h4>
+                                <span class="px-3 py-1 rounded-full bg-white/60 dark:bg-black/20 text-[10px] font-bold ${config.text} border border-white/20 backdrop-blur-sm">
+                                    LIVE STATUS
+                                </span>
+                            </div>
+                            
+                            <p class="text-lg font-bold text-slate-800 dark:text-slate-200 mb-2">
+                                مرحباً, <span class="text-brand-600 dark:text-brand-400">${data.name.split(' ')[0]}</span>
+                            </p>
+                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed font-medium text-base">
+                                ${config.desc}
+                            </p>
+
+                            ${agentHtml}
                         </div>
                     </div>
                 </div>
             `;
-            
-            requestAnimationFrame(() => {
-                resultDiv.classList.remove('translate-y-4', 'opacity-0');
-            });
 
-            try {
-                const response = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({ action: "check_status", nationalId: nationalId })
-                });
-
-                const data = await response.json();
-                resultDiv.innerHTML = '';
-
-                if (data.result === "success") {
-                    // === SMART STATUS MAPPING ===
-                    let statusStr = (data.status || "").toLowerCase();
-                    // Get new detailed fields from sheet (Column I & J)
-                    let detailedStatus = data.detailedStatus || ""; 
-                    let agentName = data.csAgent || "";
-
-                    // Default Config (Pending/Under Review)
-                    let config = {
-                        color: "yellow",
-                        bg: "bg-yellow-50 dark:bg-yellow-900/10",
-                        border: "border-yellow-200 dark:border-yellow-700/50",
-                        text: "text-yellow-700 dark:text-yellow-400",
-                        iconBg: "bg-yellow-100 dark:bg-yellow-900/30",
-                        iconColor: "text-yellow-600 dark:text-yellow-400",
-                        icon: "clock",
-                        title: "طلبك قيد المراجعة",
-                        desc: "جاري فحص البيانات والمستندات من قبل المختصين."
-                    };
-
-                    // 1. Accepted / Active
-                    if (statusStr.includes("accept") || statusStr.includes("مقبول") || statusStr.includes("active") || statusStr.includes("نشط") || statusStr.includes("تم")) {
-                        config = {
-                            color: "green",
-                            bg: "bg-green-50 dark:bg-green-900/10",
-                            border: "border-green-200 dark:border-green-700/50",
-                            text: "text-green-700 dark:text-green-400",
-                            iconBg: "bg-green-100 dark:bg-green-900/30",
-                            iconColor: "text-green-600 dark:text-green-400",
-                            icon: "check-circle-2",
-                            title: "ألف مبروك! تم القبول",
-                            desc: "تم تفعيل حسابك بنجاح. يمكنك الآن بدء العمل واستقبال الرحلات."
-                        };
-                    } 
-                    // 2. Rejected
-                    else if (statusStr.includes("reject") || statusStr.includes("مرفوض") || statusStr.includes("block")) {
-                        config = {
-                            color: "red",
-                            bg: "bg-red-50 dark:bg-red-900/10",
-                            border: "border-red-200 dark:border-red-700/50",
-                            text: "text-red-700 dark:text-red-400",
-                            iconBg: "bg-red-100 dark:bg-red-900/30",
-                            iconColor: "text-red-600 dark:text-red-400",
-                            icon: "x-circle",
-                            title: "نعتذر، الطلب مرفوض",
-                            desc: "يرجى التواصل مع خدمة العملاء لمعرفة أسباب الرفض أو إعادة التقديم."
-                        };
-                    }
-                    // 3. Contact / Missing Info
-                    else if (statusStr.includes("missing") || statusStr.includes("نقص") || statusStr.includes("call") || statusStr.includes("تواصل")) {
-                        config = {
-                            color: "blue",
-                            bg: "bg-blue-50 dark:bg-blue-900/10",
-                            border: "border-blue-200 dark:border-blue-700/50",
-                            text: "text-blue-700 dark:text-blue-400",
-                            iconBg: "bg-blue-100 dark:bg-blue-900/30",
-                            iconColor: "text-blue-600 dark:text-blue-400",
-                            icon: "phone-call",
-                            title: "إجراء مطلوب",
-                            desc: "يوجد تحديث بخصوص طلبك، يرجى مراجعة التفاصيل أدناه."
-                        };
-                    }
-
-                    // --- Dynamic Message Logic ---
-                    // If an agent name is assigned in the sheet, override/append the description
-                    let agentHtml = "";
-                    if (agentName && agentName.trim() !== "") {
-                        // Change icon to headset if agent is assigned and status is not final (like accepted/rejected)
-                        if (!statusStr.includes("accept") && !statusStr.includes("reject")) {
-                             config.icon = "headset";
-                             config.title = "جاري المتابعة معك";
-                        }
-                        
-                        agentHtml = `
-                            <div class="mt-3 p-3 bg-white/60 dark:bg-black/20 rounded-xl border border-dashed border-slate-300 dark:border-slate-700 flex items-center gap-3">
-                                <div class="w-8 h-8 rounded-full bg-brand-100 dark:bg-brand-900/50 flex items-center justify-center text-brand-600">
-                                    <i data-lucide="user" class="w-4 h-4"></i>
-                                </div>
-                                <div class="text-xs">
-                                    <p class="text-slate-500 dark:text-slate-400 font-bold">مسؤول المتابعة</p>
-                                    <p class="text-slate-800 dark:text-white font-black text-sm">${agentName}</p>
-                                </div>
-                            </div>
-                            <p class="text-sm font-bold text-brand-600 dark:text-brand-400 mt-2">سيتم التواصل معك قريباً من قبل المختص.</p>
-                        `;
-                    }
-
-                    // If detailed status exists in sheet, use it as the main description
-                    if (detailedStatus && detailedStatus.trim() !== "") {
-                        config.desc = detailedStatus;
-                    }
-
-                    // Render Card
-                    resultDiv.innerHTML = `
-                        <div class="relative overflow-hidden rounded-3xl p-6 ${config.bg} border ${config.border} shadow-lg transition-all duration-500 hover:scale-[1.02]">
-                            <i data-lucide="${config.icon}" class="absolute -left-4 -bottom-4 w-32 h-32 ${config.text} opacity-10 rotate-12"></i>
-                            <div class="relative z-10 flex items-start gap-5 text-right">
-                                <div class="w-16 h-16 rounded-2xl ${config.iconBg} flex items-center justify-center shrink-0 shadow-inner">
-                                    <i data-lucide="${config.icon}" class="w-8 h-8 ${config.iconColor}"></i>
-                                </div>
-                                <div class="flex-1 pt-1">
-                                    <div class="flex justify-between items-start">
-                                        <h4 class="text-2xl font-black ${config.text} mb-2">${config.title}</h4>
-                                        <span class="text-[10px] font-bold uppercase tracking-wider ${config.text} bg-white/50 dark:bg-black/20 px-2 py-1 rounded-lg">آخر تحديث</span>
-                                    </div>
-                                    <p class="font-bold text-slate-700 dark:text-slate-300 mb-1">أهلاً كابتن ${data.name.split(' ')[0]}</p>
-                                    <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-medium">${config.desc}</p>
-                                    ${agentHtml}
-                                </div>
-                            </div>
-                        </div>
-                    `;
-
-                } else {
-                    // Not Found
-                    localStorage.removeItem('savedNationalId'); // Clear invalid ID
-                    resultDiv.innerHTML = `
-                        <div class="bg-slate-50 dark:bg-slate-800/50 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-lg text-center">
-                            <div class="w-16 h-16 bg-slate-200 dark:bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce-slow">
-                                <i data-lucide="search-x" class="w-8 h-8 text-slate-500 dark:text-slate-400"></i>
-                            </div>
-                            <h4 class="text-xl font-bold text-slate-800 dark:text-white mb-2">الرقم غير مسجل</h4>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">لم نعثر على طلب مرتبط بهذا الرقم القومي.</p>
-                            <button onclick="document.getElementById('statusNationalId').focus(); openModal();" class="text-brand-600 dark:text-brand-400 font-bold hover:underline">
-                                تسجيل طلب جديد؟
-                            </button>
-                        </div>
-                    `;
-                }
-                lucide.createIcons();
-
-            } catch (error) {
-                console.error(error);
-                resultDiv.innerHTML = `
-                    <div class="p-4 rounded-2xl bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-800 text-center font-bold">
-                        <i data-lucide="wifi-off" class="w-6 h-6 mx-auto mb-2"></i>
-                        حدث خطأ في الاتصال، حاول مرة أخرى.
+        } else {
+            // Not Found State
+            localStorage.removeItem('savedNationalId');
+            resultDiv.innerHTML = `
+                <div class="bg-white dark:bg-slate-900/50 rounded-[2.5rem] p-8 border border-slate-200 dark:border-slate-700 shadow-xl text-center animate-in zoom-in duration-500">
+                    <div class="w-20 h-20 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="search-x" class="w-10 h-10 text-slate-400"></i>
                     </div>
-                `;
-                lucide.createIcons();
-            }
+                    <h4 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">الرقم غير مسجل</h4>
+                    <p class="text-slate-500 dark:text-slate-400 mb-8 max-w-xs mx-auto">لم نعثر على أي طلب مرتبط بهذا الرقم القومي في نظامنا.</p>
+                    <button onclick="document.getElementById('statusNationalId').focus(); openModal();" 
+                        class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-600 text-white font-bold hover:bg-brand-700 transition-colors shadow-lg shadow-brand-500/20">
+                        <i data-lucide="plus-circle" class="w-5 h-5"></i>
+                        تسجيل طلب جديد
+                    </button>
+                </div>
+            `;
         }
-    </script>
+        lucide.createIcons();
+
+    } catch (error) {
+        console.error(error);
+        resultDiv.innerHTML = `
+            <div class="p-6 rounded-2xl bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-800 text-center font-bold animate-pulse">
+                <i data-lucide="wifi-off" class="w-8 h-8 mx-auto mb-3"></i>
+                حدث خطأ في الاتصال بالسيرفر، يرجى المحاولة مرة أخرى.
+            </div>
+        `;
+        lucide.createIcons();
+    }
+}    </script>
 </body>
 </html>
